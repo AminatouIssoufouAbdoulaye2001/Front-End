@@ -1,0 +1,159 @@
+
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+.head{
+    .head-top{
+        display: block;
+        width: 100%;
+        background: #ffffff;
+        color: #fff;
+        margin: 0 auto;
+        padding: 0;
+        min-width: 320px;
+        height: auto;
+        .row{
+
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-top: calc(var(--bs-gutter-y) * -1);
+    margin-right: calc(var(--bs-gutter-x) / -2);
+    margin-left: calc(var(--bs-gutter-x) / -2);
+    .ul-top-head{
+        display: inline-flex;
+        margin-bottom: 0;
+        float: right;
+        li{
+            display: list-item;
+            text-align: -webkit-match-parent;
+            margin-right: 30px;
+            a{
+                text-decoration: none;
+            }
+            .icon-top-head{
+                color: #2c323ee0;
+                font-weight: 400;
+                font-size: 0.9rem;
+                i{
+                    margin-right: 5px
+                };
+                img{
+                    margin-right: 5px;
+                    border-radius: 5px;
+                    max-width: 20px
+                };
+            }
+        }
+    }
+        }
+        
+    }
+
+    
+    /* ------------ nav--------------  */
+    .bottom-header {
+    
+        .navbar{
+         top: -10px;
+         
+         .navbar-brand{
+             font-size: 30px;
+             margin-top: 5px;
+             margin-left: 50px;
+             margin-bottom: -5px;
+             img{
+                 margin-right: 4px;
+                 display: inline-block;
+             }
+            
+         }
+         #navbarNavDropdown{
+             
+             .navbar-nav{
+                 
+                 
+                 .nav-item{
+                     margin-right:0px;
+ 
+                     .btn-group {
+                         margin-right: 10px;
+                         .dropdown-menu{
+                             display: none;
+                             position: absolute;
+                             background-color: #fff;
+                             min-width: 160px;
+                             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                             z-index: 1;
+                                                    
+                             /* Links inside the dropdown */
+                             span a{
+                                 color:black;
+                                 padding: 12px 16px;
+                                 text-decoration: none;
+                                 display: block;
+                                 margin-left: 20px;
+                                 i{
+                                     color: #5333ed;
+                                 }
+                                 
+                             }
+                             /* Change color of dropdown links on hover */
+                
+ 
+                           }
+                           
+ 
+                         }
+                         /* Dropdown Content (Hidden by Default) */
+                
+                      .btn-group:hover{
+                          background-color: #5333ed;
+                          height: -5px;
+                         /* Show the dropdown menu on hover */
+                         .btn-group:hover .btn
+                {
+                    color: #fff;
+                
+                }
+                .btn:hover{
+                    background-color: #5333ed;
+                }
+                .btn:hover a{
+                    color: #fff;
+
+                }
+                .btn:hover a i{
+                    color: #fff;
+                }
+            
+                         .dropdown-menu{
+                             display: block;
+                         }
+                     }
+ 
+                 }
+                 .btn{
+                     font-size: 20px;
+                    
+                      #icon_menu{
+                         margin-right: 5px;
+                     }
+ 
+                 }
+   
+             }
+            }
+        }
+     
+       
+          
+     }
+ }
+ 
+
