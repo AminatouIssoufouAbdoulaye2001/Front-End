@@ -11,10 +11,12 @@ import { SectionComponent } from './Components/section/section.component';
 import { SignUpComponent } from './Components/sign-up/sign-up.component';
 import { HomeComponent } from './Components/home/home.component';
 import { authInterceptorProviders } from './Helpers/auth.interceptor';
-import { FormsModule } from '@angular/forms';
-
-
-
+import { FormsModule,ReactiveFormsModule} from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatCardModule } from '@angular/material/card';
+import {MatInputModule} from '@angular/material/input';
+import { FlexLayoutModule } from '@angular/flex-layout';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +26,7 @@ import { FormsModule } from '@angular/forms';
     SectionComponent,
     SignUpComponent,
     HomeComponent,
+   
 
   ],
   imports: [
@@ -31,6 +34,12 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     NgbModule,
     FormsModule,
+    CommonModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FlexLayoutModule,
+    ReactiveFormsModule
   ],
   providers: [ authInterceptorProviders
               ],
