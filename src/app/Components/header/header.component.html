@@ -11,7 +11,8 @@
         <li class="ul-top-head-li"><a href=""> <span class="icon-top-head"><i class="fas fa-comment-dots"></i>Support</span></a></li>
         <li class="ul-top-head-li"><a href=""><span class="icon-top-head"><img src="assets/tn.png">Tunisie</span></a></li>
         <li class="ul-top-head-li"><a href=""> <span class="icon-top-head">À propos</span></a></li>
-        <li class="ul-top-head-li"><a href="/se-connecter"><span class="icon-top-head" style="font-weight: 500;"><i class="fas fa-user-circle"></i>Espace Client</span></a></li>
+        <li class="ul-top-head-li"><a href="/signup" ><span class="icon-top-head" style="font-weight: 500;"><i class="fa fa-sign-in-alt"></i>Sign-up</span></a></li>
+        <li class="ul-top-head-li"><a href="/login"><span class="icon-top-head" style="font-weight: 500;"><i class="fas fa-user-circle"></i>Espace Client</span></a></li>
       </ul>
     </div>
   </div>
@@ -23,7 +24,7 @@
       <div class= "bottom-header">
         <div class= "container">
           <nav class="navbar navbar-expand-lg  mt-3">
-            <a class="navbar-brand" href="#"><img src="https://img.icons8.com/fluency/40/000000/clouds.png"/>NGhost</a>
+            <a class="navbar-brand" href="/home" >NGhost</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -35,10 +36,10 @@
                     <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
                       <span class="btn" ngbDropdownToggle>Hébergement Web</span>
                       <div class="dropdown-menu" ngbDropdownMenu>
-                        <span class="btn" ngbDropdownItem><a href="#">Hebergement E-commerce</a></span>
-                        <span class="btn" ngbDropdownItem><a href="#">Hebergement Basic</a></span>
-                                        <span class="btn" ngbDropdownItem><a href="#"> Hebergement Pro</a></span>
-                        <span class="btn" ngbDropdownItem><a href="#">EMail Entreprise Suite</a></span>
+                        <span class="btn" ngbDropdownItem><a href="#">  <i class="fas fa-server"></i>Hebergement E-commerce</a></span>
+                        <span class="btn" ngbDropdownItem><a href="#"><i class="wsmenu-arrow"></i>Hebergement Basic</a></span>
+                                        <span class="btn" ngbDropdownItem><a href="#"><i class="fab fa-cloudversify"></i> Hebergement Pro</a></span>
+                        <span class="btn" ngbDropdownItem><a href="#"><i class="fas fa-envelope "></i>EMail Entreprise Suite</a></span>
                       </div>
                     </div>
                   </div>
@@ -48,8 +49,10 @@
                     <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
                       <span class="btn" ngbDropdownToggle>Domaines</span>
                       <div class="dropdown-menu" ngbDropdownMenu>
-                           <span class="btn" ngbDropdownItem><a href="#"><i class="fas fa-globe"></i> Enregistrer un nom de domaine</a></span>
-                          <span class="btn" ngbDropdownItem><a href="#"><i class="fas fa-exchange"></i> Transferer un nom domaine</a></span>
+                      
+                           <span class="btn" ngbDropdownItem><a href="#"> <i class="fas fa-copyright instagram-color"></i>Enregistrer un domaine</a></span>
+                          <span class="btn" ngbDropdownItem><a href="#"> <i class="fas fa-exchange-alt color-accent"></i> Transferer un domaine</a></span>
+                          <span class="btn" ngbDropdownItem><a href="#"><i class="fas fa-globe"></i>Verifier un domaine</a></span>
                       </div>
                     </div>
                   </div>
@@ -60,8 +63,8 @@
                       <span class="btn" ngbDropdownToggle>Serveurs</span>
                       <div class="dropdown-menu" ngbDropdownMenu>
                         <span class="btn" ngbDropdownItem><a href="#"><i class="fab fa-linux"></i> Cloud VPS Linux</a></span>
-                        <span class="btn" ngbDropdownItem><a href="#">Cloud VPS Windows</a></span>
-                        <span class="btn" ngbDropdownItem><a href="#">Serveurs Dédiés</a></span>
+                        <span class="btn" ngbDropdownItem><a href="#"><i class="fab fa-windows"></i>Cloud VPS Windows</a></span>
+                        <span class="btn" ngbDropdownItem><a href="#"> <i class="fas fa-database"></i>Serveurs Dédiés</a></span>
                       </div>
                     </div>
                   </div>
@@ -71,7 +74,7 @@
                     <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
                       <span class="btn" ngbDropdownToggle>Securité</span>
                       <div class="dropdown-menu" ngbDropdownMenu>
-                        <span class="btn" ngbDropdownItem><a href="#"> <i class="fas fa-lock-alt"></i>Certificat SSL</a></span>
+                        <span class="btn" ngbDropdownItem><a href="#"><i class="fas fa-lock icon-size-lg color-primary"></i>Certificat SSL</a></span>
                       </div>
                     </div>
                   </div>
@@ -83,5 +86,3 @@
     </div>
     </section>
   </header>
-  
-<app-section></app-section>

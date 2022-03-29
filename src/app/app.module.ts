@@ -8,6 +8,11 @@ import { HeaderComponent } from './Components/header/header.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SectionComponent } from './Components/section/section.component';
+import { SignUpComponent } from './Components/sign-up/sign-up.component';
+import { HomeComponent } from './Components/home/home.component';
+import { authInterceptorProviders } from './Helpers/auth.interceptor';
+import { FormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -16,14 +21,19 @@ import { SectionComponent } from './Components/section/section.component';
     LoginComponent,
     HeaderComponent,
     FooterComponent,
-    SectionComponent
+    SectionComponent,
+    SignUpComponent,
+    HomeComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    FormsModule,
   ],
-  providers: [],
+  providers: [ authInterceptorProviders
+              ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

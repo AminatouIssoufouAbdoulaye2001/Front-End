@@ -4,6 +4,8 @@
 @import '~@fortawesome/fontawesome-free/scss/solid';
 @import '~@fortawesome/fontawesome-free/scss/regular';
 .head{
+
+
     .head-top{
         display: block;
         width: 100%;
@@ -29,6 +31,9 @@
         display: inline-flex;
         margin-bottom: 0;
         float: right;
+        li:hover a span {
+            color: orange;
+        }
         li{
             display: list-item;
             text-align: -webkit-match-parent;
@@ -61,6 +66,7 @@
     
         .navbar{
          top: -10px;
+         
          
          .navbar-brand{
              font-size: 30px;
@@ -99,7 +105,8 @@
                                  display: block;
                                  margin-left: 20px;
                                  i{
-                                     color: #5333ed;
+                                     margin-right: 5px;
+                                     color: #4b8ef1;
                                  }
                                  
                              }
@@ -113,7 +120,7 @@
                          /* Dropdown Content (Hidden by Default) */
                 
                       .btn-group:hover{
-                          background-color: #5333ed;
+                          background-color: #4b8ef1;
                           height: -5px;
                          /* Show the dropdown menu on hover */
                          .btn-group:hover .btn
@@ -122,7 +129,7 @@
                 
                 }
                 .btn:hover{
-                    background-color: #5333ed;
+                    background-color: #4b8ef1;
                 }
                 .btn:hover a{
                     color: #fff;
@@ -139,7 +146,8 @@
  
                  }
                  .btn{
-                     font-size: 20px;
+                     top: 0px;
+                     font-size: 15px;
                     
                       #icon_menu{
                          margin-right: 5px;
