@@ -10,7 +10,7 @@ import { AuthService } from 'src/app/Services/auth.service';
   styleUrls: ['./sign-up.component.scss']
 })
 export class SignUpComponent implements OnInit {
-signupForm:FormGroup;
+  signupForm:FormGroup;
 
   isSuccessful = false;
   isSignUpFailed = false;

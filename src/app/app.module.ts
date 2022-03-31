@@ -17,6 +17,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { RegisterComponent } from './Components/register/register.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +27,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     SectionComponent,
     SignUpComponent,
     HomeComponent,
+    RegisterComponent,
    
 
   ],
