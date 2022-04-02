@@ -9,26 +9,12 @@ import { TokenStorageService } from 'src/app/Services/token-storage.service';
 })
 export class LoginComponent implements OnInit {
 
-  loginForm: FormGroup = new FormGroup({
-    username: new FormControl(''),
-    password: new FormControl(''),
-  });
-  isLoggedIn = false;
-  isLoginFailed = false;
-  errorMessage = '';
-  roles: string[] = [];
   constructor(private authService: AuthService, private tokenStorage: TokenStorageService,private formBuilder:FormBuilder) { 
-    this.loginForm=this.formBuilder.group({
-      username:this.formBuilder.control(""),
-      password:this.formBuilder.control(""),
-    })
+ 
   }
   ngOnInit(): void {
     
     }
   
-  onSubmit(): void {
-console.log(this.loginForm.value)
-  }
   
 }

@@ -65,11 +65,10 @@
     .bottom-header {
     
         .navbar{
-         top: -10px;
-         
+         top: 10px;
          
          .navbar-brand{
-             font-size: 30px;
+             font-size: 35px;
              margin-top: 5px;
              margin-left: 50px;
              margin-bottom: -5px;
@@ -83,7 +82,36 @@
              
              .navbar-nav{
                  
-                 
+                .topbn
+                {
+            border-radius: 120px;
+                font-size: 14px;
+                background: #4b8ef1;
+                padding: 0.4rem 0.9rem;
+                border: solid 2px #4b8ef1;
+                font-weight: 400;
+                transition: unset;
+                
+                border-bottom-color: #4b8ef1!important;
+                color: #fff!important;
+                }
+                .topbn:hover
+                {
+                   background: #4b8ef1!important;
+                   color:white!important;
+                       border-bottom-color: solid #004FD5!important;
+            
+                }   
+                .espace-client{
+                    margin-left: 120px;
+                    top: -5px;
+                }
+                
+                .topbn i
+                {
+                   color:white!important;
+            
+                }  
                  .nav-item{
                      margin-right:0px;
  

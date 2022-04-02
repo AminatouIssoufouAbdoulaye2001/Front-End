@@ -18,6 +18,7 @@ import { MatCardModule } from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { RegisterComponent } from './Components/register/register.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,7 @@ import { RegisterComponent } from './Components/register/register.component';
     SignUpComponent,
     HomeComponent,
     RegisterComponent,
-   
+  
 
   ],
   imports: [
