@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -10,29 +10,48 @@ export class RegisterComponent implements OnInit {
 
   signupForm!: FormGroup;
   loginForm!: FormGroup;
-  isSuccessful = false;
-  isSignUpFailed = false;
   errorMessage = '';
-  constructor(private formBuilder:FormBuilder) {}
-  ngOnInit(){
-    this.signupForm=this.formBuilder.group({
-      firstName:['',Validators.required],
-      lastName:['',Validators.required],
-      email:['',[Validators.required,Validators.email]],
-      password:['',[Validators.required,Validators.minLength(8)]],
-      cpassword:['',[Validators.required,Validators.minLength(8)]],
-      
+
+  constructor(private formBuilder: FormBuilder) {
+    this.signupForm = this.formBuilder.group({
+      userName: this.formBuilder.control('', Validators.required),
+      fullName: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(8)]],
+      passwordConf: ['', [Validators.required, Validators.minLength(8)]],
     });
-    this.loginForm=this.formBuilder.group({
-      username:['',Validators.required],
-  password:['',Validators.required],
-    })
+
+    this.loginForm = this.formBuilder.group({
+      userName: ['', Validators.required],
+      password: ['', Validators.required],
+    });
   }
+
+  ngOnInit() {
+
+  }
+
+  getUsername = () => this.loginForm.get('userName');
+
+  getPassword = () => this.loginForm.get('password');
+
+  getSignUpFormUsername = () => this.signupForm.get('userName');
+
+  getSignUpFormPassword = () => this.signupForm.get('password');
+
+  getFullName = () => this.signupForm.get('fullName');
+
+  getPasswordConf = () => this.signupForm.get('passwordConf');
+
+  getEmail = () => this.signupForm.get('email');
+
   onSubmitSignUpForm() {
-  console.log(this.signupForm.value)
+    if (this.signupForm.valid) {
+      console.log(this.signupForm.value)
+    }
   }
 
   onSubmitLoginForm() {
     console.log(this.loginForm.value)
-    }
+  }
 }
