@@ -1,3 +1,10 @@
+.input{
+  outline: none;
+}
+.input:focus{
+  border: 2px solid #1161ee !important;
+}
+
 body{
 	margin:0;
 	color:#6a6f8c;
@@ -21,16 +28,16 @@ a{color:inherit;text-decoration:none}
 	position:relative;
 	background: no-repeat center;
 	box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
-    
+
 }
 .login-html{
-    
+
 	width:100%;
 	height:100%;
 	position:absolute;
 	padding:90px 70px 50px 70px;
 	background:#4b8ef1;
- 
+
 }
 
 .login-html .sign-in-htm,
@@ -56,7 +63,7 @@ a{color:inherit;text-decoration:none}
 }
 .login-html .tab{
 	font-size:22px;
-	
+
 	display:inline-block;
 	border-bottom:2px solid transparent;
     text-align: center;

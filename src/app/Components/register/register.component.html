@@ -1,80 +1,105 @@
 <div class="login-wrap">
-	<div class="login-html">
-		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Se connecter</label>
-		<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">S'inscrire</label>
-		<div class="login-form">
-			<form class="sign-in-htm" [formGroup]="loginForm" (ngSubmit)="onSubmitLoginForm()">
-				<div class="group">
-					<label for="user" class="label">Nom d'utilisateur</label>
-					<input id="user" type="text" class="input" formControlName="username">
-					<div style="color: red;" *ngIf="loginForm.get('username')?.invalid && (loginForm.get('username')?.dirty || loginForm.get('username')?.touched)">
-						Champs obligatoire.
-					  </div>
-				</div>
-				<div class="group">
-					<label for="pass" class="label">Mot de Passe</label>
-					<input id="pass" type="password" class="input" data-type="password" formControlName="password">
-					<div style="color: red;" *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('username')?.touched)">
-						Champs obligatoire.
-					  </div>
-					
-				</div>
-				<div class="group">
-					<input id="check" type="checkbox" class="check" checked>
-					<label for="check"><span class="icon"></span> Rester connecter</label>
-				</div>
-				<div class="group">
-					<button type="submit" [disabled]="loginForm.invalid" class="button">Connexion</button>
-				</div>
-				<div class="hr"></div>
-				<div class="foot-lnk">
-					<a href="#forgot">Mot de passe oublié?</a>
-				</div>
-			</form>
-			<form class="sign-up-htm"  [formGroup]="signupForm" (ngSubmit)="onSubmitSignUpForm()">
-				<div class="group">
-					<label for="user" class="label">Nom</label>
-					<input id="user" type="text" class="input" formControlName="firstName">
-					<div style="color: red;" *ngIf="signupForm.get('firstName')?.invalid && (signupForm.get('firstName')?.dirty || signupForm.get('firstName')?.touched)">
-						Champs obligatoire.
-					  </div>
-				</div>
-				<div class="group">
-					<label for="user" class="label">Prenom</label>
-					<input id="user" type="text" class="input" formControlName="lastName">
-					<div style="color: red;" *ngIf="signupForm.get('lastName')?.invalid && (signupForm.get('lastName')?.dirty || signupForm.get('lastName')?.touched)">
-						Champs obligatoire.
-					  </div>
-				</div>
-				<div class="group">
-					<label for="pass" class="label">Mot de passe</label>
-					<input id="pass" type="password" class="input" data-type="password" formControlName="password">
-					<div style="color: red;" *ngIf="signupForm.get('password')?.invalid && (signupForm.get('password')?.dirty || signupForm.get('password')?.touched)">
-						Mot de passe de 8 caractére réquis.
-					  </div>
-				</div>
-				<div class="group">
-					<label for="pass" class="label">Confirmer Mot de passe</label>
-					<input id="pass" type="password" class="input" data-type="password" formControlName="cpassword">
-					<div style="color: red;" *ngIf="signupForm.get('cpassword')?.invalid && (signupForm.get('cpassword')?.dirty || signupForm.get('cpassword')?.touched)">
-						Veuillez confirmer votre mot de passe.
-					  </div>
-				</div>
-				<div class="group">
-					<label for="pass" class="label">Adresse E-mail</label>
-					<input id="pass" type="text" class="input" formControlName="email">
-					<div style="color: red;" *ngIf="signupForm.get('email')?.invalid && (signupForm.get('email')?.dirty || signupForm.get('email')?.touched)">
-						Veuillez indiquer une adresse e-mail valide..
-					  </div>
-				</div>
-				<div class="group">
-					<button type="submit" [disabled]="signupForm.invalid" class="button">Enregistrer</button>
-				</div>
-				<div class="hr"></div>
-				<div class="foot-lnk">
-					<label for="tab-1">Rappellez moi?</label>
-				</div>
-			</form>
-		</div>
-	</div>
+  <div class="login-html">
+    <input
+      (change)="onChangeTab(1)"
+      [checked]="showLoginForm"
+      class="sign-in"
+      id="tab-1"
+      name="tab"
+      type="radio"><label class="tab" for="tab-1">Se connecter</label>
+    <input
+      (change)="onChangeTab(2)"
+      class="sign-up"
+      id="tab-2"
+      name="tab"
+      [checked]="showLoginForm === false"
+      type="radio"><label class="tab" for="tab-2">S'inscrire</label>
+    <div class="login-form">
+      <form (ngSubmit)="onSubmitLoginForm()" [formGroup]="loginForm" class="sign-in-htm">
+        <div class="group">
+          <label class="label">Nom d'utilisateur <span class="erreur">*</span></label>
+          <input class="input" formControlName="userName" type="text">
+          <div
+            *ngIf="getUsername()?.invalid &&
+            (getUsername()?.dirty ||getUsername()?.touched)"
+            class="erreur">
+            le nom d'utilisateur est obligatoire.
+          </div>
+        </div>
+        <div class="group">
+          <label class="label" for="pass">Mot de Passe <span class="erreur">*</span></label>
+          <input
+            class="input"
+            formControlName="password"
+            type="password">
+          <div
+            *ngIf="getPassword()?.invalid && (getPassword()?.dirty || getPassword()?.touched)"
+            class="erreur">
+            le mot de passe est obligatoire.
+          </div>
+        </div>
+        <!--        bad credentials-->
+        <!--				<div class="group" *ngIf="">-->
+        <!--					<p></p>-->
+        <!--				</div>-->
+        <div class="group">
+          <button [disabled]="!loginForm.valid" class="button" type="submit">Connexion</button>
+        </div>
+      </form>
+      <form (ngSubmit)="onSubmitSignUpForm()" [formGroup]="signupForm" class="sign-up-htm">
+        <div class="group">
+          <label class="label">Nom d'utilisateur <span class="erreur">*</span></label>
+          <input class="input" formControlName="userName" type="text">
+          <div
+            *ngIf="getSignUpFormUsername()?.invalid && (getSignUpFormUsername()?.dirty || getSignUpFormUsername()?.touched)"
+            class="erreur">
+            le nom d'utilisateur est obligatoire.
+          </div>
+        </div>
+        <div class="group">
+          <label class="label"> Nom & Prénom <span class="erreur">*</span></label>
+          <input class="input" formControlName="fullName" type="text">
+          <div
+            *ngIf="getFullName()?.invalid && (getFullName()?.dirty || getFullName()?.touched)"
+            class="erreur">
+            le nom d'utilisateur est obligatoire.
+          </div>
+        </div>
+        <div class="group">
+          <label class="label">Mot de passe <span class="erreur">*</span></label>
+          <input class="input" formControlName="password" type="password">
+          <div
+            *ngIf="getSignUpFormPassword()?.invalid && (getSignUpFormPassword()?.dirty || getSignUpFormPassword()?.touched)"
+            class="erreur">
+            Mot de passe de 8 caractéres minimum réquis.
+          </div>
+        </div>
+        <div class="group">
+          <label class="label">Confirmer Mot de passe <span class="erreur">*</span></label>
+          <input class="input" formControlName="passwordConf" type="password">
+          <div
+            *ngIf="getPasswordConf()?.invalid && (getPasswordConf()?.dirty || getPasswordConf()?.touched)"
+            class="erreur">
+            Veuillez confirmer votre mot de passe.
+          </div>
+        </div>
+        <div class="group">
+          <label class="label">Adresse E-mail <span class="erreur">*</span></label>
+          <input class="input" formControlName="email" id="pass" type="email">
+          <div
+            *ngIf="getEmail()?.invalid && (getEmail()?.dirty || getEmail()?.touched)"
+            class="erreur">
+            Veuillez indiquer une adresse e-mail valide..
+          </div>
+        </div>
+        <!--        api error-->
+        <!--				<div class="group" *ngIf="">-->
+        <!--					<p></p>-->
+        <!--				</div>-->
+        <div class="group">
+          <button [disabled]="signupForm.invalid" class="button" type="submit">Enregistrer</button>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
