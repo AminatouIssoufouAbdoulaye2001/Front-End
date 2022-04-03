@@ -1,18 +1,23 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Subscription} from "rxjs";
+import {AuthService} from "../../Services/auth.service";
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent implements OnInit, OnDestroy {
+  subscription = new Subscription();
 
-  signupForm!: FormGroup;
-  loginForm!: FormGroup;
+  signupForm: FormGroup;
+  loginForm: FormGroup;
+  showLoginForm = true;
+
   errorMessage = '';
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private authService: AuthService, private formBuilder: FormBuilder) {
     this.signupForm = this.formBuilder.group({
       userName: this.formBuilder.control('', Validators.required),
       fullName: ['', Validators.required],
@@ -45,13 +50,44 @@ export class RegisterComponent implements OnInit {
 
   getEmail = () => this.signupForm.get('email');
 
+  onChangeTab(value: number) {
+    value === 1 ? this.showLoginForm = true : this.showLoginForm = false;
+    console.log(this.showLoginForm)
+  }
+
   onSubmitSignUpForm() {
     if (this.signupForm.valid) {
-      console.log(this.signupForm.value)
+      this.subscription.add(this.authService.signUp(this.signupForm.value).subscribe( res =>{
+        if (res.success === true) {
+          // demo
+          this.showLoginForm = true;
+          alert(res.message)
+        } else {
+          //demo
+          alert(res.message)
+        }
+      }))
     }
   }
 
   onSubmitLoginForm() {
-    console.log(this.loginForm.value)
+    if (this.loginForm.valid) {
+      this.subscription.add(this.authService.signIn(this.loginForm.value).subscribe(res => {
+
+        // ceci est une démo
+        // todo : à changer pour une application plus propre
+        if (res.success === true) {
+          alert('vous êtes bien loger, attendez la création du dashboard :) votre token est stocké dans session storage')
+          this.loginForm.reset({})
+        } else {
+          alert(res.message)
+        }
+
+      }))
+    }
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 }

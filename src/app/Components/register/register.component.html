@@ -1,8 +1,19 @@
 <div class="login-wrap">
   <div class="login-html">
-    <input checked class="sign-in" id="tab-1" name="tab" type="radio"><label class="tab" for="tab-1">Se
-    connecter</label>
-    <input class="sign-up" id="tab-2" name="tab" type="radio"><label class="tab" for="tab-2">S'inscrire</label>
+    <input
+      (change)="onChangeTab(1)"
+      [checked]="showLoginForm"
+      class="sign-in"
+      id="tab-1"
+      name="tab"
+      type="radio"><label class="tab" for="tab-1">Se connecter</label>
+    <input
+      (change)="onChangeTab(2)"
+      class="sign-up"
+      id="tab-2"
+      name="tab"
+      [checked]="showLoginForm === false"
+      type="radio"><label class="tab" for="tab-2">S'inscrire</label>
     <div class="login-form">
       <form (ngSubmit)="onSubmitLoginForm()" [formGroup]="loginForm" class="sign-in-htm">
         <div class="group">
@@ -57,8 +68,9 @@
         <div class="group">
           <label class="label">Mot de passe <span class="erreur">*</span></label>
           <input class="input" formControlName="password" type="password">
-          <div *ngIf="getSignUpFormPassword()?.invalid && (getSignUpFormPassword()?.dirty || getSignUpFormPassword()?.touched)"
-               class="erreur">
+          <div
+            *ngIf="getSignUpFormPassword()?.invalid && (getSignUpFormPassword()?.dirty || getSignUpFormPassword()?.touched)"
+            class="erreur">
             Mot de passe de 8 caractéres minimum réquis.
           </div>
         </div>
@@ -76,7 +88,7 @@
           <input class="input" formControlName="email" id="pass" type="email">
           <div
             *ngIf="getEmail()?.invalid && (getEmail()?.dirty || getEmail()?.touched)"
-           class="erreur">
+            class="erreur">
             Veuillez indiquer une adresse e-mail valide..
           </div>
         </div>
