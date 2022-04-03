@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CientAreaComponent } from './CientDashBoard/cient-area/cient-area.component';
 import { HomeComponent } from './Components/home/home.component';
 import { LoginComponent } from './Components/login/login.component';
 import { RegisterComponent } from './Components/register/register.component';
@@ -10,6 +11,7 @@ const routes: Routes = [
 {path:"signup", component:SignUpComponent},
 {path:"login",component:LoginComponent},
 {path:"register",component:RegisterComponent},
+{path:"cient-area",component:CientAreaComponent},
 {path:"**",redirectTo:''},
 ];
 
