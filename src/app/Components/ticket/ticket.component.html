@@ -1,0 +1,234 @@
+ <div class="container">
+  <div class="col-md-9 pull-md-right main-content">
+    <form
+      method="post"
+      action="/submitticket.php?step=3"
+      enctype="multipart/form-data"
+      role="form"
+    >
+      <input
+        type="hidden"
+        name="token"
+        value="8dfe55a77866fcea7a0e10643b0f1316e282e6d6"
+      />
+      <div class="sub-heading">
+        <h3>Information ticket</h3>
+      </div>
+      <div class="custom-card-block account-eidt mb-40">
+        <div class="row">
+          <div class="form-group col-sm-6">
+            <label for="inputName">Nom</label>
+            <input
+              type="text"
+              name="name"
+              id="inputName"
+              class="form-control disabled"
+            />
+          </div>
+          <div class="form-group col-sm-6">
+            <label for="inputEmail">Adresse E-mail</label>
+            <input
+              type="email"
+              name="email"
+              id="inputEmail"
+              class="form-control disabled"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-sm-3">
+            <label for="inputDepartment">Departement</label>
+            <select
+              name="deptid"
+              id="inputDepartment"
+              class="form-control"
+              onchange="refreshCustomFields(this)"
+            >
+              <option value="1" selected="selected">Support Technique</option>
+              <option value="2" >Support Commercial</option>
+            </select>
+          </div>
+          <div class="form-group col-sm-6">
+            <label for="inputRelatedService">Nom du Service</label>
+            <select
+              name="relatedservice"
+              id="inputRelatedService"
+              class="form-control"
+            >
+              <option value="">None</option>
+              <option value="S20">Standard (Pending)</option>
+              <option value="S36">
+                Premium - 1222222222222.com.wwwww8.com (Pending)
+              </option>
+              <option value="S4">Premium - adfasd.dfgdfg.com (Pending)</option>
+              <option value="S21">Economy - afrixdev.com (Pending)</option>
+              <option value="S9">Free - asdasdadasdas.cc (Active)</option>
+              <option value="S7">Premium - dasdasdsa.com (Pending)</option>
+              <option value="S38">Ultimate - digital-pros.net (Pending)</option>
+              <option value="S8">Premium - fdsfsdf.com (Pending)</option>
+              <option value="S30">Economy - fjyimkmrul.com (Pending)</option>
+              <option value="S16">Ultimate - freemenow123.com (Pending)</option>
+              <option value="S13">Ultimate - gfdgfdgfg.xyz (Pending)</option>
+              <option value="S12">
+                Premium - gfggfgfgfgfgfg.xyz (Pending)
+              </option>
+              <option value="S19">Economy - google.com (Pending)</option>
+              <option value="S18">Premium - hellog324567.com (Pending)</option>
+              <option value="S27">Economy - jkyghlvbnjkh.com (Pending)</option>
+              <option value="S28">Economy - kjglklk.cc (Pending)</option>
+              <option value="S37">Ultimate - mcslot.net (Pending)</option>
+              <option value="S25">
+                Economy - mystiqueeyesewe.com (Pending)
+              </option>
+              <option value="S22">Economy - ornek.com (Pending)</option>
+              <option value="S5">Premium - panteriku.com (Pending)</option>
+              <option value="S29">Economy - penesss.com (Pending)</option>
+              <option value="S26">Economy - qyzmettest2.com (Pending)</option>
+              <option value="S6">
+                Premium - robinnilssonsfdg.com (Pending)
+              </option>
+              <option value="S10">
+                Outgoing Scanning - sdjshdjsdhhdsjdhjsh.com (Pending)
+              </option>
+              <option value="S11">
+                Outgoing Scanning - sdjshdjsdhhdsjdhjsh.com (Pending)
+              </option>
+              <option value="S2">Economy - tgtricks.in (Pending)</option>
+              <option value="S3">Ultimate - themetags.info (Active)</option>
+              <option value="S1">Premium - themetags.org (Active)</option>
+              <option value="S35">Premium - wwwww.com (Pending)</option>
+              <option value="S31">Premium - xentegre.com (Pending)</option>
+              <option value="S32">Economy - yukab.com (Pending)</option>
+              <option value="D18">Domain - 334f4f34f.com (Pending)</option>
+              <option value="D15">Domain - afrixdev.com (Pending)</option>
+              <option value="D20">Domain - asddsa2211.com (Pending)</option>
+              <option value="D31">Domain - digital-pros.net (Pending)</option>
+              <option value="D26">Domain - fjyimkmrul.com (Pending)</option>
+              <option value="D11">Domain - freemenow123.com (Pending)</option>
+              <option value="D12">Domain - hellog324567.com (Pending)</option>
+              <option value="D24">Domain - jkyghlvbnjkh.com (Pending)</option>
+              <option value="D10">Domain - khsrewarwe.com (Pending)</option>
+              <option value="D8">Domain - laorbook.com (Pending)</option>
+              <option value="D9">Domain - laorbookjj.com (Pending)</option>
+              <option value="D21">
+                Domain - mystiqueeyesewe.com (Pending)
+              </option>
+              <option value="D4">Domain - panteriku.com (Pending)</option>
+              <option value="D25">Domain - penesss.com (Pending)</option>
+              <option value="D23">Domain - qwfdjh.com (Pending)</option>
+              <option value="D22">Domain - qyzmettest2.com (Pending)</option>
+              <option value="D7">
+                Domain - rffdsfsdfsdfsdfsdfsd.com (Pending)
+              </option>
+              <option value="D5">
+                Domain - robinnilssonsfdg.com (Pending)
+              </option>
+              <option value="D27">Domain - tesssst.com (Pending)</option>
+              <option value="D2">Domain - themetags.info (Active)</option>
+              <option value="D1">
+                Domain - themetags.org (Grace Period (Expired))
+              </option>
+            </select>
+          </div>
+          <div class="form-group col-sm-3">
+            <label for="inputPriority">Urgence</label>
+            <select name="urgency" id="inputPriority" class="form-control">
+              <option value="High">High</option>
+              <option value="Medium" selected="selected">Medium</option>
+              <option value="Low">Low</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="sub-heading">
+        <h3>Votre Message </h3>
+      </div>
+
+      <div class="custom-card-block account-eidt mb-40">
+        <div class="row">
+          <div class="form-group col-sm-12">
+            <label for="inputSubject">Sujet</label>
+            <input
+              type="text"
+              name="subject"
+              id="inputSubject"
+              value=""
+              class="form-control"
+            />
+          </div>
+          <div class="col-sm-12">
+            <div class="form-group">
+              <label for="inputMessage">Message</label>
+              <div class="md-editor" id="1649253522169">
+               
+                <textarea 
+                  name="message"
+                  id="inputMessage"
+                  rows="12"
+                  class="form-control markdown-editor md-input"
+                  data-auto-save-name="client_ticket_open"
+                style="resize: vertical; height: 200px;"
+                ></textarea>
+                <div class="md-footer">
+                  
+                </div>
+                <div class="md-fullscreen-controls">
+                  <a href="#" class="exit-fullscreen" title="Exit fullscreen"
+                    ><span class="glyphicon glyphicon-fullscreen"></span
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sub-heading">
+        <h3>Attachments</h3>
+      </div>
+      <div class="custom-card-block account-eidt mb-20">
+        <div class="row">
+          <div class="col-sm-9">
+            <input
+              type="file"
+              name="attachments[]"
+              id="inputAttachments"
+              class="form-control"
+            />
+            <div id="fileUploadsContainer"></div>
+          </div>
+          <div class="col-sm-3">
+            <button
+              type="button"
+              class="btn outline-btn btn-block"
+              onclick="extraTicketAttachment()"
+            >
+              <i class="fas fa-plus"></i> Add More
+            </button>
+          </div>
+          <div class="col-xs-12 ticket-attachments-message text-muted">
+            Allowed File Extensions: .jpg, .gif, .jpeg, .png, .txt, .pdf (Max
+            file size: 128MB)
+          </div>
+        </div>
+      </div>
+
+      <p>
+        <input
+          type="submit"
+          id="openTicketSubmit"
+          value="Submit"
+          class="btn primary-solid-btn disable-on-click"
+        />
+        <a href="#" class="btn outline-btn">Cancel</a>
+      </p>
+    </form>
+
+    <script>
+      jQuery(document).ready(function () {
+        getTicketSuggestions();
+      });
+    </script>
+  </div>
+</div> -
+
+
