@@ -37,7 +37,7 @@ export class SidebarComponent implements OnInit {
         tooltip: 'Aller au dashboard',
       },
       {
-        routerLink: '/adminpage/service',
+        routerLink: '/adminpage/addservice',
         label: 'Service',
         icon: PrimeIcons.SERVER,
         tooltip: 'Gérer vos services',

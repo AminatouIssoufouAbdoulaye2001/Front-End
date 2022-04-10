@@ -43,6 +43,17 @@ import { AddadminComponent } from './AdminDashBoard/addadmin/addadmin.component'
 import { TableModule } from 'primeng/table';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputTextModule } from 'primeng/inputtext';
+import { AddserviceComponent } from './AdminDashBoard/addservice/addservice.component';
+import { InputNumberModule } from 'primeng/inputnumber';
+import {ConfirmDialogModule} from 'primeng/confirmdialog';
+import {ToolbarModule} from 'primeng/toolbar';
+import {RatingModule} from 'primeng/rating';
+import {ToastModule} from 'primeng/toast';
+import {FileUploadModule} from 'primeng/fileupload';
+import { ProductserviceService } from './Services/productservice.service';
+import { ConfirmationService, MessageService } from 'primeng/api';
+
+
 
 @NgModule({
   declarations: [
@@ -64,6 +75,7 @@ import { InputTextModule } from 'primeng/inputtext';
     SidebarComponent,
     TopCardsComponent,
     AddadminComponent,
+    AddserviceComponent,
 
   
   
@@ -95,9 +107,15 @@ import { InputTextModule } from 'primeng/inputtext';
     DialogModule,
     EditorModule,
     ChartModule,
-    InputTextModule
+    InputTextModule,
+    InputNumberModule,
+    ConfirmDialogModule,
+    ToastModule,
+    FileUploadModule,
+    ToolbarModule,
+    RatingModule
   ],
-  providers: [],
+  providers:  [ProductserviceService, MessageService, ConfirmationService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

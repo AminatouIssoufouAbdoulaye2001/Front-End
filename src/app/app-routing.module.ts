@@ -7,6 +7,7 @@ import { RegisterComponent } from './Components/register/register.component';
 import { SignUpComponent } from './Components/sign-up/sign-up.component';
 import { TicketComponent } from './Components/ticket/ticket.component';
 import { AddadminComponent } from './AdminDashBoard/addadmin/addadmin.component';
+import { AddserviceComponent } from './AdminDashBoard/addservice/addservice.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -18,6 +19,10 @@ const routes: Routes = [
   {
     path: 'adminpage/add',
     component: AddadminComponent,
+  },
+  {
+    path: 'adminpage/addservice',
+    component: AddserviceComponent,
   },
   { path: '**', redirectTo: '' },
 ];

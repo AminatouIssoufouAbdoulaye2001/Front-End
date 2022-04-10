@@ -35,6 +35,7 @@ export class FeedsComponent implements OnInit {
         time: '31 May',
       },
       {
+    
         class: 'danger',
         icon: PrimeIcons.USER,
         task: 'New user registered.',

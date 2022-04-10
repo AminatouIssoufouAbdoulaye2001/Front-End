@@ -16,7 +16,7 @@ export class AddadminComponent implements OnInit {
 
   users: User[]= [];
 
-  roles = ['Administrateur', 'Whatever it is!'];
+  roles = ['Administrateur', 'Agent technique','Agent commercial'];
 
   myForm = new FormGroup({
     fullName: new FormControl('', [Validators.required]),

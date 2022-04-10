@@ -15,7 +15,6 @@
       formControlName="fullName"
       required
     />
-    <div class="valid-feedback">Looks good!</div>
   </div>
 
   <div class="col-md-4">
@@ -110,14 +109,15 @@
       <td>
         <p-cellEditor>
           <ng-template pTemplate="input">
-            <p-dropdown
-              [options]="roles"
+            <input
+              pInputText
+              type="text"
               [(ngModel)]="admin.role"
-              [style]="{ width: '100%' }"
-            ></p-dropdown>
-            <ng-template pTemplate="output">
-              {{ admin.role }}
-            </ng-template>
+              required
+            />
+          </ng-template>
+          <ng-template pTemplate="output">
+            {{ admin.role }}
           </ng-template>
         </p-cellEditor>
       </td>
