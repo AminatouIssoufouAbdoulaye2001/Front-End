@@ -57,7 +57,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
 
   onSubmitSignUpForm() {
     if (this.signupForm.valid) {
-      this.subscription.add(this.authService.signUp(this.signupForm.value).subscribe( res =>{
+      this.subscription.add(this.authService.login(this.signupForm.value).subscribe( res =>{
         if (res.success === true) {
           // demo
           this.showLoginForm = true;
@@ -72,7 +72,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
 
   onSubmitLoginForm() {
     if (this.loginForm.valid) {
-      this.subscription.add(this.authService.signIn(this.loginForm.value).subscribe(res => {
+      this.subscription.add(this.authService.login(this.loginForm.value).subscribe(res => {
 
         // ceci est une démo
         // todo : à changer pour une application plus propre

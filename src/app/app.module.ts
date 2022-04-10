@@ -17,6 +17,7 @@ import {MatInputModule} from '@angular/material/input';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { RegisterComponent } from './Components/register/register.component';
 import {HttpClientModule} from "@angular/common/http";
+import { AuthTestComponent } from './Components/auth-test/auth-test.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import {HttpClientModule} from "@angular/common/http";
     SignUpComponent,
     HomeComponent,
     RegisterComponent,
+    AuthTestComponent,
   ],
   imports: [
     BrowserModule,
