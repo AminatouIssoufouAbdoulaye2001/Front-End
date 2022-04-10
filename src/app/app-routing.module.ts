@@ -6,7 +6,7 @@ import {SingInComponent} from "./Components/sign-in/form.component";
 import {SignUpComponent} from "./Components/sign-up/sign-up.component";
 
 const routes: Routes = [
-  {path: "home", component: HomeComponent},
+  {path: '', component: HomeComponent},
   {
     path: 'account',
     component:LogComponent,
@@ -26,9 +26,7 @@ const routes: Routes = [
       },
     ]
   },
-
-  {path: "**", redirectTo: ''},
-];
+  ]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

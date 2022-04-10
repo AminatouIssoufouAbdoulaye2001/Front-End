@@ -58,7 +58,7 @@ export class SingInComponent implements OnInit, OnDestroy {
   }
 
   navigateToHome() {
-    this.router.navigate(['home']);
+    this.router.navigate(['']);
   }
 
   choseAgency(): void {

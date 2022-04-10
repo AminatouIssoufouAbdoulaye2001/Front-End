@@ -54,7 +54,7 @@ export class SignUpComponent implements OnInit {
   getEmail = () => this.signupForm.get('email');
 
   navigateToHome() {
-    this.router.navigate(['home']);
+    this.router.navigate(['']);
   }
 
   choseAgency(): void {
