@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuItem, PrimeIcons } from 'primeng/api';
+import {AuthService} from "../../../Services/auth.service";
 
 @Component({
   selector: 'app-sidebar',
@@ -16,10 +17,10 @@ export class SidebarComponent implements OnInit {
 
   @Output() closeNotifier = new EventEmitter<boolean>();
 
- 
+
   displayWeather: boolean = false;
 
-  constructor(private _router: Router) {}
+  constructor(private _router: Router, private authService: AuthService) {}
 
   ngOnInit(): void {
     this.sidebarAffiche();
@@ -73,7 +74,7 @@ export class SidebarComponent implements OnInit {
         tooltip: 'Sections des clients',
       },
       {
-        routerLink: '/login',
+        routerLink: '',
         label: 'Déconnexion',
         icon: PrimeIcons.SIGN_OUT,
         tooltip: 'Terminer votre session',
@@ -85,7 +86,7 @@ export class SidebarComponent implements OnInit {
     this.links = [
       {
         routerLink: '/agency/dashboard',
-        label: 'Dashboard',
+        label: 'Dashboardpppp',
         icon: PrimeIcons.CHART_LINE,
         tooltip: "Consulter le dashboard de l'agence",
       },
@@ -114,8 +115,8 @@ export class SidebarComponent implements OnInit {
         tooltip: "Modifier les informations relative l'agence",
       },
       {
-        routerLink: '/login',
-        label: 'Déconnexion',
+        routerLink: '',
+        label: 'Déconnexionnn',
         icon: PrimeIcons.SIGN_OUT,
         tooltip: 'Terminer votre session',
       },
@@ -123,14 +124,14 @@ export class SidebarComponent implements OnInit {
   };
 
   lezgo(routerLink: string) {
-    if (routerLink === '/login') {
-      sessionStorage.clear();
+    console.log(routerLink);
+    if (routerLink === '') {
+      this.authService.logOut();
       this._router.navigate([`${routerLink}`]);
     } else this._router.navigate([`${routerLink}`]);
   }
 
-  displayWeatherDialog = () => (this.displayWeather = true);
-
   notifyClosing = () => this.closeNotifier.emit(false);
+
   sidebarAffiche=() => this.location=window.location.href;
 }

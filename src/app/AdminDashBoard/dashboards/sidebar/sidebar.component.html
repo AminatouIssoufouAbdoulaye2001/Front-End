@@ -7,15 +7,13 @@
       [label]="link.label!"
       [pTooltip]="link.tooltip!"
       [icon]="link.icon!"
-      (click)="
-        link.routerLink ? lezgo(link.routerLink) : displayWeatherDialog()
-      "
+      (click)="lezgo(link.routerLink)"
       iconPos="left"
       class="p-button-rounded p-button-raised p-button-text p-button-success btn-block w-100"
       [id]="link.id ? link.id : ''"
       [style]="{
         'margin-top': '10px',
-        color: '#0948b3' 
+        color: '#0948b3'
       }"
     ></button>
   </div>

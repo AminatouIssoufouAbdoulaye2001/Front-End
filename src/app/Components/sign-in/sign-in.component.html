@@ -1,0 +1,157 @@
+<div class="login-container">
+  <div class="d-flex align-items-center mb-3 pb-1" fxLayoutAlign="center center">
+      <span class="h1 fw-bold mb-0" style="color: #0050d5">
+       Se Connecter
+      </span>
+  </div>
+
+  <form [formGroup]="loginForm">
+    <div
+      class="form-outline mb-4"
+      data-aos="zoom-in"
+      data-aos-delay="1200"
+      data-aos-duration="600"
+      data-aos-easing="ease-in-out"
+    >
+      <span class="p-float-label">
+        <input
+          class="form-control form-control-lg"
+          formControlName="userName"
+          id="emailInput"
+          pInputText
+          type="text"
+        />
+        <label> Nom d'utilisateur</label>
+      </span>
+
+      <div
+        *ngIf="getusername()?.invalid && (getusername()?.dirty || getusername()?.touched)
+        ">
+        <p-message
+          *ngIf="(getusername()?.errors)!['required']"
+          class="not-first-message"
+          severity="error"
+          text="Nom d'utilisateur requis"
+        >
+        </p-message>
+      </div>
+    </div>
+
+    <div
+      class="form-outline mb-4"
+      data-aos="zoom-in"
+      data-aos-delay="1200"
+      data-aos-duration="600"
+      data-aos-easing="ease-in-out"
+    >
+      <span class="p-float-label">
+        <input
+          class="form-control form-control-lg"
+          formControlName="password"
+          id="passwordInput"
+          pInputText
+          type="password"
+        />
+        <label >Mot de passe</label>
+      </span>
+
+      <!--Error messages-->
+      <div
+        *ngIf="getPassword()?.invalid && (getPassword()?.dirty || getPassword()?.touched)">
+        <p-message
+          *ngIf="(getPassword()?.errors)!['required']"
+          class="not-first-message"
+          severity="error"
+          text="Mot de passe requis"
+        >
+        </p-message>
+      </div>
+    </div>
+
+    <!--End password-->
+
+    <div
+      class="pt-1 mb-4"
+      data-aos="fade-up"
+      data-aos-delay="800"
+      data-aos-easing="ease-in-out"
+    >
+      <button
+        [style]="{ color: '#0050d5' }"
+        [disabled]="getForm().invalid"
+        (click)="onSubmit()"
+        class="p-button-raised p-button-rounded p-button-success p-button-outlined btn-block w-100"
+        icon="pi pi-sign-in"
+        id="goButton"
+        label="Se connecter"
+        pButton
+        pRipple
+        type="button"
+      ></button>
+
+
+      <!--Alternatives-->
+
+      <!-- Buttons à afficher si l'utilisateur veut s'inscrire ou juste consulter le catalogue -->
+      <div *ngIf="!displayOptions">
+        <button
+          (click)="displayOptions = true"
+          aria-label="join NGHost"
+          class="p-button-raised p-button-rounded p-button-outlined p-button-primary btn-block w-100"
+          icon="pi pi-user-plus"
+          label="Nous rejoindre"
+          pButton
+          pRipple
+          type="button"
+        ></button>
+
+        <button
+          (click)="navigateToHome()"
+          aria-label="browse NGHost's content"
+          class="p-button-raised p-button-rounded p-button-outlined p-button-secondary btn-block w-100"
+          icon="pi pi-book"
+          label="Explorer notre catalogue"
+          pButton
+          pRipple
+          type="button"
+        ></button>
+      </div>
+
+      <!-- Choix de catégorie pour l'inscription -->
+      <div *ngIf="displayOptions">
+        <button
+          (click)="choseAgency()"
+          class="p-button-raised p-button-rounded p-button-outlined p-button-primary btn-block w-100"
+          data-aos="fade-down"
+          data-aos-duration="500"
+          icon="pi pi-building"
+          label="Vous êtes une entreprise"
+          pButton
+          pRipple
+        ></button>
+
+        <button
+          (click)="choseUser()"
+          class="p-button-raised p-button-rounded p-button-outlined p-button-secondary btn-block w-100"
+          data-aos="fade-up"
+          data-aos-duration="500"
+          icon="pi pi-user"
+          label="Vous êtes un particulier"
+          pButton
+          pRipple
+        ></button>
+
+        <div id="hide-options">
+          <button
+            (click)="displayOptions = false"
+            class="p-button-outlined p-button-rounded p-button-secondary p-button-raised"
+            data-aos="zoom-out"
+            icon="pi pi-times"
+            pButton
+            pRipple
+          ></button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

@@ -6,21 +6,12 @@ import * as AOS from 'aos';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit{
-  private roles: string[] = [];
-  isLoggedIn = false;
-  showAdminBoard = false;
-  showModeratorBoard = false;
-  username?: string;
-  constructor() { }
+export class AppComponent implements OnInit {
+  constructor() {
+  }
+
   ngOnInit(): void {
     AOS.init();
-   
-    }
-
-  // logout(): void {
-  //   this.tokenStorageService.signOut();
-  //   window.location.reload();
-  // }
+  }
 }
 
