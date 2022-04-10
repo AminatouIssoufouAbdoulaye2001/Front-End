@@ -19,7 +19,7 @@ export class RestApiService {
   }
 
   register(data: any): Observable<APIRequestResponse> {
-    return this.http.post<APIRequestResponse>(this.appUtilService.SERVER_URL + 'users', data, this.appUtilService.HTTP_OPTIONS).pipe(
+    return this.http.post<APIRequestResponse>(environment.SERVER_URL + 'users', data, this.appUtilService.HTTP_OPTIONS).pipe(
       catchError(err => this.errorHandler(err.error()))
     );
   }

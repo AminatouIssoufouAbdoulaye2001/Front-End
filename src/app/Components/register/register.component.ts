@@ -57,7 +57,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
 
   onSubmitSignUpForm() {
     if (this.signupForm.valid) {
-      this.subscription.add(this.authService.login(this.signupForm.value).subscribe( res =>{
+      this.subscription.add(this.authService.register(this.signupForm.value).subscribe( res =>{
         if (res.success === true) {
           // demo
           this.showLoginForm = true;
