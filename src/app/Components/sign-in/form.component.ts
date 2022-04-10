@@ -3,6 +3,8 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ConfirmationService, MessageService} from 'primeng/api';
 import {Subscription} from 'rxjs';
 import {ActivatedRoute, Router} from '@angular/router';
+import {AuthService} from "../../Services/auth.service";
+import {data} from "jquery";
 
 @Component({
   selector: 'app-sign-in',
@@ -13,8 +15,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 export class SingInComponent implements OnInit, OnDestroy {
 
   loginForm: FormGroup;
-
-
+  sub = new Subscription();
   displayRegistration: boolean = false;
 
   displayOptions: boolean = false;
@@ -22,15 +23,10 @@ export class SingInComponent implements OnInit, OnDestroy {
   choosenType!: string;
 
 
-  isSmall!: boolean;
-
-  subscription!: Subscription;
-
-
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private _messageService: MessageService,
+    private authService: AuthService,
     private fb: FormBuilder
   ) {
     this.loginForm = fb.group({
@@ -44,7 +40,7 @@ export class SingInComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this._messageService.clear();
+    this.sub.unsubscribe();
   }
 
   getPassword = () => this.loginForm.get('password');
@@ -54,7 +50,11 @@ export class SingInComponent implements OnInit, OnDestroy {
   getForm = () => this.loginForm;
 
   onSubmit() {
-    console.log(this.loginForm.value);
+   if (this.loginForm.valid) {
+    this.sub.add(this.authService.login(this.loginForm.value).subscribe(
+      data => { console.log('ok')}
+    ))
+   }
   }
 
   navigateToHome() {

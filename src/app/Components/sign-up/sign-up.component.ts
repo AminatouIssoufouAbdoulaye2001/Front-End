@@ -1,8 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from 'src/app/Services/auth.service';
 import {getJquery} from "@utility/js-libraries";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
+import {Subscription} from "rxjs";
+import {UsersService} from "../../Services/users.service";
 
 var $ = getJquery();
 
@@ -12,24 +14,17 @@ var $ = getJquery();
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.scss']
 })
-export class SignUpComponent implements OnInit {
+export class SignUpComponent implements OnInit, OnDestroy {
+
   signupForm: FormGroup;
-
-  displayResetModal: boolean = false;
-
-  displayRegistration: boolean = false;
-
-  displayOptions: boolean = true;
-
-  choosenType!: string;
-
-
-  isSmall!: boolean;
+  sub = new Subscription()
 
   constructor(
-    private authService: AuthService,
+    private router: Router,
+    private route: ActivatedRoute,
+    private userService: UsersService,
     private fb: FormBuilder,
-    private router: Router) {
+    ) {
 
     this.signupForm = this.fb.group({
       userName: fb.control('', Validators.required),
@@ -41,6 +36,17 @@ export class SignUpComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  onSubmit() {
+    if (this.signupForm.valid) {
+      this.userService.registerUser(this.signupForm.value).subscribe(
+        data => {
+          console.log(data);
+          this.router.navigate(['../sign-in'], {relativeTo: this.route})
+        }
+      )
+    }
   }
 
   getusername = () => this.signupForm.get('userName');
@@ -57,18 +63,7 @@ export class SignUpComponent implements OnInit {
     this.router.navigate(['']);
   }
 
-  choseAgency(): void {
-    this.choosenType = 'Agency';
-    this.displayRegistration = true;
-  }
-
-  choseUser(): void {
-    this.choosenType = 'User';
-    this.displayRegistration = true;
-  }
-
-  hideRegistration(): void {
-    this.displayRegistration = false;
-    this.displayOptions = false;
+  ngOnDestroy(): void {
+    this.sub.unsubscribe();
   }
 }
