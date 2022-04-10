@@ -29,11 +29,11 @@ export class AuthService {
   }
 
   logOut() {
-
+    localStorage.removeItem(TOKEN_KEY);
   }
 
   isAuthenticated(): boolean {
-    const token = localStorage.getItem(TOKEN_KEY);
+    const token = this.getToken();
     if (!token) {
       return false
     }
@@ -41,8 +41,10 @@ export class AuthService {
     return !helper.isTokenExpired(token);
   }
 
+  getToken = () => localStorage.getItem(TOKEN_KEY);
+
   getRole(): string {
-    const token = localStorage.getItem(TOKEN_KEY);
+    const token = this.getToken();
     if (!token) {
       return '';
     }
