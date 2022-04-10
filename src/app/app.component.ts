@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +14,7 @@ export class AppComponent {
   username?: string;
   constructor() { }
   ngOnInit(): void {
+    AOS.init()
     // this.isLoggedIn = !!this.tokenStorageService.getToken();
     // if (this.isLoggedIn) {
     //   const user = this.tokenStorageService.getUser();

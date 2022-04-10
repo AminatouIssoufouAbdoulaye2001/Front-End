@@ -17,7 +17,26 @@ import {MatInputModule} from '@angular/material/input';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { RegisterComponent } from './Components/register/register.component';
 import {HttpClientModule} from "@angular/common/http";
-
+import { ImageCarouselComponent } from './Components/login/image-carousel/image-carousel.component';
+import { LoginFormTextComponent } from './Components/login/login-form-text/login-form-text.component';
+import { LoginFormComponent } from './Components/login/login-form/login-form.component';
+import { RegistrationComponent } from './Components/login/registration/registration.component';
+import {MessagesModule} from 'primeng/messages';
+import { MessageModule } from 'primeng/message';  
+import {SkeletonModule} from 'primeng/skeleton';
+import {PasswordModule} from 'primeng/password';
+import {CarouselModule} from 'primeng/carousel';
+import {DialogModule} from 'primeng/dialog';
+import {ConfirmDialogModule} from 'primeng/confirmdialog';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatButtonModule } from '@angular/material/button';
+import { ResetPasswordComponent } from './Components/login/reset-password/reset-password.component';
+import { FormComponent } from './Components/login/form/form.component';
+import { ButtonModule } from 'primeng/button';
+import { InputTextModule } from 'primeng/inputtext';
+import { AgencyFormComponent } from './Components/login/agency-form/agency-form.component';
+import {ToastModule} from 'primeng/toast';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +46,14 @@ import {HttpClientModule} from "@angular/common/http";
     SignUpComponent,
     HomeComponent,
     RegisterComponent,
+    ImageCarouselComponent,
+    LoginFormTextComponent,
+    LoginFormComponent,
+    RegistrationComponent,
+    ResetPasswordComponent,
+    FormComponent,
+    AgencyFormComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -39,7 +66,20 @@ import {HttpClientModule} from "@angular/common/http";
     MatInputModule,
     FlexLayoutModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    PasswordModule,
+    MessageModule,
+    MessagesModule,
+    CarouselModule,
+    SkeletonModule,
+    DialogModule,
+    ConfirmDialogModule,
+    MatStepperModule,
+    MatButtonModule,
+    ButtonModule,
+    InputTextModule,
+    ToastModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
