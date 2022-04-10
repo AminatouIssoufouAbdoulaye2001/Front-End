@@ -1,47 +1,147 @@
-<!-- <mat-card>
-  <mat-card-header>
-    <mat-card-title>Créer un compte</mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
-    <form fxLayout="column" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
-      <mat-label>Non d'utilisateur:</mat-label>
-      <p>
-        <mat-form-field appearance="outline">
-          <input matInput type="text" formControlName="username" />
-        </mat-form-field>
-      </p>
-      <mat-label>E-mail:</mat-label>
-
-      <p>
-        <mat-form-field appearance="outline">
-          <input matInput type="text" formControlName="email" />
-        </mat-form-field>
-      </p>
-      <mat-label>Mot de passe:</mat-label>
-
-      <p>
-        <mat-form-field appearance="outline">
-          <input matInput type="text" formControlName="password" />
-        </mat-form-field>
-      </p>
-      <mat-label>Confirmer mot de passe:</mat-label>
-
-      <p>
-        <mat-form-field appearance="outline">
-          <input matInput type="text" formControlName="cpassword" />
-        </mat-form-field>
-      </p>
-
-      <button type="submit" class="btn-block">
-        S'inscrire
-      </button>
-    </form>
-  </mat-card-content>
-</mat-card> -->
-<div>
-  <div >
-    <div>
-      <app-register></app-register>
-    </div>
+<div class="login-container">
+  <div class="d-flex align-items-center mb-3 pb-1" fxLayoutAlign="center center">
+      <span class="h1 fw-bold mb-0" style="color: #0050d5">
+       S' Inscrire
+      </span>
   </div>
+  <form [formGroup]="signupForm">
+    <div class="mb-4">
+      <span class="p-float-label">
+        <input
+          class="form-control form-control-lg"
+          formControlName="userName"
+          id="emailInput"
+          pInputText
+          type="text"
+        />
+        <label> Nom d'utilisateur</label>
+      </span>
+
+      <div *ngIf="getusername()?.invalid && (getusername()?.dirty || getusername()?.touched)">
+        <p-message
+          *ngIf="(getusername()?.errors)!['required']"
+          class="not-first-message"
+          severity="error"
+          text="Nom d'utilisateur requis"
+        >
+        </p-message>
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <span class="p-float-label">
+        <input
+          class="form-control form-control-lg"
+          formControlName="fullName"
+          pInputText
+          type="text"
+        />
+        <label>Nom et Prénom</label>
+      </span>
+
+      <!--Error messages-->
+      <div *ngIf="getFullName()?.invalid && (getFullName()?.dirty || getFullName()?.touched)">
+        <p-message
+          *ngIf="(getFullName()?.errors)!['required']"
+          class="not-first-message"
+          severity="error"
+          text="Le nom et le Prénom sont réquis"
+        >
+        </p-message>
+      </div>
+    </div>
+
+    <div class=" row mb-4">
+      <div class="col-lg-6">
+        <span class="p-float-label">
+        <input
+          class="form-control form-control-lg"
+          formControlName="password"
+          pInputText
+          type="password"
+        />
+        <label>Mot de passe</label>
+      </span>
+
+        <div *ngIf="getPassword()?.invalid && (getPassword()?.dirty || getPassword()?.touched)">
+          <p-message
+            *ngIf="(getPassword()?.errors)!['required']"
+            class="not-first-message"
+            severity="error"
+            text="Le mot de passe est réquis"
+          >
+          </p-message>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <span class="p-float-label">
+        <input
+          class="form-control form-control-lg"
+          formControlName="passwordConf"
+          pInputText
+          type="password"
+        />
+        <label>Confirmation de mot de passe</label>
+      </span>
+
+        <div *ngIf="getPasswordConf()?.invalid && (getPasswordConf()?.dirty || getPasswordConf()?.touched)">
+          <p-message
+            *ngIf="(getPasswordConf()?.errors)!['required']"
+            class="not-first-message"
+            severity="error"
+            text=" la Confirmation est réquise"
+          >
+          </p-message>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="mb-4">
+      <span class="p-float-label">
+        <input
+          class="form-control form-control-lg"
+          formControlName="email"
+          id="passwordInput"
+          pInputText
+          type="email"
+        />
+        <label>Email</label>
+      </span>
+
+      <div *ngIf="getPasswordConf()?.invalid && (getPasswordConf()?.dirty || getPasswordConf()?.touched)">
+        <p-message
+          *ngIf="(getPasswordConf()?.errors)!['required']"
+          class="not-first-message"
+          severity="error"
+          text="Le mot de passe de Confirmation est réquise"
+        >
+        </p-message>
+      </div>
+    </div>
+
+    <button
+      [style]="{ color: '#0050d5' }"
+      class="p-button-raised p-button-rounded p-button-success p-button-outlined btn-block w-100"
+      icon="pi pi-sign-in"
+      id="goButton"
+      label="S' inscrire"
+      pButton
+      pRipple
+      type="button"
+    ></button>
+  </form>
+  <!-- Choix de catégorie pour l'inscription -->
+  <button
+    (click)="navigateToHome()"
+    aria-label="browse NGHost's content"
+    class="p-button-raised p-button-rounded p-button-outlined p-button-secondary btn-block w-100"
+    icon="pi pi-book"
+    label="Explorer notre catalogue"
+    pButton
+    pRipple
+    type="button"
+  ></button>
+
 </div>
+

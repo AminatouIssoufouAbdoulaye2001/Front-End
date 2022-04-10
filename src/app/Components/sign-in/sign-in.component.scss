@@ -1,4 +1,4 @@
-@import "./custom";
+@import "src/app/Components/sign-in/custom";
 
 .not-first-message {
   margin-left: 5px;
@@ -28,4 +28,8 @@ button {
 // Update modal text
 p {
   color: var(--green-pakistan-green);
+}
+
+.login-container {
+  margin-top: 20%;
 }

@@ -1,0 +1,42 @@
+button {
+  font-family: "Amiri";
+}
+
+// The update button
+:host ::ng-deep {
+  & .update-choice {
+    & button {
+      margin-top: 15px;
+    }
+  }
+}
+
+.not-first-message {
+  margin-left: 5px;
+}
+
+.password-reset {
+  margin-top: 10px;
+}
+
+#hide-options {
+  margin-top: 15px;
+  text-align: center;
+}
+
+button {
+  margin-top: 10px;
+  font-size: large;
+}
+
+@media screen and (min-width: 900px) {
+  .update-choice {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+// Update modal text
+p {
+  color: var(--green-pakistan-green);
+}
