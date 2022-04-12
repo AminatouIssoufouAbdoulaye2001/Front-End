@@ -6,18 +6,33 @@ import { Product } from '../Models/produits';
   providedIn: 'root'
 })
 export class ProductserviceService {
+ 
 
-  status: string[]=["Illimité","Free","Included"];
-
+  status: string[] = ['ILLIMITE', 'FREE', 'INCLUDED'];
   productNames: string[]=[
-    "Hébergement basic",
-    "Hébergement economique",
-    "Hébergement pro",
-    "Serveur dédier",
-    "Vps linux",
-    "Vps windows"
-  ];
+    "Hébergement Basic",
+    "Hébergement E-commerce",
+    "Hébergement Pro"
+   ];
   constructor(private http:HttpClient) { }
+  getProductsSmall() {
+    return this.http.get<any>('assets/products-small.json')
+    .toPromise()
+    .then(res => <Product[]>res.data)
+    .then(data => { return data; });
+}
+getProducts() {
+    return this.http.get<any>('assets/products.json')
+  .toPromise()
+  .then(res => <Product[]>res.data)
+  .then(data => { return data; });
+}
+getProductsWithOrdersSmall() {
+  return this.http.get<any>('assets/products-orders-small.json')
+  .toPromise()
+  .then(res => <Product[]>res.data)
+  .then(data => { return data; });
+}
 
   generateProduct(): Product {
     const product:Product={
@@ -25,13 +40,10 @@ export class ProductserviceService {
       website:this.generateWebsite(),
       name:this.generateName(),
       price:this.generatePrice(),
-      category:"Produit Category",
       bandeWidth:this.generateStatus(),
-      licence:this.generateLicence(),
       core:this.generateCore(),
       stockage:this.generateStockage(),
-      se:this.generateSe(),
-      domaine:this.generateDomain()
+      domaine:this.generateStatus()
 
     };
     return product;
@@ -65,12 +77,7 @@ export class ProductserviceService {
     return Math.floor(Math.random() * Math.floor(15)+1);
   }
   generateStockage() {
-    return Math.floor(Math.random() * Math.floor(1000)+1);
-  }
-  generateSe(): string | undefined {
-    throw new Error('Method not implemented.');
-  }
-  generateDomain(){
-    return this.status[Math.floor(Math.random() * Math.floor(3))];
+     return this.productNames[Math.floor(Math.random() * Math.floor(6))];
   }
 }
+

@@ -1,4 +1,3 @@
-
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
@@ -39,7 +38,6 @@ import { EditorModule } from 'primeng/editor';
 import { TopCardsComponent } from './AdminDashBoard/dashboards/top-cards/top-cards.component';
 import { SalesRatioComponent } from './AdminDashBoard/dashboards/sales-ratio/sales-ratio.component';
 import{ ChartModule} from 'primeng/chart';
-import { AddadminComponent } from './AdminDashBoard/addadmin/addadmin.component';
 import { TableModule } from 'primeng/table';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputTextModule } from 'primeng/inputtext';
@@ -62,6 +60,7 @@ import { SingInComponent } from './Components/sign-in/form.component';
 import { LogComponent } from './Components/log/log.component';
 import {HTTP_INTERCEPTORS} from "@angular/common/http";
 import {TokenInterceptor} from "./interceptors/token.interceptor";
+import { AddadminComponent } from './AdminDashBoard/addadmin/addadmin.component';
 
 @NgModule({
   declarations: [
@@ -81,10 +80,10 @@ import {TokenInterceptor} from "./interceptors/token.interceptor";
     ToolbarComponent,
     SidebarComponent,
     TopCardsComponent,
-    AddadminComponent,
     AddserviceComponent,
     SingInComponent,
     LogComponent,
+    AddadminComponent
 
   ],
   imports: [

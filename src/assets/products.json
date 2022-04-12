@@ -1,0 +1,35 @@
+{
+	"data": [
+		{
+			"id": 1000,
+			"website":1,
+			"name": "Hébergement Basic",
+			"stockage": "500 Go",
+			"price": 65,
+			"core": 2,
+			"bandeWidth": "ILLIMITE",
+			"domaine": "FREE"
+		},
+		{
+			"id": 1001,
+            "website":4,
+			"name": "Hébergement E-commerce",
+			"stockage":  "750 Go",
+			"price": 65,
+			"core": 6,
+			"bandeWidth": "ILLIMITE",
+			"domaine": "FREE"
+		},
+        {
+			"id": 1002,
+            "website":12,
+			"name": "Hébergement Pro",
+			"stockage":  "1000 Go",
+			"price": 65,
+			"core": 5,
+			"bandeWidth": "ILLIMITE",
+			"domaine": "FREE"
+		}
+    ]
+
+}

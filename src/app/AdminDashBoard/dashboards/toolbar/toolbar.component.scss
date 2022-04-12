@@ -1,6 +1,11 @@
-mat-toolbar {
-  //background:#0948b3 ;
+.btn{
+  margin:10px;
+}
 
+mat-toolbar {
+  background:#0948b3 ;
+  height: 70px;
+  
   & .brand {
     font-family: "GreatVibes";
     color: white;

@@ -5,10 +5,14 @@ import {RestApiService} from "./rest-api-service";
   providedIn: "root"
 })
 export class UsersService {
+
   constructor(private restApi: RestApiService) {
   }
 
   registerUser(data: any) {
     return  this.restApi.register(data)
   }
+
 }
+
+

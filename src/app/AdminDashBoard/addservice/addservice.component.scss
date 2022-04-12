@@ -1,3 +1,52 @@
+.btn{
+    margin-right:10px;
+}
+.product-badge.status-illimite {
+    color: rgb(37, 96, 41);
+    background: rgb(200, 230, 201);
+}
+.product-badge.status-free {
+    color: rgb(37, 96, 41);
+    background: rgb(37, 201, 42);
+}
+
+.product-badge {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.3px;
+    border-radius: 2px;
+    padding: 0.25em 0.5rem;
+}
+
+.layout-wrapper .layout-content .card {
+    margin-bottom: 2rem;
+    background: var(--surface-card);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+
+.p-datatable {
+    position: relative;
+}
+.p-component, .p-component * {
+    box-sizing: border-box;
+}
+.p-component {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 1rem;
+    font-weight: normal;
+}
+.p-datatable-header {
+    background: #0948b3;
+    color: #d7e3ee;
+    border: 1px solid #dee2e6;
+    border-width: 1px 0 1px 0;
+    padding: 1rem 1rem;
+    font-weight: 700;
+}
+
 :host ::ng-deep {
     .p-paginator {
         .p-paginator-current {

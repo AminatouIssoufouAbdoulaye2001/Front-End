@@ -1,0 +1,24 @@
+{
+	"data": [
+		{
+			"id": "1000",
+			"fullName": "Aminatou Issoufou Abdoulaye",
+            "username":"Oummyia",
+			"role": "ADMINISTRATEUR"
+		
+		},
+		{
+			"id": "1001",
+            "fullName": "Aminatou Issoufou Abdoulaye",
+            "username":"Oummyia",
+			"role": "ADMINISTRATEUR"
+		},
+        {
+			"id": "1002",
+            "fullName": "Aminatou Issoufou Abdoulaye",
+            "username":"Oummyia",
+			"role": "AGENT TECHINIQUE"
+		}
+    ]
+
+}

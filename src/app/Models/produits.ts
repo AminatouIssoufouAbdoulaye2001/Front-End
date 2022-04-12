@@ -2,12 +2,10 @@ export interface Product{
     id?:string;
     website?:number;
     name?:string;
-    stockage?:number;
+    stockage?:string;
     price?:number;
     core?:number;
     bandeWidth?:string;
-    se?:string;
-    licence?:number;
-    category?:string;
+    //catalogue?:string;
     domaine?:string;
 }
