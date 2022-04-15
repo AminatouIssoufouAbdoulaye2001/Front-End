@@ -20,7 +20,12 @@ import { AsideComponent } from './CientDashBoard/aside/aside.component';
 import { AreaComponent } from './CientDashBoard/area/area.component';
 import { CientAreaComponent } from './CientDashBoard/cient-area/cient-area.component';
 import {HttpClientModule} from "@angular/common/http";
-
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatIconModule} from '@angular/material/icon';
+import {MatListModule} from '@angular/material/list';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { DashboardComponent } from './CientDashBoard/dashboard/dashboard.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +38,8 @@ import {HttpClientModule} from "@angular/common/http";
     AsideComponent,
     AreaComponent,
     CientAreaComponent,
+    DashboardComponent,
+    
   
 
   ],
@@ -47,7 +54,12 @@ import {HttpClientModule} from "@angular/common/http";
     MatInputModule,
     FlexLayoutModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    MatToolbarModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -6,9 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cient-area.component.scss']
 })
 export class CientAreaComponent implements OnInit {
-
-  constructor() { }
-
+ 
+ 
+   constructor() {}
+ 
+  
   ngOnInit(): void {
   }
 
