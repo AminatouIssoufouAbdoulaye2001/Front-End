@@ -1,0 +1,282 @@
+
+
+
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.panel-default {
+    border-color: #ddd;
+}
+
+.panel {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgb(0 0 0 / 5%);
+    box-shadow: 0 1px 1px rgb(0 0 0 / 5%);
+}
+
+.client-home-panels .panel>.panel-heading {
+    /* background-color: #fff; */
+    border-bottom: 0;
+    font-weight: 700;
+}
+.client-home-panels .panel>.panel-body {
+    padding: 0;
+    max-height: 170px;
+    overflow: auto;
+}
+.col-sm-6 {
+    width: 50%;
+}
+@media (min-width: 768px)
+{
+    .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9 {
+        float: left;
+    }
+}
+.col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.tile .icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 48px;
+    line-height: 1;
+    color: #fff!important; 
+}
+
+.tiles {
+    margin: 0 15px 15px 15px;
+}
+
+a:hover {
+    color: #5e50ee;
+    text-decoration: none;
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.content {
+    padding: 0;
+    /* position: relative; */
+    /* -webkit-transition: 300ms ease all; */
+    /* transition: 300ms ease all; */
+    //-webkit-backface-visibility: hidden;
+    /* backface-visibility: hidden; */
+    /* min-height: calc(100% - 4rem); */
+     margin-left: 260px; 
+}
+.content.app-content .content-overlay {
+    position: fixed;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.5);
+    cursor: pointer;
+    -webkit-transition: all .7s;
+    transition: all .7s;
+    z-index: -1;
+}
+
+
+.navbar-floating .header-navbar-shadow {
+    display: block;
+    /* background: -webkit-linear-gradient(top,rgba(248,248,248,0.95) 44%,rgba(248,248,248,0.46) 73%,rgba(255,255,255,0)); */
+    background: linear-gradient(180deg,rgba(248,248,248,0.95) 44%,rgba(248,248,248,0.46) 73%,rgba(255,255,255,0));
+    padding-top: 2.2rem;
+    background-repeat: repeat;
+    width: 100%;
+    height: 102px;
+    position: fixed;
+    top: 0;
+    z-index: 11;
+}
+.header-navbar-shadow {
+    display: none;
+}
+.content-wrapper {
+    padding: calc(2.2rem - 0.4rem) 2.2rem 0;
+    margin-top: 6rem;
+}
+section#main-body {
+    margin: 0;
+    padding: 20px 0;
+    min-height: 350px;
+    background-color: #fff;
+}
+.panel.panel-accent-gold {
+    border-top: 3px solid #0948b3;
+}
+.panel.panel-accent-emerald {
+    border-top: 3px solid #0948b3;
+}
+.panel.panel-accent-blue{
+    border-top: 3px solid #0948b3;
+}
+.panel {
+    font-size: .9em;
+}
+.panel-default {
+    border-color: #ddd;
+}
+.panel {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgb(0 0 0 / 5%);
+    box-shadow: 0 1px 1px rgb(0 0 0 / 5%);
+}
+.client-home-panels .panel>.panel-heading {
+    /* background-color: #fff; */
+    border-bottom: 0;
+    font-weight: 700;
+}
+.panel-default>.panel-heading {
+    color: #333;
+    background-color: #f5f5f5;
+    border-color: #ddd;
+}
+.panel-heading {
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+ h2, h3, h5, h6,  .h2, .h3, .h5, .h6 {
+    margin-bottom: 0.5rem;
+    font-family: inherit;
+    font-weight: 500; 
+    line-height: 1.2;
+    color: #fff;
+}
+h4,h1{
+    margin-bottom: 0.5rem;
+    font-family: inherit;
+    font-weight: 500; 
+    line-height: 1.2;
+    color: rgb(20, 3, 3);
+}
+// .info{
+//     background: #0948b3;
+//     height: 35px;
+//     width: 300px;
+//     margin-left: -17px;
+// }
+.panel-sidebar>.panel-heading {
+    color: #333;
+    background-color: #0948b3;
+    border-bottom: 0;
+}
+.panel>.panel-body {
+    padding: 0;
+    max-height: 170px;
+    overflow: auto;
+}
+.panel-body {
+    padding: 10px 15px;
+}
+.panel-body {
+    padding: 15px;
+}
+
+
+.client-home-panels .panel>.panel-footer {
+    border-top: 0;
+}
+.panel-footer {
+    width: 307px;
+    padding: 10px 15px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+.client-home-panels .panel>.panel-heading .panel-title .btn {
+    color: #fff;
+    border: 0;
+}
+//  .bg-color-gold {
+//     background-color: #fff;
+// }
+.btn {
+    overflow: hidden;
+}
+.btn-group-xs>.btn, .btn-xs {
+    padding: 1px 5px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+}
+.btn-default {
+    color: #333;
+    background-color: #0948b3;
+    /* border-color: #ccc; */
+}
+.btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+a:hover {
+    color: #0948b3;
+    text-decoration: none;
+}
+.add:hover{
+    color: #f5f5f5;
+}
+.tiles .tile {
+    padding: 12px 20px;
+    background-color: #0948b3;
+    border-right: 1px solid #fff;
+}
+
+.tile .stat {
+    margin-top: 20px;
+    font-size: 40px;
+    line-height: 1;
+    color: #f5f5f5;
+}
+
+.tile .title {
+    font-weight: 700;
+    color: #f5f5f5;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+a{
+    color: #2c2c2c;
+}

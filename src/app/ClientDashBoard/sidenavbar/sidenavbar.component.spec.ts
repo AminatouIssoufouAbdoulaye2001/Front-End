@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CientAreaComponent } from './cient-area.component';
+import { SidenavbarComponent } from './sidenavbar.component';
 
-describe('CientAreaComponent', () => {
-  let component: CientAreaComponent;
-  let fixture: ComponentFixture<CientAreaComponent>;
+describe('SidenavbarComponent', () => {
+  let component: SidenavbarComponent;
+  let fixture: ComponentFixture<SidenavbarComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CientAreaComponent ]
+      declarations: [ SidenavbarComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CientAreaComponent);
+    fixture = TestBed.createComponent(SidenavbarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
