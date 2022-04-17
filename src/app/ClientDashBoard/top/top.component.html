@@ -1,1 +1,107 @@
-<p>top works!</p>
+<div class="content-body">
+    <section id="main-body">
+    <div class="container">
+    <div class="row">
+    <div class="col-md-9 pull-md-right main-content">
+    <form id="submitticket" method="post" >
+    <input type="hidden" name="token" value="9d68b0836ed5d8ca59cefbbf301ac8008624a6fc">
+    <input type="hidden" name="deptid" value="18">
+    <div class="row">
+    <div class="form-group col-sm-4">
+    <label for="inputName">Nom</label>
+    <input type="text" name="name" id="inputName" value="Aminatou Issoufou Abdoulaye" class="form-control disabled" disabled="disabled">
+    </div>
+    <div class="form-group col-sm-5">
+    <label for="inputEmail">Courriel</label>
+    <input type="email" name="email" id="inputEmail" value="aminatouoummyia@gmail.com" class="form-control disabled" disabled="disabled">
+    </div>
+    </div>
+    <div class="row form-group">
+    <div class="col-sm-12">
+    <label for="inputAttachments">CC</label>
+    </div>
+    <div class="col-sm-9">
+    <input type="text" name="cc[]" class="form-control">
+    <div id="ccContainer"></div>
+    </div>
+    <div class="col-sm-3">
+    <button type="button" class="btn btn-default btn-block">
+    <i class="fa fas fa-plus"></i> Ajouter
+    </button>
+    </div>
+    </div>
+    <div class="row">
+    <div class="form-group col-sm-10">
+    <label for="inputSubject">Objet</label>
+    <input type="text" name="subject" id="inputSubject" value="" class="form-control">
+    </div>
+    </div>
+    <div class="row">
+    <div class="form-group col-sm-3">
+    <label for="inputDepartment">Département</label>
+    <select name="hidden_deptid" class="form-control" disabled="disabled">
+    <option value="18" selected="selected">
+    Facturation
+    </option>
+    </select>
+    </div>
+    <div class="form-group col-sm-3">
+    <label for="inputPriority">Urgence</label>
+    <select name="urgency" id="inputPriority" class="form-control valid" aria-invalid="false">
+    <option value="1">Low</option>
+    <option value="2">Medium</option>
+    <option value="3">High</option>
+    <option value="4">Critical</option>
+    </select>
+    </div>
+    </div>
+    <div class="form-group">
+    <label for="inputMessage">Message</label>
+    <textarea name="message" id="inputMessage" rows="12" class="form-control"></textarea>
+    </div>
+    <div class="row form-group">
+    <div class="col-sm-12">
+    </div>
+    <div class="col-sm-9">
+    <input type="file" name="attachments[]" id="inputAttachments" class="form-control">
+    <div id="fileUploadsContainer"></div>
+    </div>
+    <div class="col-sm-3">
+    <button type="button" class="btn btn-default btn-block" >
+    <i class="fa fas fa-plus"></i> Ajouter
+    </button>
+    </div>
+    <div class="col-xs-12 ticket-attachments-message text-muted">
+    Extensions permises: doc|docx|xml|png|gif|jpg|jpeg|zip|rar|pdf|txt|log
+    </div>
+    </div>
+    <br>
+    <input type="submit" value="Envoyer" class="btn btn-primary">
+    </form>
+    </div>
+    <div class="col-md-3 pull-md-left sidebar">
+    <div menuitemname="Support client" class="panel panel-sidebar panel-sidebar">
+    <div class="panel-heading">
+    <h3 class="panel-title">
+    Support client
+    <i class="fas fa-chevron-up panel-minimise pull-right"></i>
+    </h3>
+    </div>
+    <div class="panel-body">
+    Ne vous inquiétez pas , <strong>Aminatou</strong>! Nous vous répondrons le jour ouvrable suivant
+    </div>
+    <div class="list-group">
+    <div menuitemname="<strong>Ouvert</strong> 09:00-19:00 H" class="list-group-item" id="Primary_Sidebar-Support_client-<strong>Ouvert<_strong>_09:00-19:00_H">
+  &nbsp; <strong>Ouvert</strong> 09:00-19:00 H   <i class="fas fa-smile-o"></i>
+    </div>
+    <div menuitemname="<strong>Closed</strong> Weekends" class="list-group-item" id="Primary_Sidebar-Support_client-<strong>Closed<_strong>_Weekends">
+  &nbsp; <strong>Closed</strong> Weekends   <i class="fas fa-frown-o"></i>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="clearfix"></div>
+    </div>
+    </div>
+    </section>
+    </div>

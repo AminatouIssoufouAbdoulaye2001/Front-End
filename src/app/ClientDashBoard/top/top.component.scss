@@ -1,0 +1,46 @@
+.container{
+    margin-top: 160px;
+    max-width: 1140px;
+}
+h3.panel-title {
+    background: #0948b3;
+}
+.btn{
+    background: #0948b3;
+    color: white;
+}
+h3{
+    color: white;
+}
+.panel-sidebar {
+    border-color: #0948b3;
+    font-size: 15px;
+}
+.panel-body {
+    padding: 15px;
+    border: 1px solid #0948b3;
+}
+.list-group-item {
+    position: relative;
+    display: block;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: -1px;
+    background-color: #0948b3;
+    border: 1px solid #0948b3;
+    color: white;
+}
+
+input.btn.btn-primary {
+    border: #0948b3;
+}
+
+ .panel-sidebar .list-group-item i:not(.fa-circle):not(.fa-dot-circle):not(.no-transform) {
+    float: right;
+//     line-height: 24px;
+//     font-size: 16px;
+//     color: #0948b3;
+ }
+// .fa, .fas {
+//     font-family: "Font Awesome 5 Pro";
+//     font-weight: 900;
+// }

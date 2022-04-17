@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AreaComponent } from './ClientDashBoard/area/area.component';
+import { DashboardComponent } from './ClientDashBoard/dashboard/dashboard.component';
 import { TopComponent } from './ClientDashBoard/top/top.component';
-//import { DashboardComponent } from './ClientDashBoard/dashboard/dashboard.component';
+import { DomaineComponent } from './Components/domaine/domaine.component';
 
 const routes: Routes = [
 {
@@ -10,6 +11,12 @@ const routes: Routes = [
 },
 {
   path:"ticket",component:TopComponent
+},
+{
+path:"client", component:DashboardComponent
+},
+{
+  path:"domaine" ,component:DomaineComponent
 }
 ];
 

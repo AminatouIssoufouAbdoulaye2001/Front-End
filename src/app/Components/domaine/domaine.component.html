@@ -1,0 +1,97 @@
+<section id="main-body">
+    <div class="container">
+    <div class="row">
+    <div class="col-md-12 pull-md-right">
+    <div class="header-lined">
+    <h1>Mes noms de domaines</h1>
+    <ol class="breadcrumb">
+    <li>
+    <a href="/index.php"> Accueil
+    </a> </li>
+    <li>
+    <a href="/clientarea.php"> Espace client
+    </a> </li>
+    <li class="active">
+    Mes noms de domaines
+    </li>
+    </ol>
+    </div>
+    </div>
+    <div id="suggestions" class="col-md-12 pull-md-right"></div>
+    
+    <div class="col-md-9 pull-md-right main-content">
+    <div class="tab-content">
+    <div class="tab-pane fade in active" id="tabOverview">
+   
+    <form id="domainForm" method="post" action="clientarea.php?action=bulkdomain">
+    <input type="hidden" name="token" value="9d68b0836ed5d8ca59cefbbf301ac8008624a6fc">
+    <input id="bulkaction" name="update" type="hidden">
+    <div class="table-container clearfix">
+    <div id="tableDomainsList_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer"><div class="listtable"><div id="tableDomainsList_filter" class="dataTables_filter"><label><input type="search" class="form-control input-sm" placeholder="" aria-controls="tableDomainsList"></label></div><div class="dataTables_info" id="tableDomainsList_info" role="status" aria-live="polite">0 de 0 / 0</div><table id="tableDomainsList" class="table table-list dataTable no-footer dtr-inline" aria-describedby="tableDomainsList_info" role="grid" style="width: 0px;">
+    <thead>
+    <tr role="row"><th width="20" class="sorting_disabled" rowspan="1" colspan="1" style="width: 0px;" aria-label=""></th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 0px;" aria-label=""></th><th class="sorting_asc" tabindex="0" aria-controls="tableDomainsList" rowspan="1" colspan="1" style="width: 0px;" aria-label="Domaine: activate to sort column descending" aria-sort="ascending">Domaine</th><th class="sorting" tabindex="0" aria-controls="tableDomainsList" rowspan="1" colspan="1" style="width: 0px;" aria-label="Enregistrement: activate to sort column ascending">Enregistrement</th><th class="sorting" tabindex="0" aria-controls="tableDomainsList" rowspan="1" colspan="1" style="width: 0px;" aria-label="Échéance: activate to sort column ascending">Échéance</th><th class="sorting" tabindex="0" aria-controls="tableDomainsList" rowspan="1" colspan="1" style="width: 0px;" aria-label="Renouvellement automatique: activate to sort column ascending">Renouvellement automatique</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 0px;" aria-label="État">État</th><th class="sorting" tabindex="0" aria-controls="tableDomainsList" rowspan="1" colspan="1" style="width: 0px;" aria-label="&amp;nbsp;: activate to sort column ascending">&nbsp;</th></tr>
+    </thead>
+    <tbody>
+     <tr class="odd"><td valign="top" colspan="8" class="dataTables_empty">Aucun enregistrement trouvé</td></tr></tbody>
+    </table></div><div class="dataTables_paginate paging_simple_numbers" id="tableDomainsList_paginate"><ul class="pagination"><li class="paginate_button previous disabled" aria-controls="tableDomainsList" tabindex="0" id="tableDomainsList_previous"><a href="#">Précédent</a></li><li class="paginate_button next disabled" aria-controls="tableDomainsList" tabindex="0" id="tableDomainsList_next"><a href="#">Suivant</a></li></ul></div><div class="dataTables_length" id="tableDomainsList_length"><label>Afficher <select name="tableDomainsList_length" aria-controls="tableDomainsList" class="form-control input-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="-1">Tous</option></select></label></div></div>
+    <div class="text-center hidden" id="tableLoading">
+    <p><i class="fas fa-spinner fa-spin"></i> Chargement en cours...</p>
+    </div>
+    </div>
+    </form>
+    <div class="btn-group margin-bottom">
+    <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+    <span class="glyphicon glyphicon-folder-open"></span> &nbsp; Avec la sélection <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu">
+    <li><a href="#" id="nameservers" class="setBulkAction"><i class="glyphicon glyphicon-globe"></i> Gérer les serveurs de noms</a></li>
+    <li><a href="#" id="autorenew" class="setBulkAction"><i class="glyphicon glyphicon-refresh"></i> Statut d'auto-renouvellement</a></li>
+    <li><a href="#" id="reglock" class="setBulkAction"><i class="glyphicon glyphicon-lock"></i> Statut de verrouillage</a></li>
+    <li><a href="#" id="contactinfo" class="setBulkAction"><i class="glyphicon glyphicon-user"></i> Modifier les informations du contact</a></li>
+    <li><a href="#" id="renewDomains" class="setBulkAction"><i class="glyphicon glyphicon-refresh"></i> renouveler les domaines</a></li>
+    </ul>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="col-md-3 pull-md-left sidebar">
+    <div menuitemname="My Domains Status Filter" class="panel panel-sidebar panel-default panel-actions view-filter-btns">
+    <div class="panel-heading">
+    <h3 class="panel-title">
+    <i class="fas fa-filter"></i>&nbsp; Afficher
+    <i class="fas fa-chevron-up panel-minimise pull-right"></i>
+    </h3>
+    </div>
+    <div class="list-group">
+    <a menuitemname="clientareaactive" href="/clientarea.php?action=domains#" class="list-group-item" id="Primary_Sidebar-My_Domains_Status_Filter-clientareaactive">
+    <span class="badge">0</span> <i class="far fa-circle"></i>&nbsp; <span>Actif</span>
+    </a>
+    <a menuitemname="clientareaexpired" href="/clientarea.php?action=domains#" class="list-group-item" id="Primary_Sidebar-My_Domains_Status_Filter-clientareaexpired">
+    <span class="badge">0</span> <i class="far fa-circle"></i>&nbsp; <span>Expiré</span>
+    </a>
+    </div>
+    </div>
+    <div menuitemname="My Domains Actions" class="panel panel-sidebar panel-default">
+    <div class="panel-heading">
+    <h3 class="panel-title">
+    <i class="fas fa-plus"></i>&nbsp; Actions
+    <i class="fas fa-chevron-up panel-minimise pull-right"></i>
+    </h3>
+    </div>
+    <div class="list-group">
+    <a menuitemname="Renew Domain" href="/cart/domain/renew" class="list-group-item" id="Secondary_Sidebar-My_Domains_Actions-Renew_Domain">
+    <i class="fas fa-sync fa-fw"></i>&nbsp; Renouvellement
+    </a>
+    <a menuitemname="Register a New Domain" href="/cart.php?a=add&amp;domain=register" class="list-group-item" id="Secondary_Sidebar-My_Domains_Actions-Register_a_New_Domain">
+    <i class="fas fa-globe fa-fw"></i>&nbsp; Enregistrer un nom de domaine
+    </a>
+    <a menuitemname="Transfer in a Domain" href="/cart.php?a=add&amp;domain=transfer" class="list-group-item" id="Secondary_Sidebar-My_Domains_Actions-Transfer_in_a_Domain">
+    <i class="fas fa-share fa-fw"></i>&nbsp; Transférer un nom de domaine
+    </a>
+    </div>
+    </div>
+    </div>
+    <div class="clearfix"></div>
+    </div>
+    </div>
+    </section>
