@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CientAreaComponent } from './cient-area.component';
+import { TopComponent } from './top.component';
 
-describe('CientAreaComponent', () => {
-  let component: CientAreaComponent;
-  let fixture: ComponentFixture<CientAreaComponent>;
+describe('TopComponent', () => {
+  let component: TopComponent;
+  let fixture: ComponentFixture<TopComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CientAreaComponent ]
+      declarations: [ TopComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CientAreaComponent);
+    fixture = TestBed.createComponent(TopComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

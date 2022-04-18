@@ -1,5 +1,4 @@
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
-import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -15,10 +14,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { AsideComponent } from './CientDashBoard/aside/aside.component';
-import { AreaComponent } from './CientDashBoard/area/area.component';
-import { CientAreaComponent } from './CientDashBoard/cient-area/cient-area.component';
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import { TicketComponent } from './Components/ticket/ticket.component';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatIconModule}from '@angular/material/icon'
@@ -58,9 +54,15 @@ import {CarouselModule} from 'primeng/carousel';
 import { MatStepperModule } from '@angular/material/stepper';
 import { SingInComponent } from './Components/sign-in/form.component';
 import { LogComponent } from './Components/log/log.component';
-import {HTTP_INTERCEPTORS} from "@angular/common/http";
 import {TokenInterceptor} from "./interceptors/token.interceptor";
 import { AddadminComponent } from './AdminDashBoard/addadmin/addadmin.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { SidenavbarComponent } from './ClientDashBoard/sidenavbar/sidenavbar.component';
+import { AreaComponent } from './ClientDashBoard/area/area.component';
+import { DashboardComponent } from './ClientDashBoard/dashboard/dashboard.component';
+import { TopComponent } from './ClientDashBoard/top/top.component';
+import {NgModule} from "@angular/core";
 
 @NgModule({
   declarations: [
@@ -71,9 +73,7 @@ import { AddadminComponent } from './AdminDashBoard/addadmin/addadmin.component'
     SectionComponent,
     SignUpComponent,
     HomeComponent,
-    AsideComponent,
     AreaComponent,
-    CientAreaComponent,
     TicketComponent,
     FeedsComponent,
     AdminpageComponent,
@@ -83,8 +83,11 @@ import { AddadminComponent } from './AdminDashBoard/addadmin/addadmin.component'
     AddserviceComponent,
     SingInComponent,
     LogComponent,
-    AddadminComponent
-
+    AddadminComponent,
+    SidenavbarComponent,
+    AreaComponent,
+    DashboardComponent,
+    TopComponent,
   ],
   imports: [
     BrowserModule,
@@ -133,6 +136,12 @@ import { AddadminComponent } from './AdminDashBoard/addadmin/addadmin.component'
     InputTextModule,
     ToastModule,
     BrowserAnimationsModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    MatToolbarModule,
+    BrowserAnimationsModule,
+    CardModule
   ],
   providers:  [
     ProductserviceService,
@@ -150,3 +159,4 @@ import { AddadminComponent } from './AdminDashBoard/addadmin/addadmin.component'
 export class AppModule {
 
 }
+
