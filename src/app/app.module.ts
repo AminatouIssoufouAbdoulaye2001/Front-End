@@ -32,6 +32,7 @@ import { LogComponent } from './Components/log/log.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {TokenInterceptor} from "./interceptors/token.interceptor";
+import { TopheaderComponent } from './Components/topheader/topheader.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import {TokenInterceptor} from "./interceptors/token.interceptor";
     HomeComponent,
     SingInComponent,
     LogComponent,
+    TopheaderComponent,
 
   ],
   imports: [

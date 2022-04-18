@@ -5,11 +5,12 @@
 @import '~@fortawesome/fontawesome-free/scss/regular';
 .head{
 
-
+background-color: #0948b3;
+height: 75px !important;
     .head-top{
         display: block;
         width: 100%;
-        background: #ffffff;
+        background: #0948b3;
         color: #fff;
         margin: 0 auto;
         padding: 0;
@@ -65,7 +66,14 @@
     .bottom-header {
     
         .navbar{
-         top: 10px;
+         top: 0px !important;
+         .logo{
+        height: 68px;
+     padding-bottom: 11px; 
+     margin-top: 10px; 
+      width: 152px; 
+      margin-left: -93px;
+         }
          
          .navbar-brand{
              font-size: 35px;
@@ -86,22 +94,20 @@
                 {
             border-radius: 120px;
                 font-size: 14px;
-                background: #4b8ef1;
+                background: #0948b3;
                 padding: 0.4rem 0.9rem;
-                border: solid 2px #4b8ef1;
+                border: solid 2px white !important;
                 font-weight: 400;
                 transition: unset;
-                
-                border-bottom-color: #4b8ef1!important;
                 color: #fff!important;
                 }
-                .topbn:hover
-                {
-                   background: #4b8ef1!important;
-                   color:white!important;
-                       border-bottom-color: solid #004FD5!important;
+                // .topbn:hover
+                // {
+                //    background: #4b8ef1!important;
+                //    color:white!important;
+                //        border-bottom-color: solid #004FD5!important;
             
-                }   
+                // }   
                 .espace-client{
                     margin-left: 120px;
                     top: -5px;
@@ -116,7 +122,9 @@
                      margin-right:0px;
  
                      .btn-group {
+
                          margin-right: 10px;
+                        
                          .dropdown-menu{
                              display: none;
                              position: absolute;
@@ -134,7 +142,7 @@
                                  margin-left: 20px;
                                  i{
                                      margin-right: 5px;
-                                     color: #4b8ef1;
+                                     color: #0948b3;
                                  }
                                  
                              }
@@ -148,7 +156,7 @@
                          /* Dropdown Content (Hidden by Default) */
                 
                       .btn-group:hover{
-                          background-color: #4b8ef1;
+                          background-color: #0948b3;
                           height: -5px;
                          /* Show the dropdown menu on hover */
                          .btn-group:hover .btn
@@ -157,7 +165,7 @@
                 
                 }
                 .btn:hover{
-                    background-color: #4b8ef1;
+                    background-color: #0948b3;
                 }
                 .btn:hover a{
                     color: #fff;
@@ -176,7 +184,7 @@
                  .btn{
                      top: 0px;
                      font-size: 15px;
-                    
+                    color: #fff;
                       #icon_menu{
                          margin-right: 5px;
                      }

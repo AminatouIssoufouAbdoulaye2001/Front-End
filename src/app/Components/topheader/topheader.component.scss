@@ -1,0 +1,34 @@
+.price-block .offer-price {
+    font-weight: 700;
+    font-size: 20rem;
+    line-height: 15rem;
+    font-family: "Roboto", sans-serif;
+}
+.price-block .cent-value {
+    font-weight: 700;
+    font-size: 5rem;
+    line-height: 4rem;
+    font-family: "Roboto", sans-serif;
+}
+
+.price-block .per-value {
+    font-size: 2rem;
+}
+.price-block .price-currency {
+    font-weight: 700;
+    font-size: 4rem;
+    line-height: 3rem;
+    font-family: "Roboto", sans-serif;
+}
+.big-price-wrap span.regular-price {
+    position: absolute;
+    left: 45%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    bottom: -20%;
+    font-size: 14px;
+    color: white !important;
+}
+.ptb-120 {
+    padding: 120px 0;
+}

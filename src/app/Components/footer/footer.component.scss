@@ -1,41 +1,41 @@
-@media (max-width: 767px) {
-    .the-clients .naccs .menu div {
-      text-align: center;
-    }
-    footer .section-heading h4 {
-      color: #2a2a2a;
-    }
-    footer #search {
-      margin-bottom: 45px;
-    }
-    footer {
-      padding-top: 0px;
-      text-align: center;
-    }
-    .footer-widget ul {
-      display: block;
-      width: 100%;
-      float: none;
-      text-align: center;
-      margin: 0 auto;
-    }
-    .footer-widget h4 {
-      margin-top: 45px;
-      margin-bottom: 20px;
-    }
-    footer #search input {
-      border: 1px solid #eee;
-      color: #afafaf;
-      background-color: #fff;
-      border-radius: 23px;
-      margin-bottom: 15px;
-      padding: 0px 30px;
-    }
-    footer #search button {
-      background-color: #fff;
-      color: #4b8ef1;
-    }
-    footer #search input::placeholder { 
-      color: #2a2a2a;
-    }
+@import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
+
+body {
+    background: linear-gradient(0deg, #fff, 50%, #DEEEFE);
+    font-family: 'Rubik', sans-serif;
+    background: #0948b3;
+    height: 100 !important
+}
+
+.container-fluid {
+    overflow: hidden;
+    margin-top: 250px;
+    background: #0948b3;
+    color: white !important;
+    margin-bottom: 0;
+    padding-bottom: 0
+}
+
+small {
+    font-size: calc(12px + (15 - 12) * ((100vw - 360px) / (1600 - 360))) !important
+}
+
+.bold-text {
+    color: white !important
+}
+
+.mt-55 {
+    margin-top: calc(50px + (60 - 50) * ((100vw - 360px) / (1600 - 360))) !important
+}
+
+h3 {
+    font-size: calc(34px + (40 - 34) * ((100vw - 360px) / (1600 - 360))) !important
+}
+
+.social {
+    font-size: 21px !important
+}
+
+.rights {
+    font-size: calc(10px + (12 - 10) * ((100vw - 360px) / (1600 - 360))) !important
 }

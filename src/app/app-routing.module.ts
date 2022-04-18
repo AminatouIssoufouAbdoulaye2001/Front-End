@@ -4,6 +4,7 @@ import {HomeComponent} from './Components/home/home.component';
 import {LogComponent} from "./Components/log/log.component";
 import {SingInComponent} from "./Components/sign-in/form.component";
 import {SignUpComponent} from "./Components/sign-up/sign-up.component";
+import { TopheaderComponent } from './Components/topheader/topheader.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -26,6 +27,12 @@ const routes: Routes = [
       },
     ]
   },
+  {
+    path:"home" ,component:HomeComponent
+  },
+  {
+    path:"top",component:TopheaderComponent
+  }
   ]
 
 @NgModule({

@@ -1,5 +1,6 @@
 .primary-bg {
-    background: #4b8ef1 !important;
+    background: #0948b3 !important;
+    margin-top: 24px;
 }
 
 .hero-slider-content h1 {
@@ -13,16 +14,16 @@
 }
 /* line 141, src/assets/scss/components/_components.buttons.scss */
 .btn-brand-01 {
-    background-color: #4b8ef1;;
-    border-color: #4b8ef1;
+    background-color: #0948b3;;
+    border-color: #0948b3;
     color: #fff;
     
   }
   
   /* line 17, node_modules/bootstrap/scss/mixins/_hover.scss */
   .btn-brand-01:hover, .btn-brand-01:focus {
-    background-color: #4b8ef1;
-    border-color: #4b8ef1;
+    background-color: #0948b3;
+    border-color: #0948b3;
     color: #fff;
   }
   
@@ -95,6 +96,7 @@
   .domain-search-list {
     position: relative;
     display: block;
+    margin-right: 188px;
   }
 
   .domain-search-list li:not(:last-child) {
@@ -106,6 +108,12 @@
     padding: 0 6px;
     text-align: center;
     color: inherit;
+    img{
+      width: 120px;
+    }
+  }
+  h4:hover{
+    color: white;
   }
 
   .domain-search-list li a span {
@@ -235,7 +243,7 @@ pricing
   }
   
   .pricing-item-regular ul li {
-    color: #4b8ef1;
+    color: #0948b3;
     font-size: 15px;
     margin-bottom: 15px;
   }
@@ -312,7 +320,7 @@ pricing
   }
   
   .pricing-item-pro ul li {
-    color: #4b8ef1;
+    color: #0948b3;
     font-size: 15px;
     margin-bottom: 15px;
   }
