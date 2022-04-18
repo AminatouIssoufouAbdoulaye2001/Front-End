@@ -11,6 +11,7 @@ import {RoleGuard} from "./guards/role.guard";
 import {AreaComponent} from './ClientDashBoard/area/area.component';
 import {TopComponent} from './ClientDashBoard/top/top.component';
 import {DashboardComponent} from "./ClientDashBoard/dashboard/dashboard.component";
+import {UserProfilResolver} from "./guards/user-profil-resolver";
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -69,6 +70,9 @@ const routes: Routes = [
     canActivate: [RoleGuard],
     data: {
       role: 'ROLE_CLIENT'
+    },
+    resolve: {
+      userInfos: UserProfilResolver
     }
   },
   {

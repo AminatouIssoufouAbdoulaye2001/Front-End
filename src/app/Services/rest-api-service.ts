@@ -23,6 +23,11 @@ export class RestApiService {
     );
   }
 
+  getUserProfil(): Observable<any> {
+    return this.http.get(environment.SERVER_URL + 'users/profil' ).pipe(
+      catchError(err => this.errorHandler(err.error)));
+  }
+
   private errorHandler(error: APIResquestError) {
 
     // todo: à travailler pour afficher les errors aux utilisateur

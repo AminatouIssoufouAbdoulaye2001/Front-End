@@ -50,7 +50,6 @@ export class AuthService {
     }
 
     const tokenPayload = decode(token);
-    console.log(tokenPayload);
     // @ts-ignore
     return tokenPayload.roles;
   }
