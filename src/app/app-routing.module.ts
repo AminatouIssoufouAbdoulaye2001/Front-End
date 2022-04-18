@@ -15,7 +15,26 @@ import {DashboardComponent} from "./ClientDashBoard/dashboard/dashboard.componen
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {
-    path: 'adminpage/dashboard',
+    path: 'account',
+    component: LogComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: 'sign-in',
+        pathMatch: 'full'
+      },
+      {
+        path: 'sign-in',
+        component: SingInComponent
+      },
+      {
+        path: 'sign-up',
+        component: SignUpComponent
+      },
+    ]
+  },
+  {
+    path: 'dashboard/admin',
     component: AdminpageComponent,
     canActivate: [RoleGuard],
     data: {
@@ -39,34 +58,18 @@ const routes: Routes = [
     }
   },
   {
-    path: 'account',
-    component: LogComponent,
-    children: [
-      {
-        path: '',
-        redirectTo: 'sign-in',
-        pathMatch: 'full'
-      },
-      {
-        path: 'sign-in',
-        component: SingInComponent
-      },
-      {
-        path: 'sign-up',
-        component: SignUpComponent
-      },
-    ]
-  },
-  {
-    path:"dashboard",
+    path:"dashboard/client",
     component: AreaComponent,
     children: [
       {
         path: '',
         component: DashboardComponent
       }
-    ]
-
+    ],
+    canActivate: [RoleGuard],
+    data: {
+      role: 'ROLE_CLIENT'
+    }
   },
   {
     path: "ticket", component: TopComponent

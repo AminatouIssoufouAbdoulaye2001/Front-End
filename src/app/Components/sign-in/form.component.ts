@@ -55,11 +55,11 @@ export class SingInComponent implements OnInit, OnDestroy {
       data => {
         if (data?.success) {
           if (this.authService.getRole() == 'ROLE_ADMIN') {
-            this.router.navigate(['adminpage/dashboard'])
+            this.router.navigate(['dashboard/admin'])
           }
 
           if (this.authService.getRole() == 'ROLE_CLIENT') {
-            this.router.navigate([''])
+            this.router.navigate(['dashboard/client'])
           }
         }
       }

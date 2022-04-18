@@ -1,156 +1,161 @@
 <div class="main-menu menu-fixed menu-dark menu-accordion menu-shadow expanded" data-scroll-to-active="true">
   <div class="navbar-header expanded">
-  <ul class="nav navbar-nav flex-row">
-  <li class="nav-item mr-auto">
-  <a href="/home" class="logo"><img src="/assets/logo.png" alt="ZenHosting"></a>
-   </li>
-  <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i class="icon-x d-block d-xl-none font-medium-4 primary toggle-icon icon-disc feather"></i><i class="toggle-icon icon-disc font-medium-4 d-none d-xl-block collapse-toggle-icon primary feather" data-ticon="icon-disc"></i></a></li>
-  </ul>
+    <ul class="nav navbar-nav flex-row">
+      <li class="nav-item mr-auto">
+        <a class="logo" href="/home"><img alt="ZenHosting" src="/assets/logo.png"></a>
+      </li>
+      <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i
+        class="icon-x d-block d-xl-none font-medium-4 primary toggle-icon icon-disc feather"></i><i
+        class="toggle-icon icon-disc font-medium-4 d-none d-xl-block collapse-toggle-icon primary feather"
+        data-ticon="icon-disc"></i></a></li>
+    </ul>
   </div>
   <div class="shadow-bottom"></div>
   <div class="main-menu-content ps" style="height: 352px;">
-  <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-  <li menuitemname="Home" class="nav-item" id="Primary_Navbar-Home">
-  <a href="/clientarea.php">
-  <i class="fas fa-home " style="color: white;"></i>&nbsp;
-  <span class="menu-title" style="color: white;">Espace client</span>
-  <span class="badge badge badge-warning badge-pill float-right mr-2"></span>
-  </a>
-  </li>
-  <li class="navigation-header" style="background-color: white;width:217px ;text-align: center ; font-size: 20px;"><span style="color: #0948b3;">MENU</span></li>
-  <li menuitemname="Services" class="nav-item dropdown has-sub" id="Primary_Navbar-Services">
-  <a class="dropdown-toggle " style="color:white; font-size: 20px;" data-toggle="dropdown" href="#">
-  
-  <i class="fas fa-server"></i>&nbsp; Mes services
-  
-  </a>
-  <ul class="menu-content">
-  <li menuitemname="My Services" id="Primary_Navbar-Services-My_Services">
-  <a href="#" ><i class="fas fa-circle"></i>
-  Mes produits &amp; services
-  </a>
-  </li>
-  <li menuitemname="Order New Services" id="Primary_Navbar-Services-Order_New_Services">
-  <a href="#"  class="list"><i class="fas fa-circle"></i>
-  Commander un nouveau service
-  </a>
-  </li>
-  <li menuitemname="View Available Addons" id="Primary_Navbar-Services-View_Available_Addons">
-  <a href="#"  class="list"><i class="fas fa-circle"></i>
-  Afficher les ajouts disponibles
-  </a>
-  </li>
-  </ul>
-  </li>
-  <li menuitemname="Domains" class="nav-item dropdown has-sub" id="Primary_Navbar-Domains">
-  <a class="dropdown-toggle" style="color: white; font-size: 20px;" data-toggle="dropdown" href="#">
-  
-  <i class="fas fa-globe"></i>&nbsp; Mes domaines
-  
-  </a>
-  <ul class="menu-content">
-  <li menuitemname="My Domains" id="Primary_Navbar-Domains-My_Domains">
-  <a href="/clientarea.php?action=domains"><i class="feather icon-circle"></i>
-  Mes noms de domaines
-  </a>
-  </li>
-  <li menuitemname="Manage DNS" id="Primary_Navbar-Domains-Manage_DNS">
-  <a href="/index.php?m=DNSManager2"><i class="feather icon-circle"></i>
-  Manage DNS
-  </a>
-  </li>
-  <li menuitemname="Renew Domains" id="Primary_Navbar-Domains-Renew_Domains">
-  <a href="#"><i class="feather icon-circle"></i>
-  Renouveler un nom de domaine
-  </a>
-  </li>
-  <li menuitemname="Register a New Domain" id="Primary_Navbar-Domains-Register_a_New_Domain">
-  <a href="#"><i class="feather icon-circle"></i>
-  Enregistrer un nom de domaine
-  </a>
-  </li>
-  <li menuitemname="Transfer a Domain to Us" id="Primary_Navbar-Domains-Transfer_a_Domain_to_Us">
-  <a href="/cart.php?a=add&amp;domain=transfer"><i class="feather icon-circle"></i>
-  Transférer un nom de domaine
-  </a>
-  </li>
-  <li menuitemname="Domain Search" id="Primary_Navbar-Domains-Domain_Search">
-  <a href="/domainchecker.php"><i class="feather icon-circle"></i>
-  Rechercher un nom de domaine
-  </a>
-  </li>
-  </ul>
-  </li>
-  <li menuitemname="Billing" class="nav-item dropdown has-sub" id="Primary_Navbar-Billing">
-  <a class="dropdown-toggle" style="color: white; font-size: 20px;" data-toggle="dropdown" href="#">
-  
-  <i class="fas fa-file-text"></i>&nbsp; Mes factures
-  
-  </a>
-  <ul class="menu-content">
-  <li menuitemname="My Invoices" id="Primary_Navbar-Billing-My_Invoices">
-  <a href="/clientarea.php?action=invoices"><i class="feather icon-circle"></i>
-  Mes factures
-  </a>
-  </li>
-  <li menuitemname="My Quotes" id="Primary_Navbar-Billing-My_Quotes">
-  <a href="#"><i class="feather icon-circle"></i>
-  Mes devis
-  </a>
-  </li>
-  <li menuitemname="Mass Payment" id="Primary_Navbar-Billing-Mass_Payment">
-  <a href="#"><i class="feather icon-circle"></i>
-  Paiement en masse
-  </a>
-  </li>
-  <li menuitemname="Add Funds" id="Primary_Navbar-Billing-Add_Funds">
-  <a href="#"><i class="feather icon-circle"></i>
-  Ajouter des fonds
-  </a>
-  </li>
-  </ul>
-  </li>
-  <li menuitemname="Support" class="nav-item dropdown has-sub" id="Primary_Navbar-Support">
-  <a class="dropdown-toggle" style="color: white; font-size: 20px;" data-toggle="dropdown" href="#">
-  
-  <i class="fas fa-edit"></i>&nbsp; Support
-  
-  </a>
-  <ul class="menu-content">
-  <li menuitemname="Tickets" id="Primary_Navbar-Support-Tickets">
-  <a href="#"><i class="feather icon-circle"></i>
-  Mes demandes
-  </a>
-  </li>
-  <li menuitemname="Announcements" id="Primary_Navbar-Support-Announcements">
-  <a href="/announcements.php"><i class="feather icon-circle"></i>
-  Actualités
-  </a>
-  </li>
-  <li menuitemname="Knowledgebase" id="Primary_Navbar-Support-Knowledgebase">
-  <a href="/knowledgebase.php"><i class="feather icon-circle"></i>
-  Base de connaissances
-  </a>
-  </li>
-  <li menuitemname="Downloads" id="Primary_Navbar-Support-Downloads">
-  <a href="/downloads.php"><i class="feather icon-circle"></i>
-  Téléchargements
-  </a>
-  </li>
-  <li menuitemname="Network Status" id="Primary_Navbar-Support-Network_Status">
-  <a href="/serverstatus.php"><i class="feather icon-circle"></i>
-  État du réseau
-  </a>
-  </li>
-  </ul>
-  </li>
-  <li menuitemname="Open Ticket" class="nav-item" id="Primary_Navbar-Open_Ticket">
-  <a href="#" style="color: white; font-size: 20px;">
-  
-    <i class="fas fa-ticket"></i>&nbsp; Ouvrir un ticket
-  
-  </a>
-  </li>
-  </ul>
-  <div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; right: 0px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></div>
+    <ul class="navigation navigation-main" data-menu="menu-navigation" id="main-menu-navigation">
+      <li class="navigation-header" style="background-color: white;width:217px ;text-align: center ; font-size: 20px;">
+        <span style="color: #0948b3;">MENU</span>
+      </li>
+
+      <li class="nav-item dropdown has-sub" id="Primary_Navbar-Services" menuitemname="Services">
+        <a class="dropdown-toggle " data-toggle="dropdown" href="#" style="color:white; font-size: 20px;">
+
+          <i class="fas fa-server"></i>&nbsp; Mes services
+
+        </a>
+        <ul class="menu-content">
+          <li id="Primary_Navbar-Services-My_Services" menuitemname="My Services">
+            <a href="#"><i class="fas fa-circle"></i>
+              Mes produits &amp; services
+            </a>
+          </li>
+          <li id="Primary_Navbar-Services-Order_New_Services" menuitemname="Order New Services">
+            <a class="list" href="#"><i class="fas fa-circle"></i>
+              Commander un nouveau service
+            </a>
+          </li>
+          <li id="Primary_Navbar-Services-View_Available_Addons" menuitemname="View Available Addons">
+            <a class="list" href="#"><i class="fas fa-circle"></i>
+              Afficher les ajouts disponibles
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item dropdown has-sub" id="Primary_Navbar-Domains" menuitemname="Domains">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color: white; font-size: 20px;">
+
+          <i class="fas fa-globe"></i>&nbsp; Mes domaines
+
+        </a>
+        <ul class="menu-content">
+          <li id="Primary_Navbar-Domains-My_Domains" menuitemname="My Domains">
+            <a href="/clientarea.php?action=domains"><i class="feather icon-circle"></i>
+              Mes noms de domaines
+            </a>
+          </li>
+          <li id="Primary_Navbar-Domains-Manage_DNS" menuitemname="Manage DNS">
+            <a href="/index.php?m=DNSManager2"><i class="feather icon-circle"></i>
+              Manage DNS
+            </a>
+          </li>
+          <li id="Primary_Navbar-Domains-Renew_Domains" menuitemname="Renew Domains">
+            <a href="#"><i class="feather icon-circle"></i>
+              Renouveler un nom de domaine
+            </a>
+          </li>
+          <li id="Primary_Navbar-Domains-Register_a_New_Domain" menuitemname="Register a New Domain">
+            <a href="#"><i class="feather icon-circle"></i>
+              Enregistrer un nom de domaine
+            </a>
+          </li>
+          <li id="Primary_Navbar-Domains-Transfer_a_Domain_to_Us" menuitemname="Transfer a Domain to Us">
+            <a href="/cart.php?a=add&amp;domain=transfer"><i class="feather icon-circle"></i>
+              Transférer un nom de domaine
+            </a>
+          </li>
+          <li id="Primary_Navbar-Domains-Domain_Search" menuitemname="Domain Search">
+            <a href="/domainchecker.php"><i class="feather icon-circle"></i>
+              Rechercher un nom de domaine
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item dropdown has-sub" id="Primary_Navbar-Billing" menuitemname="Billing">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color: white; font-size: 20px;">
+
+          <i class="fas fa-file-text"></i>&nbsp; Mes factures
+
+        </a>
+        <ul class="menu-content">
+          <li id="Primary_Navbar-Billing-My_Invoices" menuitemname="My Invoices">
+            <a href="/clientarea.php?action=invoices"><i class="feather icon-circle"></i>
+              Mes factures
+            </a>
+          </li>
+          <li id="Primary_Navbar-Billing-My_Quotes" menuitemname="My Quotes">
+            <a href="#"><i class="feather icon-circle"></i>
+              Mes devis
+            </a>
+          </li>
+          <li id="Primary_Navbar-Billing-Mass_Payment" menuitemname="Mass Payment">
+            <a href="#"><i class="feather icon-circle"></i>
+              Paiement en masse
+            </a>
+          </li>
+          <li id="Primary_Navbar-Billing-Add_Funds" menuitemname="Add Funds">
+            <a href="#"><i class="feather icon-circle"></i>
+              Ajouter des fonds
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item dropdown has-sub" id="Primary_Navbar-Support" menuitemname="Support">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color: white; font-size: 20px;">
+
+          <i class="fas fa-edit"></i>&nbsp; Support
+
+        </a>
+        <ul class="menu-content">
+          <li id="Primary_Navbar-Support-Tickets" menuitemname="Tickets">
+            <a href="#"><i class="feather icon-circle"></i>
+              Mes demandes
+            </a>
+          </li>
+          <li id="Primary_Navbar-Support-Announcements" menuitemname="Announcements">
+            <a href="/announcements.php"><i class="feather icon-circle"></i>
+              Actualités
+            </a>
+          </li>
+          <li id="Primary_Navbar-Support-Knowledgebase" menuitemname="Knowledgebase">
+            <a href="/knowledgebase.php"><i class="feather icon-circle"></i>
+              Base de connaissances
+            </a>
+          </li>
+          <li id="Primary_Navbar-Support-Downloads" menuitemname="Downloads">
+            <a href="/downloads.php"><i class="feather icon-circle"></i>
+              Téléchargements
+            </a>
+          </li>
+          <li id="Primary_Navbar-Support-Network_Status" menuitemname="Network Status">
+            <a href="/serverstatus.php"><i class="feather icon-circle"></i>
+              État du réseau
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="nav-item" id="Primary_Navbar-Open_Ticket" menuitemname="Open Ticket">
+        <a type="button" style="color: white; font-size: 20px;" (click)="logout()">
+          <i class="fas fa-ticket"></i>&nbsp; Déconnexion
+        </a>
+      </li>
+
+    </ul>
+    <div class="ps__rail-x" style="left: 0px; bottom: 0px;">
+      <div class="ps__thumb-x" style="left: 0px; width: 0px;" tabindex="0"></div>
+    </div>
+    <div class="ps__rail-y" style="top: 0px; right: 0px;">
+      <div class="ps__thumb-y" style="top: 0px; height: 0px;" tabindex="0"></div>
+    </div>
   </div>
+</div>
