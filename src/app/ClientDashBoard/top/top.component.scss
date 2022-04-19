@@ -1,0 +1,124 @@
+@media (min-width: 1200px)
+{.container, .container-sm, .container-md, .container-lg, .container-xl {
+    max-width: 1140px;
+}
+}
+@media (min-width: 992px)
+{.container, .container-sm, .container-md, .container-lg {
+    max-width: 960px;
+}}
+@media (min-width: 768px)
+{.container, .container-sm, .container-md {
+    max-width: 720px;
+}}
+@media (min-width: 576px)
+{.container, .container-sm {
+    max-width: 540px;
+}}
+.container, .container-fluid, .container-sm, .container-md, .container-lg, .container-xl {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.align-items-center {
+    -webkit-box-align: center !important;
+    -ms-flex-align: center !important;
+    align-items: center !important;
+}
+.justify-content-between {
+    -webkit-box-pack: justify !important;
+    -ms-flex-pack: justify !important;
+    justify-content: space-between !important;
+}
+.row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.gradient-bg {
+    background: linear-gradient(75deg, #073482, #014cda) !important;
+}
+
+.ptb-120 {
+    padding: 120px 0;
+}
+.text-white {
+    color: #fff !important;
+}
+h1, .h1 {
+    font-size: 2.68675rem;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    margin-bottom: 0.977rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    line-height: 1.25;
+    color: #1a202c;
+}
+.container, .container-sm, .container-md, .container-lg, .container-xl {
+    max-width: 1140px;
+}
+.justify-content-between {
+    -webkit-box-pack: justify !important;
+    -ms-flex-pack: justify !important;
+    justify-content: space-between !important;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+.d-flex {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+}
+
+.price-block .price-currency {
+    font-weight: 700;
+    font-size: 4rem;
+    line-height: 3rem;
+    font-family: "Roboto", sans-serif;
+}
+
+.price-block .offer-price {
+    font-weight: 700;
+    font-size: 20rem;
+    line-height: 15rem;
+    font-family: "Roboto", sans-serif;
+}
+.price-block .right-block {
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+}
+
+.price-block .cent-value {
+    font-weight: 700;
+    font-size: 5rem;
+    line-height: 4rem;
+    font-family: "Roboto", sans-serif;
+}
+.price-block .per-value {
+    font-size: 2rem;
+}
+.big-price-wrap span.regular-price {
+    position: absolute;
+    left: 45%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    bottom: -20%;
+    font-size: 14px;
+    color: white !important;
+}

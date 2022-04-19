@@ -12,6 +12,7 @@ import {AreaComponent} from './ClientDashBoard/area/area.component';
 import {TopComponent} from './ClientDashBoard/top/top.component';
 import {DashboardComponent} from "./ClientDashBoard/dashboard/dashboard.component";
 import {UserProfilResolver} from "./guards/user-profil-resolver";
+import { VpssaleComponent } from './Components/vpssale/vpssale.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -76,8 +77,12 @@ const routes: Routes = [
     }
   },
   {
-    path: "ticket", component: TopComponent
+    path: "top", component: TopComponent
+  },
+  {
+    path:"vpssales",component:VpssaleComponent
   }
+
 ]
 
 

@@ -63,6 +63,8 @@ import { AreaComponent } from './ClientDashBoard/area/area.component';
 import { DashboardComponent } from './ClientDashBoard/dashboard/dashboard.component';
 import { TopComponent } from './ClientDashBoard/top/top.component';
 import {NgModule} from "@angular/core";
+import { HomesaleComponent } from './Components/homesale/homesale.component';
+import { VpssaleComponent } from './Components/vpssale/vpssale.component';
 
 @NgModule({
   declarations: [
@@ -88,6 +90,8 @@ import {NgModule} from "@angular/core";
     AreaComponent,
     DashboardComponent,
     TopComponent,
+    HomesaleComponent,
+    VpssaleComponent,
   ],
   imports: [
     BrowserModule,
