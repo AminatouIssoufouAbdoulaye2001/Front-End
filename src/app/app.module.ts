@@ -65,6 +65,8 @@ import { TopComponent } from './ClientDashBoard/top/top.component';
 import {NgModule} from "@angular/core";
 import { HomesaleComponent } from './Components/homesale/homesale.component';
 import { VpssaleComponent } from './Components/vpssale/vpssale.component';
+import { DomaineComponent } from './Components/domaine/domaine.component';
+import { HerbergementwebComponent } from './Components/herbergementweb/herbergementweb.component';
 
 @NgModule({
   declarations: [
@@ -92,6 +94,8 @@ import { VpssaleComponent } from './Components/vpssale/vpssale.component';
     TopComponent,
     HomesaleComponent,
     VpssaleComponent,
+    DomaineComponent,
+    HerbergementwebComponent,
   ],
   imports: [
     BrowserModule,

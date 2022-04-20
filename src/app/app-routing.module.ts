@@ -13,6 +13,9 @@ import {TopComponent} from './ClientDashBoard/top/top.component';
 import {DashboardComponent} from "./ClientDashBoard/dashboard/dashboard.component";
 import {UserProfilResolver} from "./guards/user-profil-resolver";
 import { VpssaleComponent } from './Components/vpssale/vpssale.component';
+import { TicketComponent } from './Components/ticket/ticket.component';
+import { DomaineComponent } from './Components/domaine/domaine.component';
+import { HerbergementwebComponent } from './Components/herbergementweb/herbergementweb.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -81,6 +84,15 @@ const routes: Routes = [
   },
   {
     path:"vpssales",component:VpssaleComponent
+  },
+  {
+    path:"ticket",component:TicketComponent
+  },
+  {
+    path:"domain",component:DomaineComponent
+  },
+  {
+    path:"web",component:HerbergementwebComponent
   }
 
 ]

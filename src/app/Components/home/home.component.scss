@@ -1,7 +1,16 @@
 .primary-bg {
   background: #0948b3 !important;
-  margin-top: 24px;
+  margin-top: -10px;
+  height: 540px;
 }
+.primary-bg1 {
+  background: #0948b3 !important;
+  margin-top: -10px;
+  height: 215px;
+  padding: 9px;
+  margin-top: 23px;
+}
+
 
 .hero-slider-content h1 {
   font-weight: 600;
@@ -340,3 +349,11 @@ pricing
   margin-top: 40px;
 }
 
+
+
+.hero-slider-content.text-white.py-5{
+  margin-top: -265px;
+}
+a {
+  text-decoration: none;
+}

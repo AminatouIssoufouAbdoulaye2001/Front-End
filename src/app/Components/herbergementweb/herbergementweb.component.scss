@@ -1,0 +1,67 @@
+.pricing-header {
+    padding: 25px 10px;
+}
+
+.pricing-header {
+    position: relative;
+    background: transparent;
+    padding: 10px 15px 20px;
+}
+
+.card.single-pricing-pack {
+    border: 1px solid #e6e8ec;
+}
+.row {
+    margin-right: -15px;
+    width: 1216px;
+    margin-left: 277px;
+}
+#order-standard_cart a, #order-standard_cart a:hover, #order-standard_cart a:active, #order-standard_cart a:visited, #order-standard_cart a:link {
+    outline: none;
+    transition: all 0.5s ease 0s;
+    -webkit-transition: all 0.5s ease 0s;
+    -moz-transition: all 0.5s ease 0s;
+}
+.outline-btn {
+    position: relative;
+    display: inline-block;
+    color: #0073ec;
+    border: 1px solid #0073ec;
+    background: transparent;
+}
+.outline-btn, .secondary-solid-btn, .primary-solid-btn, .solid-white-btn, .outline-white-btn, .secondary-outline-btn, .danger-btn, .success-btn {
+    padding: 12px 30px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    transition: all .25s ease-in-out;
+}
+.feature-badge span {
+    width: 184px;
+    height: 20px;
+    line-height: 16px;
+    position: absolute;
+    top: 17px;
+    right: -60px;
+    z-index: 2;
+    overflow: hidden;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    box-shadow: 0 0 0 3px #0671ec, 0px 21px 5px -18px rgb(0 0 0 / 60%);
+    background: #0372ec;
+    text-align: center;
+    color: #ffffff;
+    font-size: 10px;
+}
+.badge {
+    display: inline;
+    padding: 0.2rem 0.5rem;
+    line-height: inherit;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 77%;
+}
+.single-pricing-pack footer {
+    margin-top: auto;
+    padding-bottom: 25px;
+}

@@ -1,3 +1,5 @@
+ 
+ <app-sidenavbar></app-sidenavbar>
  <div class="container">
   <div class="col-md-9 pull-md-right main-content">
     <form
@@ -12,7 +14,7 @@
         value="8dfe55a77866fcea7a0e10643b0f1316e282e6d6"
       />
       <div class="sub-heading">
-        <h3>Information ticket</h3>
+        <h1><strong>Information ticket</strong></h1>
       </div>
       <div class="custom-card-block account-eidt mb-40">
         <div class="row">
@@ -200,9 +202,8 @@
             <button
               type="button"
               class="btn outline-btn btn-block"
-              onclick="extraTicketAttachment()"
             >
-              <i class="fas fa-plus"></i> Add More
+              <i class="fas fa-plus"></i> Ajouter plus
             </button>
           </div>
           <div class="col-xs-12 ticket-attachments-message text-muted">
@@ -219,15 +220,10 @@
           value="Submit"
           class="btn primary-solid-btn disable-on-click"
         />
-        <a href="#" class="btn outline-btn">Cancel</a>
+        <a href="#" class="btn outline-btn">Annuler</a>
       </p>
     </form>
 
-    <script>
-      jQuery(document).ready(function () {
-        getTicketSuggestions();
-      });
-    </script>
   </div>
 </div> -
 
