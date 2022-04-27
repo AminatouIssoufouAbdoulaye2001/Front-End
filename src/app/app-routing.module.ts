@@ -9,13 +9,14 @@ import {AddadminComponent} from "./AdminDashBoard/addadmin/addadmin.component";
 import {AddserviceComponent} from "./AdminDashBoard/addservice/addservice.component";
 import {RoleGuard} from "./guards/role.guard";
 import {AreaComponent} from './ClientDashBoard/area/area.component';
-import {TopComponent} from './ClientDashBoard/top/top.component';
+import {TopComponent} from './Components/top/top.component';
 import {DashboardComponent} from "./ClientDashBoard/dashboard/dashboard.component";
 import {UserProfilResolver} from "./guards/user-profil-resolver";
 import { VpssaleComponent } from './Components/vpssale/vpssale.component';
 import { TicketComponent } from './Components/ticket/ticket.component';
 import { DomaineComponent } from './Components/domaine/domaine.component';
 import { HerbergementwebComponent } from './Components/herbergementweb/herbergementweb.component';
+import { HomesaleComponent } from './Components/homesale/homesale.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -93,6 +94,12 @@ const routes: Routes = [
   },
   {
     path:"web",component:HerbergementwebComponent
+  },
+  {
+    path:"dashboard",component:DashboardComponent
+  },
+  {
+    path:"sales",component:HomesaleComponent
   }
 
 ]

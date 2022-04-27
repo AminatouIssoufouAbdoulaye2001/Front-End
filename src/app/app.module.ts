@@ -61,12 +61,13 @@ import { MatListModule } from '@angular/material/list';
 import { SidenavbarComponent } from './ClientDashBoard/sidenavbar/sidenavbar.component';
 import { AreaComponent } from './ClientDashBoard/area/area.component';
 import { DashboardComponent } from './ClientDashBoard/dashboard/dashboard.component';
-import { TopComponent } from './ClientDashBoard/top/top.component';
 import {NgModule} from "@angular/core";
 import { HomesaleComponent } from './Components/homesale/homesale.component';
 import { VpssaleComponent } from './Components/vpssale/vpssale.component';
 import { DomaineComponent } from './Components/domaine/domaine.component';
 import { HerbergementwebComponent } from './Components/herbergementweb/herbergementweb.component';
+import { TopComponent } from './Components/top/top.component';
+import { TopheaderComponent } from './ClientDashBoard/topheader/topheader.component';
 
 @NgModule({
   declarations: [
@@ -96,6 +97,7 @@ import { HerbergementwebComponent } from './Components/herbergementweb/herbergem
     VpssaleComponent,
     DomaineComponent,
     HerbergementwebComponent,
+    TopheaderComponent
   ],
   imports: [
     BrowserModule,

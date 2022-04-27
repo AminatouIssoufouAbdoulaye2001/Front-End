@@ -172,7 +172,9 @@ h4:hover{
   border-radius: 0 0 4px 4px;
 }
 
-
+.support:hover{
+  color: orange;
+}
 
 
 
@@ -349,11 +351,19 @@ pricing
   margin-top: 40px;
 }
 
-
-
+h3{
+  color: #7c8088;
+  margin: -5px;
+  strong{
+      margin-right: 5px;
+  }
+}
 .hero-slider-content.text-white.py-5{
   margin-top: -265px;
 }
 a {
   text-decoration: none;
+}
+.shadow{
+  box-shadow: 20px 5px 5px red;
 }

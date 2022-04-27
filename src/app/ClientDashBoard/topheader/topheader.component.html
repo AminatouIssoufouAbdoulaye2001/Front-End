@@ -1,0 +1,169 @@
+
+        
+                <div class="col-md-12 pull-md-right">
+                  <div class="header-lined">
+                    <h1>Bienvenue à nouveau, Aminatou</h1>
+                    <hr>
+                    <!-- <ol class="breadcrumb">
+                      <li>
+                        <a href="/index.php"> Accueil </a>
+                      </li>
+                      <li class="active">Espace client</li>
+                    </ol> -->
+
+                  </div>
+                </div>
+                
+               
+                <div class="col-md-9 pull-md-right main-content">
+                    <div class="tiles clearfix">
+                      <div class="row" style="width: 969px; height: 100px">
+                        <div class="col-sm-3 col-xs-6 tile">
+                          <a href="#">
+                            <div class="icon"><i class="fas fa-cube"></i></div>
+                            <div class="stat">0</div>
+                            <div class="title">Mes services</div>
+                            <div class="highlight bg-color-blue"></div>
+                          </a>
+                        </div>
+                        <div class="col-sm-3 col-xs-6 tile">
+                          <a href="#">
+                            <div class="icon"><i class="fas fa-globe"></i></div>
+                            <div class="stat">0</div>
+                            <div class="title">Mes domaines</div>
+                            <div class="highlight bg-color"></div>
+                          </a>
+                        </div>
+                        <div class="col-sm-3 col-xs-6 tile">
+                          <a href="supporttickets.php">
+                            <div class="icon"><i class="fas fa-comments"></i></div>
+                            <div class="stat">0</div>
+                            <div class="title">Mes demandes</div>
+                            <div class="highlight bg-color"></div>
+                          </a>
+                        </div>
+                        <div class="col-sm-3 col-xs-6 tile">
+                          <a href="#">
+                            <div class="icon"><i class="fas fa-credit-card"></i></div>
+                            <div class="stat">0</div>
+                            <div class="title">Factures</div>
+                            <div class="highlight bg-color"></div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <form
+                      role="form"
+                      method="post"
+                      action="clientarea.php?action=kbsearch"
+                    >
+                      <input
+                        type="hidden"
+                        name="token"
+                        value="9d68b0836ed5d8ca59cefbbf301ac8008624a6fc"
+                      />
+                      <div class="row"></div>
+                    </form>
+                    <div class="client-home-panels">
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <div
+                            menuitemname="Active Products/Services"
+                            class="panel panel-default panel-accent-gold"
+                          >
+                            <div class="panel-heading">
+                              <h4 class="panel-title">
+                                <div class="pull-right">
+                                  <a
+                                    href="#"
+                                    class="btn btn-default bg-color-gold btn-xs"
+                                  >
+                                    <i class="fas fa-plus"></i> Afficher tout
+                                  </a>
+                                </div>
+                                <i class="fas fa-cube"></i>&nbsp; Vos
+                                produits/services actifs
+                              </h4>
+                            </div>
+                            <div class="panel-body">
+                              <p>
+                                Vous n'avez aucun produit/service.
+                                <a href="cart.php">Passer une commande</a>.
+                              </p>
+                            </div>
+                            <div class="panel-footer"></div>
+                          </div>
+                          <div
+                            menuitemname="Register a New Domain"
+                            class="panel panel-default panel-accent-emerald"
+                          >
+                            <div class="panel-heading">
+                              <h4 class="panel-title">
+                                <i class="fas fa-globe"></i>&nbsp; Enregistrer un nom
+                                de domaine
+                              </h4>
+                            </div>
+                            <div class="panel-body">
+                              <form method="post" action="domainchecker.php">
+                                <input
+                                  type="hidden"
+                                  name="token"
+                                  value="9d68b0836ed5d8ca59cefbbf301ac8008624a6fc"
+                                />
+                                <div class="input-group margin-10">
+                                  <input
+                                    type="text"
+                                    name="domain"
+                                    class="form-control"
+                                  />
+                                  <div class="input-group-btn">
+                                    <input
+                                      type="submit"
+                                      value="Enregistrement"
+                                      class="btn btn-success"
+                                    />
+                                    <input
+                                      type="submit"
+                                      name="transfer"
+                                      value="Transfert"
+                                      class="btn"
+                                    />
+                                  </div>
+                                </div>
+                              </form>
+                            </div>
+                            <div class="panel-footer"></div>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div
+                            menuitemname="Recent Support Tickets"
+                            class="panel panel-default panel-accent-blue"
+                          >
+                            <div class="panel-heading">
+                              <h4 class="panel-title">
+                                <div class="pull-right">
+                                  <a
+                                    href="submitticket.php"
+                                    class="btn btn-default bg-color-blue btn-xs"
+                                  >
+                                    <i class="fas fa-plus"></i> Ouvrir une ticket
+                                  </a>
+                                </div>
+                                <i class="fas fa-comments"></i>&nbsp; Dernières
+                                demandes
+                              </h4>
+                            </div>
+                            <div class="panel-body">
+                              <p>
+                                Aucune demande. Si vous avez besoin d'aide, vous
+                                pouvez
+                                <a routerLink="/ticket">ouvrir un ticket</a>.
+                              </p>
+                            </div>
+                            <div class="panel-footer"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>

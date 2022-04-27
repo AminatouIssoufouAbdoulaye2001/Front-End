@@ -1,3 +1,4 @@
+<app-sidenavbar></app-sidenavbar>
 <div class="app-content content">
   <div class="content-overlay"></div>
   <div class="header-navbar-shadow"></div>
@@ -11,14 +12,16 @@
               <div class="header-lined">
                 <h1>Bienvenue à nouveau, Aminatou</h1>
                 <hr>
-                <ol class="breadcrumb">
+                <!-- <ol class="breadcrumb">
                   <li>
                     <a href="/index.php"> Accueil </a>
                   </li>
                   <li class="active">Espace client</li>
-                </ol>
+                </ol> -->
+
               </div>
             </div>
+           
             <div id="suggestions" class="col-md-12 pull-md-right"></div>
 
             <div class="col-md-9 pull-md-right main-content">
@@ -164,7 +167,7 @@
                         <p>
                           Aucune demande. Si vous avez besoin d'aide, vous
                           pouvez
-                          <a href="/ticket">ouvrir un ticket</a>.
+                          <a routerLink="/ticket">ouvrir un ticket</a>.
                         </p>
                       </div>
                       <div class="panel-footer"></div>
@@ -236,7 +239,7 @@
                 <div class="list-group">
                   <a
                     menuitemname="Order New Services"
-                    href="/cart.php"
+                    routerLink="/sales"
                     class="list-group-item"
                     id="Secondary_Sidebar-Client_Shortcuts-Order_New_Services"
                   >
@@ -245,7 +248,7 @@
                   </a>
                   <a
                     menuitemname="Register New Domain"
-                    href="/domainchecker.php"
+                    routerLink="/vpssales"
                     class="list-group-item"
                     id="Secondary_Sidebar-Client_Shortcuts-Register_New_Domain"
                   >
