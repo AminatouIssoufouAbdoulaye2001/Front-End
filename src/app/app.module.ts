@@ -15,7 +15,6 @@ import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
-import { TicketComponent } from './Components/ticket/ticket.component';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatIconModule}from '@angular/material/icon'
 import {MatButtonModule} from '@angular/material/button'
@@ -68,6 +67,8 @@ import { DomaineComponent } from './Components/domaine/domaine.component';
 import { HerbergementwebComponent } from './Components/herbergementweb/herbergementweb.component';
 import { TopComponent } from './Components/top/top.component';
 import { TopheaderComponent } from './ClientDashBoard/topheader/topheader.component';
+import { TicketComponent } from './Components/ticket/ticket.component';
+import { MailsuiteComponent } from './Components/mailsuite/mailsuite.component';
 
 @NgModule({
   declarations: [
@@ -79,7 +80,6 @@ import { TopheaderComponent } from './ClientDashBoard/topheader/topheader.compon
     SignUpComponent,
     HomeComponent,
     AreaComponent,
-    TicketComponent,
     FeedsComponent,
     AdminpageComponent,
     ToolbarComponent,
@@ -97,7 +97,10 @@ import { TopheaderComponent } from './ClientDashBoard/topheader/topheader.compon
     VpssaleComponent,
     DomaineComponent,
     HerbergementwebComponent,
-    TopheaderComponent
+    TopheaderComponent,
+    TicketComponent,
+    MailsuiteComponent
+  
   ],
   imports: [
     BrowserModule,

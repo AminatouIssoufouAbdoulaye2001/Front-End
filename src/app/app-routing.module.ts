@@ -17,6 +17,7 @@ import { TicketComponent } from './Components/ticket/ticket.component';
 import { DomaineComponent } from './Components/domaine/domaine.component';
 import { HerbergementwebComponent } from './Components/herbergementweb/herbergementweb.component';
 import { HomesaleComponent } from './Components/homesale/homesale.component';
+import { MailsuiteComponent } from './Components/mailsuite/mailsuite.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -100,6 +101,9 @@ const routes: Routes = [
   },
   {
     path:"sales",component:HomesaleComponent
+  },
+  {
+    path:"mail",component:MailsuiteComponent
   }
 
 ]
