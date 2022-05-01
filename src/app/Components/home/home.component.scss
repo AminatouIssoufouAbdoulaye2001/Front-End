@@ -550,3 +550,25 @@ p {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
+
+
+element.style {
+}
+.domain-search-form[_ngcontent-mou-c139] input[_ngcontent-mou-c139]:not([type=submit]) {
+  width: 55%;
+  height: 100%;
+  border: none;
+  padding-top: 10px;
+  border-bottom: 2px solid #0948b3;
+}
+.invalid-form {
+  color: #212529;
+  background-color: #fff;
+  border-color: #86b7fe;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem orangered;
+}
+
+.error-color {
+  color: orangered;
+}

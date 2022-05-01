@@ -69,6 +69,7 @@ import { TopComponent } from './Components/top/top.component';
 import { TopheaderComponent } from './ClientDashBoard/topheader/topheader.component';
 import { TicketComponent } from './Components/ticket/ticket.component';
 import { MailsuiteComponent } from './Components/mailsuite/mailsuite.component';
+import {GodaddyApiRequestInterceptor} from "./interceptors/godaddy-api-request.interceptor";
 
 @NgModule({
   declarations: [
@@ -100,7 +101,7 @@ import { MailsuiteComponent } from './Components/mailsuite/mailsuite.component';
     TopheaderComponent,
     TicketComponent,
     MailsuiteComponent
-  
+
   ],
   imports: [
     BrowserModule,
@@ -164,6 +165,11 @@ import { MailsuiteComponent } from './Components/mailsuite/mailsuite.component';
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
       multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: GodaddyApiRequestInterceptor,
+      multi: true
     }
   ],
 
@@ -172,4 +178,3 @@ import { MailsuiteComponent } from './Components/mailsuite/mailsuite.component';
 export class AppModule {
 
 }
-

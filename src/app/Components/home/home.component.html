@@ -8,7 +8,7 @@
     >
       <div class="col-md-12 col-lg-6">
         <div class="hero-slider-content text-white py-5">
-          
+
           <h2 class="text-white" style="margin-top: -270px;">
             Domaine et hébergement illimités &amp; sur une seule plate-forme
           </h2>
@@ -38,28 +38,38 @@
       <div class="col-md-9 col-lg-8 col-12">
         <div class="domain-search-wrap border gray-light-bg">
           <h4 class="text-center">Vous cherchez un nom de domaine?</h4>
-          <form class="domain-search-form my-4">
+          <form
+            class="domain-search-form my-4"
+            [formGroup]="searchDomainForm"
+            (ngSubmit)="submit()"
+          >
             <input
               type="text"
-              name="domain"
-              id="domain"
-              class="form-control"
+              [ngClass]="{'form-control': true, 'invalid-form': formSubmited && nameCtrl.errors}"
+              formControlName="name"
               placeholder="votrenondedomaine.com"
             />
             <div class="select-group">
-              <select name="domainType" class="form-control">
-                <option value="com" selected>.com</option>
+              <select
+                formControlName="type"
+                class="form-control">
+                <option value="com" >.com</option>
                 <option value="net">.net</option>
                 <option value="io">.tn</option>
                 <option value="info">.info</option>
                 <option value="store">.online</option>
                 <option value="store">.org</option>
               </select>
-              <button type="submit" class="btn btn-brand-01">
+              <button
+                type="submit"
+                class="btn btn-brand-01">
                 <i class="fas fa-search pr-1"></i> Search
               </button>
             </div>
           </form>
+          <div *ngIf="formSubmited  && nameCtrl.errors" class="error-color">
+             Entrez un nom de domaine
+          </div>
           <div class="domain-list-wrap text-center">
             <ul class="list-inline domain-search-list">
               <li class="list-inline-item bg-white border rounded">
@@ -354,7 +364,7 @@
   </div>
 </section>
 
-<!-- 
+<!--
 <section class="about-section ptb-50">
   <div class="container">
     <div class="row align-center-row">

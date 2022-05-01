@@ -1,24 +1,21 @@
 import {Injectable} from '@angular/core';
 import {HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
-import {AuthService} from "../Services/auth.service";
 import {Observable} from "rxjs";
+import {environment} from "../../environments/environment";
 
 @Injectable()
-export class TokenInterceptor implements HttpInterceptor {
-  constructor(public authService: AuthService) {}
+export class GodaddyApiRequestInterceptor implements HttpInterceptor {
+  constructor() {}
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
-    const token = this.authService.getToken();
-    if (token) {
-
-      if (!request.url.includes('https://api.ote-godaddy.com/v1/')) {
+      if (request.url.includes('https://api.ote-godaddy.com/v1/')) {
         request = request.clone({
           setHeaders: {
-            Authorization: `Bearer ${this.authService.getToken()}`
+            accept: 'application/json',
+            Authorization: `sso-key ${environment.GODADDY_API_Key}:${environment.GODADDY_SECRET}}`
           }
         });
       }
-    }
     return next.handle(request);
   }
 }
