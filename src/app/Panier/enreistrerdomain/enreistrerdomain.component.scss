@@ -1,0 +1,35 @@
+section#main-body {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    /* min-height: 350px; */
+}
+section#main-body {
+    margin-top: 0!important;
+    margin-bottom: 0!important;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#main-body {
+    background: #F1F3F2;
+}
+@media (min-width: 1200px){
+.container {
+    width: 1170px;
+}}
+@media (min-width: 992px)
+{.container {
+    width: 970px;
+}}
+@media (min-width: 768px)
+{.container {
+    width: 750px;
+}}
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+    display: block;
+}

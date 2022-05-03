@@ -69,6 +69,9 @@ import { TopComponent } from './Components/top/top.component';
 import { TopheaderComponent } from './ClientDashBoard/topheader/topheader.component';
 import { TicketComponent } from './Components/ticket/ticket.component';
 import { MailsuiteComponent } from './Components/mailsuite/mailsuite.component';
+import { ProfileComponent } from './Profiles/profile/profile.component';
+import { SecuriteComponent } from './Profiles/securite/securite.component';
+import { EnreistrerdomainComponent } from './Panier/enreistrerdomain/enreistrerdomain.component';
 
 @NgModule({
   declarations: [
@@ -99,7 +102,11 @@ import { MailsuiteComponent } from './Components/mailsuite/mailsuite.component';
     HerbergementwebComponent,
     TopheaderComponent,
     TicketComponent,
-    MailsuiteComponent
+    MailsuiteComponent,
+    ProfileComponent,
+    SidenavbarComponent,
+    SecuriteComponent,
+    EnreistrerdomainComponent
   
   ],
   imports: [

@@ -97,7 +97,7 @@
                       <div class="panel-body">
                         <p>
                           Vous n'avez aucun produit/service.
-                          <a href="cart.php">Passer une commande</a>.
+                          <a href="#">Passer une commande</a>.
                         </p>
                       </div>
                       <div class="panel-footer"></div>
@@ -196,7 +196,7 @@
                   <br />{{userProfi.phone}}
                 </div>
                 <div class="panel-footer clearfix">
-                  <a href="#" class="btn add btn-success btn-sm btn-block">
+                  <a href="#" routerLink="/profile" class="btn add btn-success btn-sm btn-block">
                     <i class="fas fa-pencil-alt"></i> Mettre à jour
                   </a>
                 </div>
@@ -241,14 +241,15 @@
                     menuitemname="Order New Services"
                     routerLink="/sales"
                     class="list-group-item"
+                    style="color: white;"
                     id="Secondary_Sidebar-Client_Shortcuts-Order_New_Services"
                   >
-                    <i class="fas fa-shopping-cart fa-fw"></i>&nbsp; Commander
-                    un nouveau service
+                    <i class="fas fa-shopping-cart fa-fw"></i>&nbsp; Acheter un hébergement
                   </a>
                   <a
                     menuitemname="Register New Domain"
-                    routerLink="/vpssales"
+                    routerLink="/domain"
+                    style="color: white;"
                     class="list-group-item"
                     id="Secondary_Sidebar-Client_Shortcuts-Register_New_Domain"
                   >
@@ -257,7 +258,8 @@
                   </a>
                   <a
                     menuitemname="Logout"
-                    href="/logout.php"
+                    style="color: white;"
+                 routerLink="/home"
                     class="list-group-item"
                     id="Secondary_Sidebar-Client_Shortcuts-Logout"
                   >

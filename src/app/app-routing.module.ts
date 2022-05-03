@@ -18,6 +18,9 @@ import { DomaineComponent } from './Components/domaine/domaine.component';
 import { HerbergementwebComponent } from './Components/herbergementweb/herbergementweb.component';
 import { HomesaleComponent } from './Components/homesale/homesale.component';
 import { MailsuiteComponent } from './Components/mailsuite/mailsuite.component';
+import { ProfileComponent } from './Profiles/profile/profile.component';
+import { SecuriteComponent } from './Profiles/securite/securite.component';
+import { EnreistrerdomainComponent } from './Panier/enreistrerdomain/enreistrerdomain.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -104,6 +107,15 @@ const routes: Routes = [
   },
   {
     path:"mail",component:MailsuiteComponent
+  },
+  {
+    path:"profile", component:ProfileComponent
+  },
+  {
+    path:"securiter", component:SecuriteComponent
+  },
+  {
+    path:"Edomain", component:EnreistrerdomainComponent
   }
 
 ]

@@ -1,0 +1,86 @@
+<app-sidenavbar></app-sidenavbar>
+<div class="container-xl px-4 mt-4">
+    <!-- Account page navigation-->
+    <nav class="nav nav-borders">
+        <a class="nav-link active ms-0" routerLink="/profile" target="__blank">Profile</a>
+        <a class="nav-link" routerLink="/securiter" target="__blank">Securité</a>
+    </nav>
+    <hr class="mt-0 mb-4">
+    <div class="row">
+        <div class="col-xl-4">
+            <!-- Profile picture card-->
+            <div class="card mb-4 mb-xl-0">
+                <div class="card-header">Image de profil</div>
+                <div class="card-body text-center">
+                    <!-- Profile picture image-->
+                    <img class="img-account-profile rounded-circle mb-2" src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                    <!-- Profile picture help block-->
+                    <div class="small font-italic text-muted mb-4">JPG ou PNG ne dépassant pas 5 Mo</div>
+                    <!-- Profile picture upload button-->
+                    <button class="btn btn-primary" type="button">Télécharger une nouvelle image</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-8">
+            <!-- Account details card-->
+            <div class="card mb-4">
+                <div class="card-header">Détails du compte</div>
+                <div class="card-body">
+                    <form>
+                        <!-- Form Group (username)-->
+                        <div class="mb-3">
+                            <label class="small mb-1" for="inputUsername">Nom d'utilisateur</label>
+                            <input class="form-control" id="inputUsername" type="text" placeholder="Entrer votre nom d'utilisateur">
+                        </div>
+                        <!-- Form Row-->
+                        <div class="row gx-3 mb-3">
+                            <!-- Form Group (first name)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputFirstName">Prenom</label>
+                                <input class="form-control" id="inputFirstName" type="text" placeholder="Entrer votre prenom" >
+                            </div>
+                            <!-- Form Group (last name)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputLastName">Nom</label>
+                                <input class="form-control" id="inputLastName" type="text" placeholder="Entrer votre nom">
+                            </div>
+                        </div>
+                        <!-- Form Row        -->
+                        <div class="row gx-3 mb-3">
+                            <!-- Form Group (organization name)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputOrgName">Organization name</label>
+                                <input class="form-control" id="inputOrgName" type="text" placeholder="Enter your organization name" >
+                            </div>
+                            <!-- Form Group (location)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputLocation">Emplacement</label>
+                                <input class="form-control" id="inputLocation" type="text" placeholder="Entrer votre emplacement">
+                            </div>
+                        </div>
+                        <!-- Form Group (email address)-->
+                        <div class="mb-3">
+                            <label class="small mb-1" for="inputEmailAddress">Adresse e-mail</label>
+                            <input class="form-control" id="inputEmailAddress" type="email" placeholder="Entrer votre Adresse e-mail">
+                        </div>
+                        <!-- Form Row-->
+                        <div class="row gx-3 mb-3">
+                            <!-- Form Group (phone number)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputPhone">Numéro</label>
+                                <input class="form-control" id="inputPhone" type="tel" placeholder="Entrer votre numéro de téléphone">
+                            </div>
+                            <!-- Form Group (birthday)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputBirthday">Date de naissance</label>
+                                <input class="form-control" id="inputBirthday" type="text" name="birthday" placeholder="Entrer votre date de naissance">
+                            </div>
+                        </div>
+                        <!-- Save changes button-->
+                        <button class="btn btn-primary" type="button">Sauvegarder les modifications</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
