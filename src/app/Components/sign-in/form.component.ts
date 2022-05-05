@@ -4,7 +4,6 @@ import {ConfirmationService, MessageService} from 'primeng/api';
 import {Subscription} from 'rxjs';
 import {ActivatedRoute, Router} from '@angular/router';
 import {AuthService} from "../../Services/auth.service";
-import {data} from "jquery";
 
 @Component({
   selector: 'app-sign-in',
@@ -17,11 +16,9 @@ export class SingInComponent implements OnInit, OnDestroy {
   loginForm: FormGroup;
   sub = new Subscription();
   displayRegistration: boolean = false;
-
   displayOptions: boolean = false;
-
   choosenType!: string;
-
+  errorMsg = '';
 
   constructor(
     private router: Router,
@@ -50,21 +47,24 @@ export class SingInComponent implements OnInit, OnDestroy {
   getForm = () => this.loginForm;
 
   onSubmit() {
-   if (this.loginForm.valid) {
-    this.sub.add(this.authService.login(this.loginForm.value).subscribe(
-      data => {
-        if (data?.success) {
-          if (this.authService.getRole() == 'ROLE_ADMIN') {
-            this.router.navigate(['dashboard/admin'])
-          }
+    if (this.loginForm.valid) {
+      this.sub.add(this.authService.login(this.loginForm.value)
+        .subscribe(
+          data => {
+            this.errorMsg = '';
+            if (data?.success) {
+              if (this.authService.getRole() == 'ROLE_ADMIN') {
+                this.router.navigate(['dashboard/admin'])
+              }
 
-          if (this.authService.getRole() == 'ROLE_CLIENT') {
-            this.router.navigate(['dashboard/client'])
-          }
-        }
-      }
-    ))
-   }
+              if (this.authService.getRole() == 'ROLE_CLIENT') {
+                this.router.navigate(['dashboard/client'])
+              }
+            }
+          },
+          error => this.errorMsg =  error.message
+        ))
+    }
   }
 
   navigateToHome() {
@@ -87,6 +87,7 @@ export class SingInComponent implements OnInit, OnDestroy {
     this.displayRegistration = false;
     this.displayOptions = false;
   }
+
   /**
    * @summary If the two entries have a value, then the login button can be called
    */
@@ -111,7 +112,6 @@ export class SingInComponent implements OnInit, OnDestroy {
     // displayRegistrationModal(answer: boolean): void {
     //   this.displayRegistration = answer;
     // }
-
 
 
     /**

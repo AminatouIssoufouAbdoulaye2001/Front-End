@@ -59,7 +59,6 @@ export class RestApiService {
 
     // todo: à travailler pour afficher les errors aux utilisateur
     // snackbar, toast
-    console.log(error);
     return throwError({
       success: false,
       payload: null,

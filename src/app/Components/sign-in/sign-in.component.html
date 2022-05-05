@@ -67,7 +67,14 @@
         </p-message>
       </div>
     </div>
-
+    <div *ngIf="errorMsg">
+      <p-message
+        class="not-first-message"
+        severity="error"
+        [text]="errorMsg"
+      >
+      </p-message>
+    </div>
     <!--End password-->
 
     <div
