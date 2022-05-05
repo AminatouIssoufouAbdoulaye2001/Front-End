@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-
+ showProfil = true;
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  showProfile() {
+    this.showProfil = true;
+  }
+
+  showSecurity() {
+    this.showProfil = false;
+  }
 }

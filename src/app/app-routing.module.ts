@@ -74,6 +74,9 @@ const routes: Routes = [
       {
         path: '',
         component: DashboardComponent
+      },
+      {
+        path:"profil", component:ProfileComponent
       }
     ],
     canActivate: [RoleGuard],

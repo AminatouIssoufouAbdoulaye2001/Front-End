@@ -1,12 +1,19 @@
-<app-sidenavbar></app-sidenavbar>
-<div class="container-xl px-4 mt-4">
+<div class="container-xl px-4 " style="margin-top: 8%;">
     <!-- Account page navigation-->
-    <nav class="nav nav-borders">
-        <a class="nav-link active ms-0" routerLink="/profile" target="__blank">Profile</a>
-        <a class="nav-link" routerLink="/securiter" target="__blank">Securité</a>
+    <nav class="nav nav-borders" style="margin-bottom: 10px;">
+      <button
+        type="button"
+        class="btn btn-primary"
+        (click)="showProfile()"
+      >Profile</button>
+      <button
+        type="button"
+        class="btn btn-secondary"
+        (click)="showSecurity()"
+      >Securité</button>
     </nav>
     <hr class="mt-0 mb-4">
-    <div class="row">
+    <div class="row" *ngIf="showProfil">
         <div class="col-xl-4">
             <!-- Profile picture card-->
             <div class="card mb-4 mb-xl-0">
@@ -83,4 +90,5 @@
             </div>
         </div>
     </div>
+  <app-securite *ngIf="!showProfil"></app-securite>
 </div>
