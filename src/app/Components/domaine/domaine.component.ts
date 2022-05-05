@@ -4,6 +4,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {domainTypes} from "../../Models/domain-type.models";
 import {RestApiService} from "../../Services/rest-api-service";
 import {Domain} from "../../Models/domain.model";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-domaine',
@@ -18,21 +19,41 @@ export class DomaineComponent implements OnInit, OnDestroy {
   noAvailableDomains = false;
   waitingForSearchResult = false;
 
-  constructor(private fb: FormBuilder, private service: RestApiService) {
+  constructor(
+    private fb: FormBuilder,
+    private service: RestApiService,
+    private router: Router) {
+
+    // @ts-ignore
+    let domain = this.router.getCurrentNavigation().extras.state;
+    let domainName = '';
+    let domainType = 'com';
+    if (domain) {
+      domainName = domain['domain'];
+      domainType = domain['type'];
+    }
+
     this.searchForm = fb.group({
-      domain: fb.control('', Validators.required),
-      type: fb.control("com", Validators.required)
+      domain: fb.control(domainName, Validators.required),
+      type: fb.control(domainType, Validators.required)
     })
+
+    if (domain) {
+      this.searchDomains();
+    }
   }
 
   ngOnInit(): void {
-
   }
 
   submit() {
     if (this.searchForm.invalid) {
       return;
     }
+    this.searchDomains();
+  }
+
+  searchDomains() {
     let value = this.searchForm.value;
     let domain = value.domain;
     let domains: string[] = [];

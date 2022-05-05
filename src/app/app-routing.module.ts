@@ -94,7 +94,7 @@ const routes: Routes = [
     path:"ticket",component:TicketComponent
   },
   {
-    path:"domain",component:DomaineComponent
+    path:"search-domains",component:DomaineComponent
   },
   {
     path:"web",component:HerbergementwebComponent
