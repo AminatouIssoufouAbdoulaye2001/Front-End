@@ -1,121 +1,175 @@
-<div class="container-xl px-4 " style="margin-top: 8%;">
-  <div class="row">
-    <div class="col-xl-4">
-      <div class="card mb-4 mb-xl-0">
-        <div class="card-header">Image de profil</div>
-        <div class="card-body text-center">
-          <img alt="" class="img-account-profile rounded-circle mb-2"
-               src="http://bootdey.com/img/Content/avatar/avatar1.png">
-          <div class="small font-italic text-muted mb-4">JPG ou PNG</div>
-          <button class="btn btn-primary" type="button">Télécharger une nouvelle image</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-xl-8">
-      <!-- Account details card-->
-      <div class="card mb-4">
-        <div class="card-header">Détails du compte</div>
-        <div class="card-body">
-          <form>
-
-            <div class="row gx-3 mb-3">
-              <div class="col-md-6">
-                <label class="small mb-1" for="inputUsername">Nom d'utilisateur</label>
-                <input class="form-control" id="inputUsername" placeholder="Entrer votre nom d'utilisateur" type="text">
+<app-sidenavbar></app-sidenavbar>
+<div class="app-content content">
+  <div class="content-overlay"></div>
+  <div class="header-navbar-shadow"></div>
+  <div class="content-wrapper">
+    <div class="content-header row"></div>
+    <div class="content-body">
+      <section id="main-body">
+        <div class="container">
+            <div class="row">
+              <div class="col-xl-4">
+                <div class="card mb-4 mb-xl-0">
+                  <div class="card-header">Image de profil</div>
+                  <div class="card-body text-center">
+                    <img alt="" class="img-account-profile rounded-circle mb-2"
+                         src="http://bootdey.com/img/Content/avatar/avatar1.png">
+                    <div class="small font-italic text-muted mb-4">JPG ou PNG</div>
+                    <button class="btn btn-primary" type="button">Télécharger une nouvelle image</button>
+                  </div>
+                </div>
               </div>
-              <div class="col-md-6">
-                <label class="small mb-1" for="inputFirstName">Nom & Prenom</label>
-                <input class="form-control" id="inputFirstName" placeholder="Entrer votre prenom" type="text">
+
+              <div class="col-xl-8">
+                <!-- Account details card-->
+                <div class="card mb-4">
+                  <div class="card-header">Détails du compte</div>
+                  <div class="card-body">
+                    <form (ngSubmit)="submitProfil()" [formGroup]="profilForm">
+
+                      <div class="row gx-3 mb-3">
+                        <div class="col-md-6">
+                          <label class="small mb-1">Nom d'utilisateur</label>
+                          <input
+                            class="form-control"
+                            formControlName="username"
+                            placeholder="Entrer votre nom d'utilisateur"
+                            type="text"
+                          >
+                        </div>
+                        <div class="col-md-6">
+                          <label class="small mb-1">Nom & Prenom</label>
+                          <input
+                            class="form-control"
+                            formControlName="fullName"
+                            placeholder="Entrer votre prenom"
+                            type="text">
+                        </div>
+                      </div>
+
+                      <div class="row gx-3 mb-3">
+                        <div class="col-md-6">
+                          <label class="small mb-1">Adresse e-mail</label>
+                          <input
+                            class="form-control"
+                            formControlName="email"
+                            placeholder="Entrer votre Adresse e-mail"
+                            type="email"
+                          >
+                        </div>
+
+                        <div class="col-md-6">
+                          <label class="small mb-1">Numéro</label>
+                          <input
+                            class="form-control"
+                            formControlName="phone"
+                            placeholder="Entrer votre numéro de téléphone"
+                            type="tel"
+                          >
+                        </div>
+                      </div>
+
+                      <div class="row gx-3 mb-3">
+                        <div class="col-md-4">
+                          <label class="small mb-1" for="inputOrgName">Organization name</label>
+                          <input class="form-control" id="inputOrgName" placeholder="Enter your organization name" type="text">
+                        </div>
+
+                        <div class="col-md-4">
+                          <label class="small mb-1" for="inputLocation">Emplacement</label>
+                          <input class="form-control" id="inputLocation" placeholder="Entrer votre emplacement" type="text">
+                        </div>
+                        <div class="col-md-4">
+                          <label class="small mb-1" for="inputBirthday">Date de naissance</label>
+                          <input class="form-control" id="inputBirthday" name="birthday"
+                                 placeholder="Entrer votre date de naissance"
+                                 type="text">
+                        </div>
+                      </div>
+                      <div class="row justify-content-end" style="margin-right: 1px;">
+                        <button
+                          class="btn btn-primary col-md-2"
+                          type="submit"
+                        >
+                          Sauvegarder
+                        </button>
+                        <button
+                          (click)="resetProfil()"
+                          class="btn btn-danger col-md-2"
+                          type="button"
+                        >
+                          Annuler
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
               </div>
             </div>
-
-            <div class="row gx-3 mb-3">
-              <div class="col-md-6">
-                <label class="small mb-1" for="inputEmailAddress">Adresse e-mail</label>
-                <input class="form-control" id="inputEmailAddress" placeholder="Entrer votre Adresse e-mail"
-                       type="email">
+            <div class="row">
+              <div class="col-lg-4">
+                <div class="card mb-4">
+                  <div class="card-header">Supprimer le compte</div>
+                  <div class="card-body">
+                    <p>La suppression de votre compte est une action permanente et ne peut pas être annulée. Si vous êtes sûr de
+                      vouloir supprimer votre compte, sélectionnez le bouton ci-dessous.</p>
+                    <button class="btn btn-danger" type="button">Je comprends, supprimer mon compte</button>
+                  </div>
+                </div>
               </div>
-
-              <div class="col-md-6">
-                <label class="small mb-1" for="inputPhone">Numéro</label>
-                <input class="form-control" id="inputPhone" placeholder="Entrer votre numéro de téléphone" type="tel">
+              <div class="col-lg-8">
+                <div class="card mb-4">
+                  <div class="card-header">Changer le mot de passe</div>
+                  <div class="card-body">
+                    <form (ngSubmit)="submitChangePassword()" [formGroup]="changePassworForm">
+                      <div class="mb-3">
+                        <label class="small mb-1">Mot de passe actuel</label>
+                        <input
+                          class="form-control"
+                          placeholder="Entrer le mot de passe actuel"
+                          type="password"
+                        >
+                      </div>
+                      <div class="mb-3">
+                        <label class="small mb-1">nouveau mot de passe</label>
+                        <input
+                          class="form-control"
+                          placeholder="Entrer un nouveau mot de passe"
+                          type="password">
+                      </div>
+                      <div class="mb-3">
+                        <label class="small mb-1"
+                        >Confirmez le mot de passe</label>
+                        <input
+                          class="form-control"
+                          placeholder="Confirmer le nouveau mot de passe"
+                          type="password">
+                      </div>
+                      <div class="row justify-content-end" style="margin-right: 1px;">
+                        <button
+                          class="btn btn-primary col-md-2"
+                          type="submit"
+                        >
+                          Sauvegarder
+                        </button>
+                        <button
+                          class="btn btn-danger col-md-2"
+                          type="button"
+                        >
+                          Annuler
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
               </div>
             </div>
+          </div>
 
-            <div class="row gx-3 mb-3">
-              <div class="col-md-4">
-                <label class="small mb-1" for="inputOrgName">Organization name</label>
-                <input class="form-control" id="inputOrgName" placeholder="Enter your organization name" type="text">
-              </div>
-
-              <div class="col-md-4">
-                <label class="small mb-1" for="inputLocation">Emplacement</label>
-                <input class="form-control" id="inputLocation" placeholder="Entrer votre emplacement" type="text">
-              </div>
-              <div class="col-md-4">
-                <label class="small mb-1" for="inputBirthday">Date de naissance</label>
-                <input class="form-control" id="inputBirthday" name="birthday"
-                       placeholder="Entrer votre date de naissance"
-                       type="text">
-              </div>
-            </div>
-            <div class="row gx-3 mb-3 justify-content-end">
-              <div class="col-md-4">
-                <button class="btn btn-primary full-width" type="button">
-                  Sauvegarder les modifications
-                </button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
+      </section>
     </div>
   </div>
 </div>
 
-<div class="container-xl px-4 mt-4">
-  <div class="row">
-    <div class="col-lg-4">
-      <div class="card mb-4">
-        <div class="card-header">Supprimer le compte</div>
-        <div class="card-body">
-          <p>La suppression de votre compte est une action permanente et ne peut pas être annulée. Si vous êtes sûr de
-            vouloir supprimer votre compte, sélectionnez le bouton ci-dessous.</p>
-          <button class="btn btn-danger" type="button">Je comprends, supprimer mon compte</button>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-8">
-      <!-- Change password card-->
-      <div class="card mb-4">
-        <div class="card-header">Changer le mot de passe</div>
-        <div class="card-body">
-          <form>
-            <!-- Form Group (current password)-->
-            <div class="mb-3">
-              <label class="small mb-1" for="currentPassword">Mot de passe actuel</label>
-              <input class="form-control" id="currentPassword" placeholder="Entrer le mot de passe actuel"
-                     type="password">
-            </div>
-            <!-- Form Group (new password)-->
-            <div class="mb-3">
-              <label class="small mb-1" for="newPassword">nouveau mot de passe</label>
-              <input class="form-control" id="newPassword" placeholder="Entrer un nouveau mot de passe" type="password">
-            </div>
-            <!-- Form Group (confirm password)-->
-            <div class="mb-3">
-              <label class="small mb-1" for="confirmPassword">Confirmez le mot de passe</label>
-              <input class="form-control" id="confirmPassword" placeholder="Confirmer le nouveau mot de passe"
-                     type="password">
-            </div>
-            <button
-              class="btn btn-primary btn-right"
-              type="button">
-              Sauvegarder</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+
+
