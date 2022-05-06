@@ -1,22 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {FormBuilder} from "@angular/forms";
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss']
 })
-export class ProfileComponent implements OnInit {
- showProfil = true;
-  constructor() { }
+export class ProfileComponent implements OnInit, OnDestroy {
+
+  constructor(private fb: FormBuilder) {
+
+  }
 
   ngOnInit(): void {
+
   }
 
-  showProfile() {
-    this.showProfil = true;
+  ngOnDestroy(): void {
+
   }
 
-  showSecurity() {
-    this.showProfil = false;
-  }
 }
