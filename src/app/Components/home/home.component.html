@@ -55,7 +55,6 @@
                 formControlName="type">
                 <option value="com">.com</option>
                 <option value="net">.net</option>
-                <option value="io">.tn</option>
                 <option value="info">.info</option>
                 <option value="store">.online</option>
                 <option value="store">.org</option>
@@ -69,6 +68,26 @@
           </form>
           <div *ngIf="formSubmited  && nameCtrl.errors" class="error-color">
             Entrez un nom de domaine
+          </div>
+          <div class="domain-list-wrap text-center">
+            <ul class="list-inline domain-search-list">
+              <li class="list-inline-item bg-white border rounded">
+                <a href="#"><img src="assets/com.png" alt="com" width="70" class="img-fluid">
+                  </a>
+              </li>
+              <li class="list-inline-item bg-white border rounded">
+                <a href="#"><img src="assets/online.png" alt="com" width="70" class="img-fluid">
+              </a>
+              </li>
+              <li class="list-inline-item bg-white border rounded">
+                <a href="#"><img src="assets/net.png" alt="com" width="70" class="img-fluid">
+                 </a>
+              </li>
+              <li class="list-inline-item bg-white border rounded">
+                <a href="#"><img src="assets/org.png" alt="com" width="70" class="img-fluid">
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

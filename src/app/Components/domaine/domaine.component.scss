@@ -192,11 +192,53 @@ table {
     padding-top: 19px!important;
     text-align: center;
     font-size: 15px;
+    background: #bfd6c1;
+    color: #3a573d;
 }
 .btn-ooredoo-green {
     background: #0948b3;
     
 }
+.valide{
+    font-size: 2.5em;
+    font-weight: 500;
+    background: #bfd6c1;
+    color: #3a573d;
+    border-top: 6px solid #3a573d;
+    padding: 30px;
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 20px;
+    border-radius: 6px;
+    line-height: 30px;
+    align-items: center;
+}
+.invalide{
+    font-size: 2.5em;
+    font-weight: 500;
+    background: #c2a0a0;
+    color: #aa2605;
+    border-top: 6px solid #aa2605;
+    padding: 30px;
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 20px;
+    border-radius: 6px;
+    line-height: 30px;
+    align-items: center;
+}
+.pricing-table tbody tr {
+    border-bottom-width: 20px;
+    border-color: white;
+    border-left: 5px solid #3a573d;
+    
+}
+.pricing-table thead {
+    border-bottom-width: 20px;
+    border-color: white;
+}
+
+
 
 //} .btn-brand-01 {
 //     background-color: #083e9b;

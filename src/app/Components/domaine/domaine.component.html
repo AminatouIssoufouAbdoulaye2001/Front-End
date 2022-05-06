@@ -65,6 +65,12 @@
 <section class="domains-pricing marketplace-content">
   <div class="container" style="  margin-bottom: -170px; margin-top: 40px;">
     <h2 class="text-center">Votre Nom de domaine au meilleur Prix</h2>
+    <div class="valide" *ngIf="waitingForSearchResult">
+        <p>Féliciation suggestions disponible</p>
+      </div>
+      <div  class="invalide" *ngIf="!searchAvailableDomains.length && noAvailableDomains">
+        <p>Oups pas de suggestion</p>
+      </div>
     <div class="table-responsive">
       <table class="table table-striped table-hover pricing-table">
         <thead>
@@ -76,12 +82,12 @@
         </thead>
         <tbody>
         <tr *ngFor="let domain of searchAvailableDomains">
-          <td>{{domain.domain}}</td>
+          <td> <i class="pi pi-check"></i> {{domain.domain}}</td>
           <td>{{domain.convertPrice()}} DT HT/an</td>
-          <td class="table-btn">
+          <td>
             <a
-              class="btn btn-ooredoo-green" style="color:white"
-            >Commander</a
+              class="btn btn-ooredoo-green" style="color: white; background: #3a573d; border-color: #5a775d; "
+            > <i class="pi pi-shopping-cart"></i> Commander</a
             >
           </td>
         </tr>
