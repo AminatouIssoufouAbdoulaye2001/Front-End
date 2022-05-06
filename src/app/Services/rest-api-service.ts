@@ -2,7 +2,7 @@ import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {catchError, map, Observable, throwError} from "rxjs";
 import {APIRequestResponse, APIResquestError} from "../Models/api-response.model";
-import {LoginData} from "../Models/user.models";
+import {LoginData, UserInfo} from "../Models/user.models";
 import {environment} from "../../environments/environment";
 import {Domain, DomainAvailable} from "../Models/domain.model";
 
@@ -37,7 +37,7 @@ export class RestApiService {
       domains
     ).pipe(
       map(res => {
-        this.domainsAvailables = [];
+          this.domainsAvailables = [];
           let domains = res.payload.domains as DomainAvailable[];
           domains.forEach(el => {
             this.domainsAvailables.push(new Domain(
@@ -55,10 +55,23 @@ export class RestApiService {
       catchError(err => this.errorHandler(err.error)));
   }
 
+  patchUserProfil(userInfo: UserInfo): Observable<UserInfo> {
+    return this.http.patch<any>(
+      environment.SERVER_URL + `users/${userInfo.id}/profil`,
+      userInfo)
+      .pipe(
+        catchError(err => {
+          console.log(err);
+          return this.errorHandler(err);
+        })
+      )
+  }
+
   private errorHandler(error: APIResquestError) {
 
     // todo: à travailler pour afficher les errors aux utilisateur
     // snackbar, toast
+    console.log(error);
     return throwError({
       success: false,
       payload: null,

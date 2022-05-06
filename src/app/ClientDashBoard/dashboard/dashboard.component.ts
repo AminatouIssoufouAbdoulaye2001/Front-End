@@ -8,12 +8,7 @@ import {UserInfo} from "../../Models/user.models";
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  userProfi = {
-    fullName: '',
-    email: '',
-    username: '',
-    phone: ''
-  }
+  userProfi: UserInfo
 
   constructor(private route: ActivatedRoute) { }
 
