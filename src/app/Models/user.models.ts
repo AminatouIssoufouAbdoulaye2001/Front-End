@@ -11,9 +11,14 @@ export interface User {
   role:string;
 }
 
-export interface UserInfo {
-  username: string,
-  fullName: string,
-  email: string,
-  phone: string,
+export class UserInfo {
+  constructor(
+    public id: number,
+    public username: string,
+    public fullName: string,
+    public email: string,
+    public phone: string
+  ) {
+  }
+
 }

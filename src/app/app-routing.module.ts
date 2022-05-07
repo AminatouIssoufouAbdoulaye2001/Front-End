@@ -103,9 +103,6 @@ const routes: Routes = [
     path:"web",component:HerbergementwebComponent
   },
   {
-    path:"dashboard",component:DashboardComponent
-  },
-  {
     path:"sales",component:HomesaleComponent
   },
   {

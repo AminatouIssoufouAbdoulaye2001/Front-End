@@ -17,7 +17,8 @@ export class TokenInterceptor implements HttpInterceptor {
     if (token) {
       request = request.clone({
         setHeaders: {
-          Authorization: `Bearer ${this.authService.getToken()}`
+          Authorization: `Bearer ${this.authService.getToken()}`,
+          'Access-Control-Allow-Methods': ' GET, POST, PATCH, PUT, DELETE, OPTIONS'
         }
       });
     }

@@ -172,3 +172,9 @@
 .mr-auto, .mx-auto {
     margin-right: auto!important;
 }
+.header-navbar .navbar-container ul.nav li a.dropdown-user-link .user-name {
+    display: inline-block;
+    margin-bottom: -0.565rem;
+    margin-left: 0.2rem;
+    font-weight: 600;
+}

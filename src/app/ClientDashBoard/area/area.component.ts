@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { UserInfo } from 'src/app/Models/user.models';
 
 @Component({
   selector: 'app-area',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AreaComponent implements OnInit {
 
-  constructor() { }
+  userProfi: UserInfo
+
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+      let data = this.route.snapshot.data;
+      this.userProfi =  data['userInfos'] as UserInfo;
   }
-
 }
