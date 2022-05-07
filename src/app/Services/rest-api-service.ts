@@ -5,6 +5,8 @@ import {APIRequestResponse, APIResquestError} from "../Models/api-response.model
 import {LoginData, UserInfo} from "../Models/user.models";
 import {environment} from "../../environments/environment";
 import {Domain, DomainAvailable} from "../Models/domain.model";
+import { PleskClientService } from "./plesk-client.service";
+import { Client } from "../Models/Client.models";
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +14,8 @@ import {Domain, DomainAvailable} from "../Models/domain.model";
 export class RestApiService {
   domainsAvailables: Domain[] = []
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, 
+    private pleskService:PleskClientService) {
   }
 
   login(loginObj: LoginData): Observable<APIRequestResponse> {
@@ -20,7 +23,10 @@ export class RestApiService {
       catchError(err => this.errorHandler(err.error)));
   }
 
-  register(data: any): Observable<APIRequestResponse> {
+  register(data: Client): Observable<APIRequestResponse> {
+    this.pleskService.addClientOnPlesk(data).subscribe(clientInfo=> {
+      data.idplesk=clientInfo.id;
+    })
     return this.http.post<APIRequestResponse>(environment.SERVER_URL + 'users', data).pipe(
       catchError(err => this.errorHandler(err.error()))
     );

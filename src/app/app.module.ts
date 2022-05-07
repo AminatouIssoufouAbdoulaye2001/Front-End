@@ -72,6 +72,7 @@ import { MailsuiteComponent } from './Components/mailsuite/mailsuite.component';
 import { ProfileComponent } from './Profiles/profile/profile.component';
 import { SecuriteComponent } from './Profiles/securite/securite.component';
 import { EnreistrerdomainComponent } from './Panier/enreistrerdomain/enreistrerdomain.component';
+import { PleskClientService } from './Services/plesk-client.service';
 
 @NgModule({
   declarations: [
@@ -166,6 +167,7 @@ import { EnreistrerdomainComponent } from './Panier/enreistrerdomain/enreistrerd
   providers:  [
     ProductserviceService,
     MessageService,
+    PleskClientService,
     ConfirmationService,
     {
       provide: HTTP_INTERCEPTORS,
