@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ConfirmationService, MessageService } from 'primeng/api';
-import { UsersService } from 'src/app/Services/users.service';
+import { UserAdd} from 'src/app/Models/user.models';
 
 @Component({
   selector: 'app-addadmin',
@@ -18,7 +18,7 @@ export class AddadminComponent implements OnInit {
 
   users!: any;
 
-  user!: any ;
+  user!: UserAdd;
 
   selectedUsers?: any[] | any;
 
@@ -28,7 +28,7 @@ export class AddadminComponent implements OnInit {
   myForm = new FormGroup({
     fullName: new FormControl('', [Validators.required]),
     role: new FormControl('', [Validators.required]),
-    username: new FormControl('', [Validators.required]),
+    userName: new FormControl('', [Validators.required]),
   });
   constructor(  private messageService: MessageService,
     private confirmationService: ConfirmationService) {}
@@ -36,13 +36,15 @@ export class AddadminComponent implements OnInit {
   ngOnInit(): void {}
 
   loadData() {
-    // let $user: User = {
-    //   fullName: this.myForm.get('fullName')?.value,
-    //   role: this.myForm.get('role')?.value,
-    //   username: this.myForm.get('username')?.value,
-    // };
-    // console.table($user);
-    // this.users.unshift($user);
+    let $user: UserAdd = {
+      fullName: this.myForm.get('fullName')?.value,
+      role: this.myForm.get('role')?.value,
+      userName: this.myForm.get('userName')?.value,
+      email: this.myForm.get('email')?.value,
+      id: this.myForm.get('id')?.value,
+    };
+    console.table($user);
+    this.users.unshift($user);
     this.myForm.reset();
 
   }
@@ -54,47 +56,47 @@ export class AddadminComponent implements OnInit {
   }
 
   deleteSelectedProducts() {
-    // this.confirmationService.confirm({
-    //   message: 'Are you sure you want to delete the selected products?',
-    //   header: 'Confirm',
-    //   icon: 'pi pi-exclamation-triangle',
-    //
-    //   accept: () => {
-    //     this.users = this.users.filter(
-    //       (val) => this.selectedUsers.includes(val)
-    //     );
-    //     this.selectedUsers = null;
-    //     this.messageService.add({
-    //       severity: 'success',
-    //       summary: 'Successful',
-    //       detail: 'Products Deleted',
-    //       life: 3000,
-    //     });
-    //   },
-    // });
+    this.confirmationService.confirm({
+      message: 'Are you sure you want to delete the selected products?',
+      header: 'Confirm',
+      icon: 'pi pi-exclamation-triangle',
+    
+      accept: () => {
+        this.users = this.users.filter(
+          (val: any) => this.selectedUsers.includes(val)
+        );
+        this.selectedUsers = null;
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Successful',
+          detail: 'Products Deleted',
+          life: 3000,
+        });
+      },
+    });
   }
-  // editProduct(user: User) {
-  //   this.user = { ...user };
-  //   this.productDialog = true;
-  // }
+  editProduct(user: UserAdd) {
+    this.user = { ...user };
+    this.productDialog = true;
+  }
 
-  // deleteProduct(user: User) {
-  //   this.confirmationService.confirm({
-  //     message: 'Are you sure you want to delete ' + user.fullName + '?',
-  //     header: 'Confirm',
-  //     icon: 'pi pi-exclamation-triangle',
-  //     accept: () => {
-  //       this.users = this.users.filter((val) => val.id !== user.id);
-  //     // this.user = {};
-  //       this.messageService.add({
-  //         severity: 'success',
-  //         summary: 'Successful',
-  //         detail: 'Product Deleted',
-  //         life: 3000,
-  //       });
-  //     },
-  //   });
-  // }
+  deleteProduct(user: UserAdd) {
+    this.confirmationService.confirm({
+      message: 'Are you sure you want to delete ' + user.fullName + '?',
+      header: 'Confirm',
+      icon: 'pi pi-exclamation-triangle',
+      accept: () => {
+        this.users = this.users.filter((val:any) => val.id!== user.id);
+      // this.user = {};
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Successful',
+          detail: 'Product Deleted',
+          life: 3000,
+        });
+      },
+    });
+  }
   hideDialog() {
     this.productDialog = false;
     this.submitted = false;

@@ -21,6 +21,8 @@ import { MailsuiteComponent } from './Components/mailsuite/mailsuite.component';
 import { ProfileComponent } from './Profiles/profile/profile.component';
 import { SecuriteComponent } from './Profiles/securite/securite.component';
 import { EnreistrerdomainComponent } from './Panier/enreistrerdomain/enreistrerdomain.component';
+import { AdduserComponent } from './AdminDashBoard/adduser/adduser.component';
+import { AbonnementaddComponent } from './AdminDashBoard/abonnementadd/abonnementadd.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -52,7 +54,7 @@ const routes: Routes = [
     }
   },
   {
-    path: 'adminpage/add',
+    path: 'adminpage/adduser',
     component: AddadminComponent,
     canActivate: [RoleGuard],
     data: {
@@ -66,6 +68,12 @@ const routes: Routes = [
     data: {
       role: 'ROLE_ADMIN'
     }
+  },
+  {
+    path:"adminpage/clients", component:AdduserComponent
+  },
+  {
+    path:"adminpage/abonnementadd" , component:AbonnementaddComponent
   },
   {
     path:"dashboard/client",

@@ -73,6 +73,8 @@ import { ProfileComponent } from './Profiles/profile/profile.component';
 import { SecuriteComponent } from './Profiles/securite/securite.component';
 import { EnreistrerdomainComponent } from './Panier/enreistrerdomain/enreistrerdomain.component';
 import { PleskClientService } from './Services/plesk-client.service';
+import { AdduserComponent } from './AdminDashBoard/adduser/adduser.component';
+import { AbonnementaddComponent } from './AdminDashBoard/abonnementadd/abonnementadd.component';
 
 @NgModule({
   declarations: [
@@ -107,7 +109,10 @@ import { PleskClientService } from './Services/plesk-client.service';
     ProfileComponent,
     SidenavbarComponent,
     SecuriteComponent,
-    EnreistrerdomainComponent
+    EnreistrerdomainComponent,
+    AdduserComponent,
+    ToolbarComponent,
+    AbonnementaddComponent
 
   ],
   imports: [
@@ -162,7 +167,8 @@ import { PleskClientService } from './Services/plesk-client.service';
     MatListModule,
     MatToolbarModule,
     BrowserAnimationsModule,
-    CardModule
+    CardModule,
+    
   ],
   providers:  [
     ProductserviceService,

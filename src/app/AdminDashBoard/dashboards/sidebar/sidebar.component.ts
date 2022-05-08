@@ -38,19 +38,19 @@ export class SidebarComponent implements OnInit {
         tooltip: 'Aller au dashboard',
       },
       {
-        routerLink: '/adminpage/addservice',
-        label: 'Service',
+        routerLink: 'adminpage/addservice',
+        label: 'Services',
         icon: PrimeIcons.SERVER,
         tooltip: 'Gérer vos services',
       },
       {
-        routerLink: '/adminpage/add',
+        routerLink: '/adminpage/adduser',
         label: 'Utilisateurs',
         icon: PrimeIcons.USER_PLUS,
         tooltip: 'Gérer les utilisateurs',
       },
       {
-        routerLink: '/admin/agence/abonnements',
+        routerLink: '/adminpage/abonnementadd',
         label: "Abonnements",
         icon: PrimeIcons.TAGS,
         tooltip: 'Sections des abonnements',
@@ -68,7 +68,7 @@ export class SidebarComponent implements OnInit {
         tooltip: 'Analyser les tickets',
       },
       {
-        routerLink: '/admin/clients',
+        routerLink: '/adminpage/clients',
         label: 'Client',
         icon: PrimeIcons.USER_EDIT,
         tooltip: 'Sections des clients',

@@ -40,4 +40,10 @@ export class CreatNGhostAccount {
   ) {
   }
 }
-
+ export interface UserAdd{
+  id: string;
+  userName: string,
+  fullName: string,
+  email:string
+  role:string
+ }

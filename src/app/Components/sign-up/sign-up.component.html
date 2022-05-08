@@ -1,12 +1,17 @@
-<div class="container" xmlns="http://www.w3.org/1999/html">
-  <div class="d-flex align-items-center mb-3 pb-1" fxLayoutAlign="center center">
-      <span class="h1 fw-bold mb-0" style="color: #0050d5">
-       S' Inscrire
-      </span>
+<div class="row fixed-bottom fixed-top">
+  <div class="col-md-7 col-lg-7">
+    <img src="assets/cloud2.png">
   </div>
+  <div class="col-md-5 col-lg-5" fxLayoutAlign="center none">
+    <div class="login-container">
+      <div class="d-flex align-items-center mt-5 mb-5 pb-1" fxLayoutAlign="center center">
+    <span class="h1 fw-bold mb-0" style="color: #0050d5">
+     Se Connecter
+    </span>
+      </div>
   <form (ngSubmit)="onSubmit()" [formGroup]="signupForm">
     <div class="row">
-      <div class="col-xl-3 mb-1">
+      <div class="col-xl-6 mb-5 ">
       <span class="p-float-label">
         <input
           class="form-control form-control-lg"
@@ -27,7 +32,7 @@
           </p-message>
         </div>
       </div>
-      <div class="col-xl-3 mb-1">
+      <div class="col-xl-6 mb-5">
       <span class="p-float-label">
         <input
           class="form-control form-control-lg"
@@ -51,7 +56,30 @@
           </p-message>
         </div>
       </div>
-      <div class="col-xl-3 mb-1">
+    </div>
+  <div class="row">
+  <div class="col-xl-6 mb-5">
+    <span class="p-float-label">
+      <input
+        class="form-control form-control-lg"
+        formControlName="phone"
+        pInputText
+        type="tel"
+      />
+      <label>Phone</label>
+    </span>
+
+      <div *ngIf="controls['phone']?.invalid && (controls['phone']?.dirty || controls['phone']?.touched)">
+        <p-message
+          *ngIf="(controls['phone']?.errors)!['required']"
+          class="not-first-message"
+          severity="error"
+          text="Le mot de passe de Confirmation est réquise"
+        >
+        </p-message>
+      </div>
+    </div>
+    <div class="col-xl-6 mb-5">
       <span class="p-float-label">
         <input
           class="form-control form-control-lg"
@@ -70,36 +98,14 @@
             *ngIf="(controls['email']?.errors)!['required']"
             class="not-first-message"
             severity="error"
-            text="Le mot de passe de Confirmation est réquise"
+            text="L'e-mail est réquise"
           >
           </p-message>
         </div>
       </div>
-      <div class="col-xl-3 mb-1">
-      <span class="p-float-label">
-        <input
-          class="form-control form-control-lg"
-          formControlName="phone"
-          pInputText
-          type="tel"
-        />
-        <label>Phone</label>
-      </span>
-
-        <div *ngIf="controls['phone']?.invalid && (controls['phone']?.dirty || controls['phone']?.touched)">
-          <p-message
-            *ngIf="(controls['phone']?.errors)!['required']"
-            class="not-first-message"
-            severity="error"
-            text="Le mot de passe de Confirmation est réquise"
-          >
-          </p-message>
-        </div>
-      </div>
-    </div>
-
+</div>
     <div class="row">
-      <div class="col-xl-3 mb-1">
+      <div class="col-xl-6 mb-5">
       <span class="p-float-label">
         <input
           class="form-control form-control-lg"
@@ -110,7 +116,7 @@
         <label> Pays</label>
       </span>
       </div>
-      <div class="col-xl-3 mb-1">
+      <div class="col-xl-6 mb-5">
       <span class="p-float-label">
         <input
           class="form-control form-control-lg"
@@ -121,32 +127,34 @@
         <label>Ville</label>
       </span>
       </div>
-      <div class="col-xl-3 mb-1">
-      <span class="p-float-label">
-        <input
-          class="form-control form-control-lg"
-          formControlName="address"
-          pInputText
-          type="text"
-        />
-        <label>Adresse</label>
-      </span>
-      </div>
-      <div class="col-xl-3 mb-1">
-      <span class="p-float-label">
-        <input
-          class="form-control form-control-lg"
-          formControlName="pcode"
-          pInputText
-          type="text"
-        />
-        <label>Code postal</label>
-      </span>
-      </div>
+     
     </div>
-
+<div class="row">
+  <div class="col-xl-6 mb-5">
+    <span class="p-float-label">
+      <input
+        class="form-control form-control-lg"
+        formControlName="address"
+        pInputText
+        type="text"
+      />
+      <label>Adresse</label>
+    </span>
+    </div>
+    <div class="col-xl-6 mb-5">
+    <span class="p-float-label">
+      <input
+        class="form-control form-control-lg"
+        formControlName="pcode"
+        pInputText
+        type="text"
+      />
+      <label>Code postal</label>
+    </span>
+    </div>
+</div>
     <div class="row">
-      <div class="col-xl-4 mb-1">
+      <div class="col-xl-6 mb-5">
         <span class="p-float-label">
         <input
           class="form-control form-control-lg"
@@ -167,7 +175,7 @@
           </p-message>
         </div>
       </div>
-      <div class="col-xl-4 mb-4">
+      <div class="col-xl-6 mb-5">
         <span class="p-float-label">
         <input
           class="form-control form-control-lg"
@@ -203,9 +211,7 @@
       pRipple
       type="submit"
     ></button>
-  </form>
-  <!-- Choix de catégorie pour l'inscription -->
-  <button
+    <button
     (click)="navigateToHome()"
     aria-label="browse NGHost's content"
     class="p-button-raised p-button-rounded p-button-outlined p-button-secondary btn-block w-100"
@@ -214,6 +220,11 @@
     pButton
     pRipple
     type="button"
-  ></button>
+    ></button>
+  </form>
+  <!-- Choix de catégorie pour l'inscription -->
+ 
+</div>
+
 </div>
 
