@@ -3,6 +3,7 @@ import {RestApiService} from "./rest-api-service";
 import {CreateUserForm, CreatNGhostAccount, UserInfo} from "../Models/user.models";
 import {CreatePleskClientAccount} from "../Models/plesk-client.model";
 import {PleskClientService} from "./plesk-client.service";
+import {Observable, of} from "rxjs";
 
 @Injectable({
   providedIn: "root"
@@ -32,8 +33,16 @@ export class UsersService {
     return this.restApi.getUserProfil();
   }
 
+  desableAccount(userId: number) {
+    return this.restApi.desableAccount(userId);
+  }
+
   patchProfil(userProfil: UserInfo) {
     return this.restApi.patchUserProfil(userProfil);
+  }
+
+  patchPassword(data: any) {
+    return this.restApi.patchPassword(data);
   }
 }
 

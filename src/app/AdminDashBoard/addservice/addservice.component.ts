@@ -22,7 +22,7 @@ export class AddserviceComponent implements OnInit {
 
     status= [
         {value:'ILLIMITE', label:'illimite'},
-        {value: 'FREE', label:'free'} , 
+        {value: 'FREE', label:'free'} ,
         {vakue:'INCLUDED', label:'included'}
     ];
 
@@ -36,11 +36,14 @@ export class AddserviceComponent implements OnInit {
 
   submitted!: boolean;
 
-  constructor(private productService: ProductserviceService, private messageService: MessageService, private confirmationService: ConfirmationService) { }
+  constructor(
+    private productService: ProductserviceService,
+    private messageService: MessageService,
+    private confirmationService: ConfirmationService) { }
 
   ngOnInit() {
       this.productService.getProducts().then(data => this.products = data);
-     
+
   }
 
   openNew() {
@@ -84,13 +87,13 @@ export class AddserviceComponent implements OnInit {
       this.productDialog = false;
       this.submitted = false;
   }
-  
+
   saveProduct() {
       this.submitted = true;
 
       if (this.product.name?.trim()) {
           if (this.product.id) {
-              this.products[this.findIndexById(this.product.id)] = this.product;                
+              this.products[this.findIndexById(this.product.id)] = this.product;
               this.messageService.add({severity:'success', summary: 'Successful', detail: 'Produit mis à jour', life: 3000});
           }
           else {
@@ -194,7 +197,7 @@ export class AddserviceComponent implements OnInit {
   //     message: 'Are you sure you want to delete the selected products?',
   //     header: 'Confirm',
   //     icon: 'pi pi-exclamation-triangle',
-      
+
   //     accept: () => {
   //       this.products = this.products.filter(
   //         (val) => this.selectedProducts.includes(val)

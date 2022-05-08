@@ -13,8 +13,6 @@ export class UserProfilResolver implements Resolve<UserInfo> {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<UserInfo> | Promise<UserInfo> | UserInfo {
-    return this.userService.getUserInfos().pipe(
-      map( res => res.payload)
-    )
+    return this.userService.getUserInfos();
   }
 }

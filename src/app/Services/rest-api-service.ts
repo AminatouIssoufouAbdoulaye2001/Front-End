@@ -41,9 +41,16 @@ export class RestApiService {
       );
   }
 
-  getUserProfil(): Observable<any> {
-    return this.http.get(environment.SERVER_URL + 'users/profil').pipe(
-      catchError(err => this.errorHandler(err.error)));
+  getUserProfil(): Observable<UserInfo> {
+    return this.http.get<APIRequestResponse>(
+      environment.SERVER_URL + 'users/profil')
+      .pipe(
+        map(res => res.payload),
+        catchError(err => {
+            return this.errorHandler(err.error)
+          }
+        )
+      );
   }
 
   getAvailableDomain(domains: string[]): Observable<Domain[]> {
@@ -71,22 +78,41 @@ export class RestApiService {
   }
 
   patchUserProfil(userInfo: UserInfo): Observable<UserInfo> {
-    return this.http.patch<any>(
+    return this.http.patch<APIRequestResponse>(
       environment.SERVER_URL + `users/${userInfo.id}/profil`,
       userInfo)
       .pipe(
+        map(res => res.payload),
         catchError(err => {
-          console.log(err);
           return this.errorHandler(err);
         })
       )
   }
 
-  private errorHandler(error: APIResquestError) {
+  patchPassword(data: any): Observable<APIRequestResponse> {
+    return this.http.patch<APIRequestResponse>(
+      environment.SERVER_URL + `users/${data.userId}/password`, data)
+      .pipe(
+        catchError(err => {
+          return this.errorHandler(err);
+        })
+    )
+  }
+
+  desableAccount(userId: number) {
+    return this.http.delete<APIRequestResponse>(
+      environment.SERVER_URL + `users/${userId}/is-active`)
+      .pipe(
+        catchError(err => {
+          return this.errorHandler(err);
+        })
+      )
+  }
+
+  private errorHandler(error: any) {
 
     // todo: à travailler pour afficher les errors aux utilisateur
     // snackbar, toast
-    console.log(error);
     return throwError({
       success: false,
       payload: null,

@@ -47,7 +47,7 @@ import { ProductserviceService } from './Services/productservice.service';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import {MessagesModule} from 'primeng/messages';
 import { MessageModule } from 'primeng/message';
-import {SkeletonModule} from 'primeng/skeleton';
+import {SkeletonModule} from 'primeng/skeleton'
 import {PasswordModule} from 'primeng/password';
 import {CarouselModule} from 'primeng/carousel';
 import { MatStepperModule } from '@angular/material/stepper';
@@ -108,7 +108,7 @@ import { PleskClientService } from './Services/plesk-client.service';
     SidenavbarComponent,
     SecuriteComponent,
     EnreistrerdomainComponent
-  
+
   ],
   imports: [
     BrowserModule,
