@@ -5,6 +5,7 @@ import {getJquery} from "@utility/js-libraries";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Subscription} from "rxjs";
 import {UsersService} from "../../Services/users.service";
+import {CreateUserForm} from "../../Models/user.models";
 
 var $ = getJquery();
 
@@ -27,11 +28,46 @@ export class SignUpComponent implements OnInit, OnDestroy {
     ) {
 
     this.signupForm = this.fb.group({
-      userName: fb.control('', Validators.required),
-      fullName: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(8)]],
-      passwordConf: ['', [Validators.required, Validators.minLength(8)]],
+      name: fb.control(
+        '',
+        [
+          Validators.required,
+          Validators.minLength(1),
+          Validators.maxLength(60)
+        ]),
+      login: fb.control(
+        '',
+        [
+          Validators.required,
+          Validators.minLength(1),
+          Validators.maxLength(60)
+        ]),
+      email: fb.control(
+        '',
+        [
+          Validators.required,
+          Validators.email,
+          Validators.maxLength(255)
+        ]),
+      phone: fb.control(''),
+      country: fb.control(''),
+      city: fb.control(''),
+      address: fb.control(''),
+      pcode: fb.control(''),
+      password: fb.control(
+        '',
+        [
+          Validators.required,
+          Validators.minLength(5),
+          Validators.maxLength(14)
+        ]),
+      passwordConf:  fb.control(
+        '',
+        [
+          Validators.required,
+          Validators.minLength(5),
+          Validators.maxLength(14)
+        ]),
     });
   }
 
@@ -39,25 +75,24 @@ export class SignUpComponent implements OnInit, OnDestroy {
   }
 
   onSubmit() {
+    if (this.signupForm.invalid)
+        return;
+
     if (this.signupForm.valid) {
-      this.userService.registerUser(this.signupForm.value).subscribe(
+      let formData = this.signupForm.value as CreateUserForm;
+       this.userService.registerUser(formData).subscribe(
         data => {
           console.log(data);
-          this.router.navigate(['../sign-in'], {relativeTo: this.route})
-        }
+          // this.router.navigate(['../sign-in'], {relativeTo: this.route})
+        },
+         error => console.log(error)
       )
     }
   }
 
-  getusername = () => this.signupForm.get('userName');
-
-  getFullName = () => this.signupForm.get('fullName');
-
-  getPassword = () => this.signupForm.get('password');
-
-  getPasswordConf = () => this.signupForm.get('passwordConf');
-
-  getEmail = () => this.signupForm.get('email');
+  get controls() {
+    return this.signupForm.controls;
+  }
 
   navigateToHome() {
     this.router.navigate(['']);

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/Models/user.models';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { UsersService } from 'src/app/Services/users.service';
@@ -17,11 +16,11 @@ export class AddadminComponent implements OnInit {
   // };
   productDialog!: boolean;
 
-  users!: User[];
+  users!: any;
 
-  user!: User ;
+  user!: any ;
 
-  selectedUsers?: User[] | any;
+  selectedUsers?: any[] | any;
 
   submitted!: boolean;
   roles=['Administrateur','Agent technique','Agent commericial'];
@@ -37,13 +36,13 @@ export class AddadminComponent implements OnInit {
   ngOnInit(): void {}
 
   loadData() {
-    let $user: User = {
-      fullName: this.myForm.get('fullName')?.value,
-      role: this.myForm.get('role')?.value,
-      username: this.myForm.get('username')?.value,
-    };
-    console.table($user);
-    this.users.unshift($user);
+    // let $user: User = {
+    //   fullName: this.myForm.get('fullName')?.value,
+    //   role: this.myForm.get('role')?.value,
+    //   username: this.myForm.get('username')?.value,
+    // };
+    // console.table($user);
+    // this.users.unshift($user);
     this.myForm.reset();
 
   }
@@ -55,47 +54,47 @@ export class AddadminComponent implements OnInit {
   }
 
   deleteSelectedProducts() {
-    this.confirmationService.confirm({
-      message: 'Are you sure you want to delete the selected products?',
-      header: 'Confirm',
-      icon: 'pi pi-exclamation-triangle',
-      
-      accept: () => {
-        this.users = this.users.filter(
-          (val) => this.selectedUsers.includes(val)
-        );
-        this.selectedUsers = null;
-        this.messageService.add({
-          severity: 'success',
-          summary: 'Successful',
-          detail: 'Products Deleted',
-          life: 3000,
-        });
-      },
-    });
+    // this.confirmationService.confirm({
+    //   message: 'Are you sure you want to delete the selected products?',
+    //   header: 'Confirm',
+    //   icon: 'pi pi-exclamation-triangle',
+    //
+    //   accept: () => {
+    //     this.users = this.users.filter(
+    //       (val) => this.selectedUsers.includes(val)
+    //     );
+    //     this.selectedUsers = null;
+    //     this.messageService.add({
+    //       severity: 'success',
+    //       summary: 'Successful',
+    //       detail: 'Products Deleted',
+    //       life: 3000,
+    //     });
+    //   },
+    // });
   }
-  editProduct(user: User) {
-    this.user = { ...user };
-    this.productDialog = true;
-  }
+  // editProduct(user: User) {
+  //   this.user = { ...user };
+  //   this.productDialog = true;
+  // }
 
-  deleteProduct(user: User) {
-    this.confirmationService.confirm({
-      message: 'Are you sure you want to delete ' + user.fullName + '?',
-      header: 'Confirm',
-      icon: 'pi pi-exclamation-triangle',
-      accept: () => {
-        this.users = this.users.filter((val) => val.id !== user.id);
-      // this.user = {};
-        this.messageService.add({
-          severity: 'success',
-          summary: 'Successful',
-          detail: 'Product Deleted',
-          life: 3000,
-        });
-      },
-    });
-  }
+  // deleteProduct(user: User) {
+  //   this.confirmationService.confirm({
+  //     message: 'Are you sure you want to delete ' + user.fullName + '?',
+  //     header: 'Confirm',
+  //     icon: 'pi pi-exclamation-triangle',
+  //     accept: () => {
+  //       this.users = this.users.filter((val) => val.id !== user.id);
+  //     // this.user = {};
+  //       this.messageService.add({
+  //         severity: 'success',
+  //         summary: 'Successful',
+  //         detail: 'Product Deleted',
+  //         life: 3000,
+  //       });
+  //     },
+  //   });
+  // }
   hideDialog() {
     this.productDialog = false;
     this.submitted = false;

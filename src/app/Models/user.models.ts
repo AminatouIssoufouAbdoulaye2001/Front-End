@@ -3,32 +3,19 @@ export interface LoginData {
   password: string,
 }
 
-export interface User {
-  id?: number;
-  idPlesk?: number;
-  idNghost?: number;
-  username: string;
-  fullName: string,
-  token?: string;
-  role:string;
-   cname?:string,
-   pname?:string,
-   login?:string,
-   owner_login?:string,
-  passwd?:string,
-   status?:string,
-  phone?:string,
-   fax?:string,
-   email?:string,
-  address?:string,
-   city? :string,
-   locale?:string,
-   state?:string,
-   pcode?:string,
-   country?:string,
-   type?:string,
-   description?:string
+export interface CreateUserForm {
+  name: string;
+  login: string;
+  email: string;
+  phone: string;
+  country: string;
+  city: string;
+  address: string;
+  pcode: string;
+  password: string;
+  passwordConf: string;
 }
+
 
 export class UserInfo {
   constructor(
@@ -37,7 +24,20 @@ export class UserInfo {
     public fullName: string,
     public email: string,
     public phone: string
+  ) { }
+}
+
+export class CreatNGhostAccount {
+
+  constructor(
+    public userName: string,
+    public fullName: string,
+    public email: string,
+    public password: string,
+    public passwordConf: string,
+    public phone: string,
+    public idPlesk: number = 0,
   ) {
   }
-
 }
+

@@ -1,12 +1,12 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
-import {catchError, map, Observable, throwError} from "rxjs";
+import {catchError, map, Observable, switchMap, throwError} from "rxjs";
 import {APIRequestResponse, APIResquestError} from "../Models/api-response.model";
-import {LoginData, UserInfo} from "../Models/user.models";
+import {CreatNGhostAccount, LoginData, UserInfo} from "../Models/user.models";
 import {environment} from "../../environments/environment";
 import {Domain, DomainAvailable} from "../Models/domain.model";
-import { PleskClientService } from "./plesk-client.service";
-import { Client } from "../Models/Client.models";
+import {PleskClientService} from "./plesk-client.service";
+import {CreatePleskClientAccount} from "../Models/plesk-client.model";
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +14,8 @@ import { Client } from "../Models/Client.models";
 export class RestApiService {
   domainsAvailables: Domain[] = []
 
-  constructor(private http: HttpClient, 
-    private pleskService:PleskClientService) {
+  constructor(private http: HttpClient,
+              private pleskService: PleskClientService) {
   }
 
   login(loginObj: LoginData): Observable<APIRequestResponse> {
@@ -23,13 +23,22 @@ export class RestApiService {
       catchError(err => this.errorHandler(err.error)));
   }
 
-  register(data: Client): Observable<APIRequestResponse> {
-    this.pleskService.addClientOnPlesk(data).subscribe(clientInfo=> {
-      data.idplesk=clientInfo.id;
-    })
-    return this.http.post<APIRequestResponse>(environment.SERVER_URL + 'users', data).pipe(
-      catchError(err => this.errorHandler(err.error()))
-    );
+  register(
+    pleskAccount: CreatePleskClientAccount,
+    ngHostAccount: CreatNGhostAccount
+  ): Observable<any> {
+
+    return this.pleskService.addClientOnPlesk(pleskAccount)
+      .pipe(
+        map(res => res.id),
+        switchMap(id => {
+          ngHostAccount.idPlesk = id;
+          return this.http.post<APIRequestResponse>(
+            environment.SERVER_URL + 'users',
+            ngHostAccount)
+        }),
+        catchError(err => this.errorHandler(err.error()))
+      );
   }
 
   getUserProfil(): Observable<any> {

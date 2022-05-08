@@ -1,103 +1,57 @@
-<div class="login-container">
+<div class="container" xmlns="http://www.w3.org/1999/html">
   <div class="d-flex align-items-center mb-3 pb-1" fxLayoutAlign="center center">
       <span class="h1 fw-bold mb-0" style="color: #0050d5">
        S' Inscrire
       </span>
   </div>
-  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
-    <div class="mb-4">
+  <form (ngSubmit)="onSubmit()" [formGroup]="signupForm">
+    <div class="row">
+      <div class="col-xl-3 mb-1">
       <span class="p-float-label">
         <input
           class="form-control form-control-lg"
-          formControlName="userName"
+          formControlName="login"
           id="emailInput"
           pInputText
           type="text"
         />
         <label> Nom d'utilisateur</label>
       </span>
-
-      <div *ngIf="getusername()?.invalid && (getusername()?.dirty || getusername()?.touched)">
-        <p-message
-          *ngIf="(getusername()?.errors)!['required']"
-          class="not-first-message"
-          severity="error"
-          text="Nom d'utilisateur requis"
-        >
-        </p-message>
+        <div *ngIf="controls['login']?.invalid && (controls['login']?.dirty || controls['login']?.touched)">
+          <p-message
+            *ngIf="(controls['login']?.errors)!['required']"
+            class="not-first-message"
+            severity="error"
+            text="Nom d'utilisateur requis"
+          >
+          </p-message>
+        </div>
       </div>
-    </div>
-
-    <div class="mb-4">
+      <div class="col-xl-3 mb-1">
       <span class="p-float-label">
         <input
           class="form-control form-control-lg"
-          formControlName="fullName"
+          formControlName="name"
           pInputText
           type="text"
         />
         <label>Nom et Prénom</label>
       </span>
 
-      <!--Error messages-->
-      <div *ngIf="getFullName()?.invalid && (getFullName()?.dirty || getFullName()?.touched)">
-        <p-message
-          *ngIf="(getFullName()?.errors)!['required']"
-          class="not-first-message"
-          severity="error"
-          text="Le nom et le Prénom sont réquis"
+        <!--Error messages-->
+        <div
+          *ngIf="controls['name']?.invalid && (controls['name']?.dirty || controls['name']?.touched)"
         >
-        </p-message>
-      </div>
-    </div>
-
-    <div class=" row mb-4">
-      <div class="col-lg-6">
-        <span class="p-float-label">
-        <input
-          class="form-control form-control-lg"
-          formControlName="password"
-          pInputText
-          type="password"
-        />
-        <label>Mot de passe</label>
-      </span>
-
-        <div *ngIf="getPassword()?.invalid && (getPassword()?.dirty || getPassword()?.touched)">
           <p-message
-            *ngIf="(getPassword()?.errors)!['required']"
+            *ngIf="(controls['name']?.errors)!['required']"
             class="not-first-message"
             severity="error"
-            text="Le mot de passe est réquis"
+            text="Le nom et le Prénom sont réquis"
           >
           </p-message>
         </div>
       </div>
-      <div class="col-lg-6">
-        <span class="p-float-label">
-        <input
-          class="form-control form-control-lg"
-          formControlName="passwordConf"
-          pInputText
-          type="password"
-        />
-        <label>Confirmation de mot de passe</label>
-      </span>
-
-        <div *ngIf="getPasswordConf()?.invalid && (getPasswordConf()?.dirty || getPasswordConf()?.touched)">
-          <p-message
-            *ngIf="(getPasswordConf()?.errors)!['required']"
-            class="not-first-message"
-            severity="error"
-            text=" la Confirmation est réquise"
-          >
-          </p-message>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="mb-4">
+      <div class="col-xl-3 mb-1">
       <span class="p-float-label">
         <input
           class="form-control form-control-lg"
@@ -109,20 +63,138 @@
         <label>Email</label>
       </span>
 
-      <div *ngIf="getPasswordConf()?.invalid && (getPasswordConf()?.dirty || getPasswordConf()?.touched)">
-        <p-message
-          *ngIf="(getPasswordConf()?.errors)!['required']"
-          class="not-first-message"
-          severity="error"
-          text="Le mot de passe de Confirmation est réquise"
+        <div
+          *ngIf="controls['email']?.invalid && (controls['email']?.dirty || controls['email']?.touched)"
         >
-        </p-message>
+          <p-message
+            *ngIf="(controls['email']?.errors)!['required']"
+            class="not-first-message"
+            severity="error"
+            text="Le mot de passe de Confirmation est réquise"
+          >
+          </p-message>
+        </div>
+      </div>
+      <div class="col-xl-3 mb-1">
+      <span class="p-float-label">
+        <input
+          class="form-control form-control-lg"
+          formControlName="phone"
+          pInputText
+          type="tel"
+        />
+        <label>Phone</label>
+      </span>
+
+        <div *ngIf="controls['phone']?.invalid && (controls['phone']?.dirty || controls['phone']?.touched)">
+          <p-message
+            *ngIf="(controls['phone']?.errors)!['required']"
+            class="not-first-message"
+            severity="error"
+            text="Le mot de passe de Confirmation est réquise"
+          >
+          </p-message>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xl-3 mb-1">
+      <span class="p-float-label">
+        <input
+          class="form-control form-control-lg"
+          formControlName="country"
+          pInputText
+          type="text"
+        />
+        <label> Pays</label>
+      </span>
+      </div>
+      <div class="col-xl-3 mb-1">
+      <span class="p-float-label">
+        <input
+          class="form-control form-control-lg"
+          formControlName="city"
+          pInputText
+          type="text"
+        />
+        <label>Ville</label>
+      </span>
+      </div>
+      <div class="col-xl-3 mb-1">
+      <span class="p-float-label">
+        <input
+          class="form-control form-control-lg"
+          formControlName="address"
+          pInputText
+          type="text"
+        />
+        <label>Adresse</label>
+      </span>
+      </div>
+      <div class="col-xl-3 mb-1">
+      <span class="p-float-label">
+        <input
+          class="form-control form-control-lg"
+          formControlName="pcode"
+          pInputText
+          type="text"
+        />
+        <label>Code postal</label>
+      </span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xl-4 mb-1">
+        <span class="p-float-label">
+        <input
+          class="form-control form-control-lg"
+          formControlName="password"
+          pInputText
+          type="password"
+        />
+        <label>Mot de passe</label>
+      </span>
+
+        <div *ngIf="controls['password']?.invalid && (controls['password']?.dirty || controls['password']?.touched)">
+          <p-message
+            *ngIf="(controls['password']?.errors)!['required']"
+            class="not-first-message"
+            severity="error"
+            text="Le mot de passe est réquis"
+          >
+          </p-message>
+        </div>
+      </div>
+      <div class="col-xl-4 mb-4">
+        <span class="p-float-label">
+        <input
+          class="form-control form-control-lg"
+          formControlName="passwordConf"
+          pInputText
+          type="password"
+        />
+        <label>Confirmation de mot de passe</label>
+      </span>
+
+        <div
+          *ngIf="controls['passwordConf']?.invalid && (controls['passwordConf']?.dirty || controls['passwordConf']?.touched)"
+        >
+          <p-message
+            *ngIf="(controls['passwordConf']?.errors)!['required']"
+            class="not-first-message"
+            severity="error"
+            text=" la Confirmation est réquise"
+          >
+          </p-message>
+        </div>
       </div>
     </div>
 
     <button
-      [style]="{ color: '#0050d5' }"
       [disabled]="signupForm.invalid"
+      [ngClass]="{ 'valid-form-color': signupForm.valid, 'invalid-form-color': signupForm.invalid }"
       class="p-button-raised p-button-rounded p-button-success p-button-outlined btn-block w-100"
       icon="pi pi-sign-in"
       id="goButton"
@@ -143,6 +215,5 @@
     pRipple
     type="button"
   ></button>
-
 </div>
 

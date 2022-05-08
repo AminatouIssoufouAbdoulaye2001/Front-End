@@ -16,7 +16,7 @@ export class AuthService {
   constructor(private apiService: RestApiService) {
   }
 
-  register = (data: any) => this.apiService.register(data);
+  // register = (data: any) => this.apiService.register(data);
 
   login(data: LoginData) {
     return this.apiService.login(data).pipe(
