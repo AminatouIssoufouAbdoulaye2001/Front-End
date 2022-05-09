@@ -11,8 +11,7 @@ import {Observable, of} from "rxjs";
 export class UsersService {
 
   constructor(
-    private restApi: RestApiService,
-    private pleskService: PleskClientService
+    private restApi: RestApiService
   ) {
   }
 
@@ -26,7 +25,7 @@ export class UsersService {
       data.password, data.passwordConf, data.phone
     );
 
-    return this.pleskService.addClientOnPlesk(pleskAccount);
+    return this.restApi.register(pleskAccount,ngHostAccount)
   }
 
   getUserInfos() {

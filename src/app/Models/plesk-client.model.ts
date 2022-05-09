@@ -12,18 +12,18 @@ export class CreatePleskClientAccount {
   public description: string;
   public type: string;
   public password: string;
+  public idPlesk: number;
 
   constructor(formValue: CreateUserForm) {
-    this.name = "John Smith";
-    this.company = "Plesk";
-    this.login = "john-unit-test";
+    this.name = formValue.name;
+    this.company = "";
+    this.login = formValue.login;
     this.status = 0;
-    this.email = "john_shmith@msn.com";
-    this.locale = "en-US";
+    this.email = formValue.email;
+    this.locale = "fr-FR";
     this.owner_login = "admin";
-    this.external_id = "link:12345"
     this.description = "Nice guy";
-    this.password = "changeme1Q**";
-    this.type = "reseller";
+    this.password = formValue.password;
+    this.type = "customer";
   }
 }

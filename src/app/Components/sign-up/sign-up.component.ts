@@ -6,6 +6,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {Subscription} from "rxjs";
 import {UsersService} from "../../Services/users.service";
 import {CreateUserForm} from "../../Models/user.models";
+import { PleskClientService } from 'src/app/Services/plesk-client.service';
 
 var $ = getJquery();
 
@@ -82,8 +83,7 @@ export class SignUpComponent implements OnInit, OnDestroy {
       let formData = this.signupForm.value as CreateUserForm;
        this.userService.registerUser(formData).subscribe(
         data => {
-          console.log(data);
-          // this.router.navigate(['../sign-in'], {relativeTo: this.route})
+          this.router.navigate(['../sign-in'], {relativeTo: this.route})
         },
          error => console.log(error)
       )

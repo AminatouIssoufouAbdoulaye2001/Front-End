@@ -10,7 +10,7 @@ export class PleskClientService {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
       'Accept': 'application/json',
-      'X-API-Key': `45261b34-1a23-8eef-75c8-c58166819c16`
+      'X-API-Key': `8184f4eb-c091-c5bd-4bdb-9e85b5a98103`
     })
   };
   private pleskUrl = 'https://cps.tn:8443/api/v2/clients';  // URL to web api with client endpoint
@@ -30,13 +30,12 @@ export class PleskClientService {
 
   /** POST: add a new client to the server */
 
-  addClientOnPlesk(client: CreatePleskClientAccount): Observable<CreatedClientInfo> {
+  addClientOnPlesk(client: any): Observable<CreatedClientInfo> {
     return this.http.post<CreatedClientInfo>(
       this.pleskUrl,
       client,
       this.httpOptions
     ).pipe(
-      tap(res => console.log(res)),
       catchError(err => {
         console.log(err);
         throw err;
