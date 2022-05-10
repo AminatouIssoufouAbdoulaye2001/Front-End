@@ -43,6 +43,10 @@ export class UsersService {
   patchPassword(data: any) {
     return this.restApi.patchPassword(data);
   }
+
+  getCustomer() {
+    return this.restApi.getCustomer();
+  }
 }
 
 

@@ -109,6 +109,14 @@ export class RestApiService {
       )
   }
 
+  getCustomer() {
+    return this.http.get<APIRequestResponse>(environment.SERVER_URL + `users/customers`)
+    .pipe(
+      catchError(err =>  this.errorHandler(err))
+    )
+  }
+
+
   private errorHandler(error: any) {
 
     // todo: à travailler pour afficher les errors aux utilisateur
