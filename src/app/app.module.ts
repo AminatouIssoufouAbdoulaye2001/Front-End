@@ -10,7 +10,7 @@ import {SignUpComponent} from './Components/sign-up/sign-up.component';
 import {HomeComponent} from './Components/home/home.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatError, MatFormFieldModule} from '@angular/material/form-field';
 import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -75,6 +75,7 @@ import { EnreistrerdomainComponent } from './Panier/enreistrerdomain/enreistrerd
 import { PleskClientService } from './Services/plesk-client.service';
 import { AdduserComponent } from './AdminDashBoard/adduser/adduser.component';
 import { AbonnementaddComponent } from './AdminDashBoard/abonnementadd/abonnementadd.component';
+import { PaymentComponent } from './Components/payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -112,8 +113,8 @@ import { AbonnementaddComponent } from './AdminDashBoard/abonnementadd/abonnemen
     EnreistrerdomainComponent,
     AdduserComponent,
     ToolbarComponent,
-    AbonnementaddComponent
-
+    AbonnementaddComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,
@@ -168,6 +169,7 @@ import { AbonnementaddComponent } from './AdminDashBoard/abonnementadd/abonnemen
     MatToolbarModule,
     BrowserAnimationsModule,
     CardModule,
+    
     
   ],
   providers:  [

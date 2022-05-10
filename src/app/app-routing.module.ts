@@ -19,10 +19,10 @@ import { HerbergementwebComponent } from './Components/herbergementweb/herbergem
 import { HomesaleComponent } from './Components/homesale/homesale.component';
 import { MailsuiteComponent } from './Components/mailsuite/mailsuite.component';
 import { ProfileComponent } from './Profiles/profile/profile.component';
-import { SecuriteComponent } from './Profiles/securite/securite.component';
 import { EnreistrerdomainComponent } from './Panier/enreistrerdomain/enreistrerdomain.component';
 import { AdduserComponent } from './AdminDashBoard/adduser/adduser.component';
 import { AbonnementaddComponent } from './AdminDashBoard/abonnementadd/abonnementadd.component';
+import { PaymentComponent } from './Components/payment/payment.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -85,7 +85,7 @@ const routes: Routes = [
       },
       {
         path:"profil", component:ProfileComponent
-      }
+      },
     ],
     canActivate: [RoleGuard],
     data: {
@@ -120,7 +120,7 @@ const routes: Routes = [
     path:"profile", component:ProfileComponent
   },
   {
-    path:"securiter", component:SecuriteComponent
+    path:"paid", component:PaymentComponent
   },
   {
     path:"Edomain", component:EnreistrerdomainComponent
