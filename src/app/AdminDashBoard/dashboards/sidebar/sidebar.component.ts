@@ -44,12 +44,6 @@ export class SidebarComponent implements OnInit {
         tooltip: 'Gérer vos services',
       },
       {
-        routerLink: '/adminpage/adduser',
-        label: 'Utilisateurs',
-        icon: PrimeIcons.USER_PLUS,
-        tooltip: 'Gérer les utilisateurs',
-      },
-      {
         routerLink: '/adminpage/abonnementadd',
         label: "Abonnements",
         icon: PrimeIcons.TAGS,
@@ -74,11 +68,17 @@ export class SidebarComponent implements OnInit {
         tooltip: 'Sections des clients',
       },
       {
+        routerLink: '/adminpage/profil',
+        label: 'Profil',
+        icon: PrimeIcons.USER_PLUS,
+        tooltip: 'Informations du profil',
+      },
+      {
         routerLink: '',
         label: 'Déconnexion',
         icon: PrimeIcons.SIGN_OUT,
         tooltip: 'Terminer votre session',
-      },
+      }
     ];
   };
 

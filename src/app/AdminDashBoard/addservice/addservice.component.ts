@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MessageService, ConfirmationService } from 'primeng/api';
 import { Product } from 'src/app/Models/produits';
 import { ProductserviceService } from 'src/app/Services/productservice.service';
@@ -26,6 +26,8 @@ export class AddserviceComponent implements OnInit {
         {vakue:'INCLUDED', label:'included'}
     ];
 
+  productForm: FormGroup;
+
   productDialog!: boolean;
 
   products!: Product[];
@@ -39,7 +41,13 @@ export class AddserviceComponent implements OnInit {
   constructor(
     private productService: ProductserviceService,
     private messageService: MessageService,
-    private confirmationService: ConfirmationService) { }
+    private confirmationService: ConfirmationService,
+    private fb: FormBuilder
+    ) { 
+        this.productForm = fb.group({
+            
+        })
+    }
 
   ngOnInit() {
       this.productService.getProducts().then(data => this.products = data);

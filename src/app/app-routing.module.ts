@@ -49,13 +49,21 @@ const routes: Routes = [
     path: 'dashboard/admin',
     component: AdminpageComponent,
     canActivate: [RoleGuard],
-    data: {
+    data: { 
       role: 'ROLE_ADMIN'
     }
   },
   {
     path: 'adminpage/adduser',
     component: AddadminComponent,
+    canActivate: [RoleGuard],
+    data: {
+      role: 'ROLE_ADMIN'
+    }
+  },
+  {
+    path: 'adminpage/profil',
+    component: ProfileComponent,
     canActivate: [RoleGuard],
     data: {
       role: 'ROLE_ADMIN'
