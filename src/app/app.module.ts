@@ -76,6 +76,7 @@ import { PleskClientService } from './Services/plesk-client.service';
 import { AdduserComponent } from './AdminDashBoard/adduser/adduser.component';
 import { AbonnementaddComponent } from './AdminDashBoard/abonnementadd/abonnementadd.component';
 import { PaymentComponent } from './Components/payment/payment.component';
+import { HebergementComponent } from './test/hebergement/hebergement.component';
 
 @NgModule({
   declarations: [
@@ -114,7 +115,8 @@ import { PaymentComponent } from './Components/payment/payment.component';
     AdduserComponent,
     ToolbarComponent,
     AbonnementaddComponent,
-    PaymentComponent
+    PaymentComponent,
+    HebergementComponent
   ],
   imports: [
     BrowserModule,
