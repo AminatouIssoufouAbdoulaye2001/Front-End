@@ -1,119 +1,167 @@
-
 <app-toolbar></app-toolbar>
 <div class="container mt-5">
 
   <p-toast></p-toast>
 
   <div class="card">
-      <p-toolbar styleClass="p-mb-4 mb-3">
-          <ng-template pTemplate="left">
-              <button pButton pRipple label="New" icon="pi pi-plus" class="p-button-success btn p-mr-2" (click)="openNew()"></button>
-              <button pButton pRipple label="Delete" icon="pi pi-trash" class="p-button-danger btn" (click)="deleteSelectedProducts()" [disabled]="!selectedProducts || !selectedProducts.length"></button>
-          </ng-template>
+    <p-toolbar styleClass="p-mb-4 mb-3">
+      <ng-template pTemplate="left">
+        <button (click)="openNew()" class="p-button-success btn p-mr-2" icon="pi pi-plus" label="New" pButton
+                pRipple></button>
+      </ng-template>
+    </p-toolbar>
 
-          <ng-template pTemplate="right">
-              <p-fileUpload mode="basic" accept="image/*" [maxFileSize]="1000000" label="Import" chooseLabel="Import" class="p-mr-2 p-d-inline-block btn"></p-fileUpload>
-              <button pButton pRipple label="Export" icon="pi pi-upload" class="p-button-help btn"></button>
-          </ng-template>
-      </p-toolbar>
-
-      <p-table #dt [value]="products" [rows]="10" [paginator]="true" [globalFilterFields]="['name','country.name','representative.name','status']"
-          [(selection)]="selectedProducts" [rowHover]="true" dataKey="id"
-          currentPageReportTemplate="Montrant {first} à {last} de {totalRecords} entrées" [showCurrentPageReport]="true">
-          <ng-template pTemplate="caption" >
-            <div class="flex align-items-center justify-content-between">
-              <h3 class="m-0">Gestion des produits</h3>
-              <span class="p-input-icon-left">
+    <p-table #dt
+             [(selection)]="selectedProducts" [globalFilterFields]="['name','price']" [paginator]="true"
+             [rowHover]="true"
+             [rows]="10" [showCurrentPageReport]="true" [value]="products"
+             currentPageReportTemplate="Montrant {first} à {last} de {totalRecords} entrées"
+             dataKey="id">
+      <ng-template pTemplate="caption">
+        <div class="flex align-items-center justify-content-between">
+          <h3 class="m-0">Gestion des produits</h3>
+          <span class="p-input-icon-left">
                   <i class="pi pi-search"></i>
-                  <!-- <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')" placeholder="Search..." /> -->
+            <!-- <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')" placeholder="Search..." /> -->
               </span>
-          </div>
-          </ng-template>
-          <ng-template pTemplate="header">
-              <tr>
-                  <th style="width: 3rem">
-                      <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
-                  </th>
-                  <th pSortableColumn="name">Name <p-sortIcon field="name"></p-sortIcon></th>
-                  <th pSortableColumn="price">Price <p-sortIcon field="price"></p-sortIcon></th>
-                  <th pSortableColumn="stockage">Stockage <p-sortIcon field="stockage"></p-sortIcon></th>
-                  <th pSortableColumn="core">Core</th>
-                  <th pSortableColumn="website">WebSite</th>
-                  <th pSortableColumn="bandeWidth">Bande passante</th>
-                  <th pSortableColumn="domaine">Domaine</th>
-                  <th></th>
-              </tr>
-          </ng-template>
-          <ng-template pTemplate="body" let-product>
-              <tr>
-                  <td>
-                      <p-tableCheckbox [value]="product"></p-tableCheckbox>
-                  </td>
-                  <td>{{product.name}}</td>
-                  <td>{{product.price | currency:'TND'}}</td>
-                  <td>{{product.core}}</td>
-                  <td>{{product.website}}</td>
-                  <td>{{product.stockage}}</td>
-                  <td><span [class]="'product-badge status-' + product.bandeWidth.toLowerCase()">{{product.bandeWidth}}</span></td>
-                  <td><span [class]="'product-badge status-' + product.domaine.toLowerCase()">{{product.domaine}}</span></td>
-                  <td>
-                      <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success btn" (click)="editProduct(product)"></button>
-                      <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning btn" (click)="deleteProduct(product)"></button>
-                  </td>
-              </tr>
-          </ng-template>
-          <ng-template pTemplate="summary">
-              <div class="p-d-flex p-ai-center p-jc-between">
-                Au total il y a {{products ? products.length : 0 }} produits.
-              </div>
-          </ng-template>
-      </p-table>
+        </div>
+      </ng-template>
+      <ng-template pTemplate="header">
+        <tr>
+          <th pSortableColumn="name">Name
+            <p-sortIcon field="name"></p-sortIcon>
+          </th>
+          <th pSortableColumn="price">Price
+            <p-sortIcon field="price"></p-sortIcon>
+          </th>
+          <th pSortableColumn="memorySpace">Stockage
+            <p-sortIcon field="memorySpace"></p-sortIcon>
+          </th>
+          <th pSortableColumn="nbCore">Core</th>
+          <th pSortableColumn="domain">Domaine</th>
+          <th pSortableColumn="bandwidth">Bande passante</th>
+          <th pSortableColumn="nbEmail">Nombre de Email Pro</th>
+          <th></th>
+        </tr>
+      </ng-template>
+      <ng-template let-product pTemplate="body">
+        <tr>
+          <td>{{product.name}}</td>
+          <td>{{product.price }} TND</td>
+          <td>{{product.memorySpace}} GO</td>
+          <td>{{product.nbCore}}</td>
+          <td>
+            <span [class]="'product-badge status-' + product.domain.toLowerCase()">{{product.domain}}</span>
+          </td>
+          <td>
+            <span [class]="'product-badge status-' + product.bandwidth.toLowerCase()">{{product.bandwidth}}
+            </span>
+          </td>
+          <td>
+            <span [class]="'product-badge status-' + product.nbEmail">{{product.nbEmail}}
+            </span>
+          </td>
+          <td>
+            <button
+              (click)="editProduct(product)"
+              class="p-button-rounded p-button-success btn"
+              icon="pi pi-pencil"
+              pButton
+              pRipple></button>
+            <button
+              (click)="deleteProduct(product)"
+              class="p-button-rounded p-button-warning btn" icon="pi pi-trash" pButton
+              pRipple></button>
+          </td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="summary">
+        <div class="p-d-flex p-ai-center p-jc-between">
+          Au total il y a {{products ? products.length : 0 }} produits.
+        </div>
+      </ng-template>
+    </p-table>
   </div>
 
-  <p-dialog [(visible)]="productDialog" [style]="{width: '450px'}" header="Product Details" [modal]="true" styleClass="p-fluid">
-      <ng-template pTemplate="content">
-          <div class="p-field">
-              <label for="name">Name</label>
-              <input type="text" pInputText id="name" [(ngModel)]="product.name" required autofocus />
-              <small class="p-invalid" *ngIf="submitted && !product.name">Name is required.</small>
-          </div>
-        <div class="field">
-          <label for="inventoryStatus">Bande passante</label>
-          <p-dropdown [(ngModel)]="product.bandeWidth" inputId="bandeWidth" [options]="status" placeholder="Select">
-              <ng-template let-option pTemplate="item">
-                  <span [class]="'product-badge status-' + option.value">{{option.label}}</span>
-              </ng-template>
-          </p-dropdown>
+  <p-dialog
+    [(visible)]="productDialog"
+    [modal]="true"
+    [style]="{width: '450px'}"
+    header="Product Details"
+    styleClass="p-fluid"
+  >
+    <ng-template pTemplate="content">
+      <div class="p-field">
+        <label>Name</label>
+        <input
+          [(ngModel)]="product.name"
+          autofocus
+          pInputText
+          required
+          type="text"/>
+        <small *ngIf="submitted && !product.name" class="p-invalid">Name is required.</small>
+      </div>
+      <div class="field">
+        <label>Bande passante</label>
+        <p-dropdown
+          [(ngModel)]="product.bandwidth" [options]="status"
+          inputId="bandeWidth" placeholder="Sélectionner">
+          <ng-template let-option pTemplate="item">
+            <span [class]="'product-badge status-' + option">{{option}}</span>
+          </ng-template>
+        </p-dropdown>
       </div>
 
-      <div class="field">
-        <label for="domaine">Domaine</label>
-        <p-dropdown [(ngModel)]="product.domaine" inputId="domaine" [options]="status" placeholder="Select">
-            <ng-template let-option pTemplate="item">
-                <span [class]="'product-badge status-' + option.value">{{option.label}}</span>
-            </ng-template>
-        </p-dropdown>
-    </div>
-          <div class="p-formgrid p-grid">
-              <div class="p-field p-col">
-                  <label for="price">Price</label>
-                  <p-inputNumber id="price" [(ngModel)]="product.price" mode="currency" currency="TND" ></p-inputNumber>
-              </div>
-              <div class="p-field p-col">
-                  <label for="quantity">Core</label>
-                  <p-inputNumber id="core" [(ngModel)]="product.core"></p-inputNumber>
-              </div>
-            <div class="p-field">
-              <label for="stockage">Stockage</label>
-              <input type="text" pInputText id="stockage" [(ngModel)]="product.stockage" required autofocus />
-          </div>
-          </div>
-      </ng-template>
+      <div class="p-field">
+        <label>Domaine</label>
+        <input
+          [(ngModel)]="product.domain"
+          autofocus
+          pInputText
+          required
+          type="text"/>
+        <small *ngIf="submitted && !product.domain" class="p-invalid">le nom du domain est obligatoire.</small>
+      </div>
+      <div class="p-formgrid p-grid">
+        <div class="p-field p-col">
+          <label for="price">Price</label>
+          <p-inputNumber [(ngModel)]="product.price" currency="TND" id="price" mode="currency"></p-inputNumber>
+        </div>
+        <div class="p-field p-col">
+          <label>Core</label>
+          <p-inputNumber [(ngModel)]="product.nbCore" id="core"></p-inputNumber>
+        </div>
+        <div class="p-field p-col">
+          <label>Nombre de email</label>
+          <p-inputNumber [(ngModel)]="product.nbEmail" id="nbEmail"></p-inputNumber>
+        </div>
+        <div class="p-field p-col">
+          <label>Ram</label>
+          <p-inputNumber [(ngModel)]="product.ram" id="ram"></p-inputNumber>
+        </div>
+        <div class="p-field p-col">
+          <label>Space Mémoire</label>
+          <p-inputNumber [(ngModel)]="product.memorySpace" id="memorySpace"></p-inputNumber>
+        </div>
+        <div class="p-field">
+          <label for="stockage">Stockage</label>
+          <input [(ngModel)]="product.nbDatabase" autofocus id="stockage" pInputText required type="text"/>
+        </div>
+      </div>
+    </ng-template>
 
-      <ng-template pTemplate="footer">
-          <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="hideDialog()"></button>
-          <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="saveProduct()"></button>
-      </ng-template>
+    <ng-template pTemplate="footer">
+      <button
+        (click)="saveProduct()" class="p-button-icon"
+        icon="pi pi-check" label="Enregistrer"
+        pButton pRipple>
+      </button>
+      <button
+        (click)="hideDialog()" class="p-button-danger"
+        icon="pi pi-times" label="Annuler"
+        pButton
+        pRipple></button>
+    </ng-template>
   </p-dialog>
 
   <p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>

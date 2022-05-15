@@ -1,7 +1,7 @@
 <div id="mainCoantiner">
     <!--dust particel-->
     <div class="margin-body">
-    
+
     <div>
       <div class="starsec"></div>
       <div class="starthird"></div>
@@ -9,82 +9,36 @@
       <div class="starfifth"></div>
     </div>
     <!--Dust particle end--->
-    
-    <div class="row">
-      <div class="col-sm-4 col-md-4 pricing-column-wrapper">
-         <div class="pricing-column">
+
+    <div class="row justify-content-center">
+      <div class="col-sm-4 col-md-4 pricing-column-wrapper" *ngFor="let service of services">
+         <div class="pricing-column" >
                 <div class="pricing-price-row">
                   <div class="pricing-price-wrapper">
                     <div class="pricing-price">
-                      <div class="pricing-cost">TND 45</div>
+                      <div class="pricing-cost">{{service.price}} TND</div>
                       <div class="time">Par an</div>
                     </div>
                   </div>
                 </div>
                 <div class="pricing-row-title">
-                  <div class="pricing_row_title">small</div>
+                  <div class="pricing_row_title" style="font-size: 15px">{{service.name}}</div>
                 </div>
-                <figure class="pricing-row">Photo sharing school</figure>
-                <figure class="pricing-row"><span style="color: #5f727f;">Drop out ramen hustle</span></figure>
-                <figure class="pricing-row"><span style="color: #5f727f;">Crush revenue traction</span></figure>
-                <figure class="pricing-row strike">Crush revenue traction</figure>
-                <figure class="pricing-row strike">User base minimum viable</figure>
-                <figure class="pricing-row strike">Lorem ipsum dolor</figure>
-                <div class="pricing-footer">
-                  <div class="gem-button-container gem-button-position-center"><a class="gem-button gem-purpel">order now</a></div>
-                </div>
-              </div>
-      </div>
-      <div class="col-sm-4 col-md-4 pricing-column-wrapper">
-        <div class="pricing-column">
-                <div class="pricing-price-row">
-                  <div class="pricing-price-wrapper">
-                    <div class="pricing-price">
-                      <div class="pricing-cost">TND 99</div>
-                      <div class="time">Par an</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="pricing-row-title">
-                  <div class="pricing_row_title">medium</div>
-                </div>
-                <figure class="pricing-row">Photo sharing school</figure>
-                <figure class="pricing-row"><span>Drop out ramen hustle</span></figure>
-                <figure class="pricing-row"><span style="color: #5f727f;">Crush revenue traction</span></figure>
-                <figure class="pricing-row">Crush revenue traction</figure>
-                <figure class="pricing-row strike">User base minimum viable</figure>
-                <figure class="pricing-row strike">Lorem ipsum dolor</figure>
+                <figure class="pricing-row">Domaine: </figure>
+                <figure class="pricing-row"><span style="color: #5f727f;">Space SSD: {{service.memorySpace}} GO</span></figure>
+                <figure class="pricing-row"><span style="color: #5f727f;"> {{service.nbEmail}} Email Pro</span></figure>
+                <figure class="pricing-row strike"> {{service.nbDatabase}} Base de donnée</figure>
+                <figure class="pricing-row strike">CPU Core: {{service.nbCore}}</figure>
+                <figure class="pricing-row strike">Ram: {{service.ram}}</figure>
+                <figure class="pricing-row strike">Bande Passante: {{service.bandwidth}}</figure>
                 <div class="pricing-footer">
                   <div class="gem-button-container gem-button-position-center">
-                    <a class="gem-button gem-orange">order now</a></div>
-                </div>
-              </div>
-      </div>
-      <div class="col-sm-4 col-md-4 pricing-column-wrapper">
-        <div class="pricing-column">
-                <div class="pricing-price-row">
-                  <div class="pricing-price-wrapper">
-                    <div class="pricing-price">
-                      <div style=" " class="pricing-cost">TND 145</div>
-                      <div class="time" style="display:inline-block;">Par an</div>
-                    </div>
+                    <a class="gem-button gem-purpel">Commander</a>
                   </div>
-                </div>
-                <div class="pricing-row-title">
-                  <div class="pricing_row_title">large</div>
-                </div>
-                <figure class="pricing-row">Photo sharing school</figure>
-                <figure class="pricing-row"><span style="color: #5f727f;">Drop out ramen hustle</span></figure>
-                <figure class="pricing-row"><span style="color: #5f727f;">Crush revenue traction</span></figure>
-                <figure class="pricing-row">Crush revenue traction</figure>
-                <figure class="pricing-row">User base minimum</figure>
-                <figure class="pricing-row strike">Lorem ipsum dolor</figure>
-                <div class="pricing-footer">
-                  <div class="gem-button-container gem-button-position-center"><a class="gem-button gem-yellow">order now</a></div>
                 </div>
               </div>
       </div>
     </div>
-  
+
    </div>
   </div>

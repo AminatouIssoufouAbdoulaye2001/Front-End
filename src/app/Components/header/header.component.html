@@ -1,65 +1,61 @@
 <header class="head">
   <section>
-    <div class= "bottom-header">
-      <div class= "container">
+    <div class="bottom-header">
+      <div class="container">
         <nav class="navbar navbar-expand-lg  mt-3">
-          <img routerLink="" class="logo"  src="assets/logo.png" alt="">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <img alt="" class="logo" routerLink="" src="assets/logo.png">
+          <button aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
+                  data-target="#navbarNavDropdown" data-toggle="collapse" type="button">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavDropdown" style="margin-left: 254px;">
             <ul class="navbar-nav" style="margin-top: -13px;">
               <li class="nav-item">
                 <div class="btn-group me-3">
-                  <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+                  <div aria-label="Button group with nested dropdown" class="btn-group" ngbDropdown role="group">
                     <span class="btn" ngbDropdownToggle>HEBERGEMENT WEB</span>
                     <div class="dropdown-menu" ngbDropdownMenu>
                       <span class="btn" ngbDropdownItem><a href="#" routerLink="/web"><i class="fas fa-server"></i>Hebergement Advanced</a></span>
                       <span class="btn" ngbDropdownItem><a href="#" routerLink="/web"><i class="fas fa-cloud"></i>Hebergement Basic</a></span>
-                      <span class="btn" ngbDropdownItem><a href="#" routerLink="/web"><i class="fab fa-cloudversify"></i> Hebergement Pro</a></span>
+                      <span class="btn" ngbDropdownItem><a href="#" routerLink="/web"><i
+                        class="fab fa-cloudversify"></i> Hebergement Pro</a></span>
                     </div>
                   </div>
                 </div>
               </li>
               <li class="nav-item">
                 <div class="btn-group me-3">
-                  <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+                  <div aria-label="Button group with nested dropdown" class="btn-group" ngbDropdown role="group">
                     <span class="btn" ngbDropdownToggle>NOM DE DOMAINE</span>
                     <div class="dropdown-menu" ngbDropdownMenu>
 
-                      <span class="btn" ngbDropdownItem><a routerLink="/search-domains" href="#"> <i class="fas fa-copyright instagram-color"></i>Enregistrer un domaine</a></span>
-                      <span class="btn" ngbDropdownItem><a routerLink="/domain" href="#"> <i class="fas fa-exchange-alt color-accent"></i> Transferer un domaine</a></span>
-                      <span class="btn" ngbDropdownItem><a routerLink="/search-domains" href="#"><i class="fas fa-globe"></i>Verifier un domaine</a></span>
+                      <span class="btn" ngbDropdownItem><a href="#" routerLink="/search-domains"> <i
+                        class="fas fa-copyright instagram-color"></i>Enregistrer un domaine</a></span>
+                      <span class="btn" ngbDropdownItem><a href="#" routerLink="/domain"> <i
+                        class="fas fa-exchange-alt color-accent"></i> Transferer un domaine</a></span>
+                      <span class="btn" ngbDropdownItem><a href="#" routerLink="/search-domains"><i
+                        class="fas fa-globe"></i>Verifier un domaine</a></span>
                     </div>
                   </div>
                 </div>
               </li>
-              <!-- <li class="nav-item">
+              <li active class="nav-item">
                 <div class="btn-group me-3">
-                  <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
-                    <span class="btn" ngbDropdownToggle>Serveurs</span>
-                    <div class="dropdown-menu" ngbDropdownMenu>
-                      <span class="btn" ngbDropdownItem><a href="#"><i class="fab fa-linux"></i> Cloud VPS Linux</a></span>
-                      <span class="btn" ngbDropdownItem><a href="#"><i class="fab fa-windows"></i>Cloud VPS Windows</a></span>
-                      <span class="btn" ngbDropdownItem><a href="#"> <i class="fas fa-database"></i>Serveurs Dédiés</a></span>
-                    </div>
-                  </div>
-                </div>
-              </li> -->
-              <li class="nav-item" active>
-                <div class="btn-group me-3">
-                  <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+                  <div aria-label="Button group with nested dropdown" class="btn-group" ngbDropdown role="group">
                     <span class="btn" ngbDropdownToggle>MAIL PRO</span>
                     <div class="dropdown-menu" ngbDropdownMenu>
-                      <span class="btn" ngbDropdownItem><a href="#" routerLink="/mail"><i class="fas fa-lock icon-size-lg color-primary"></i>EMAIL Entreprise Suite</a></span>
+                      <span class="btn" ngbDropdownItem><a href="#" routerLink="/mail"><i
+                        class="fas fa-lock icon-size-lg color-primary"></i>EMAIL Entreprise Suite</a></span>
                     </div>
                   </div>
                 </div>
               </li>
               <li aria-haspopup="true" class="espace-client" style="float:right;">
-
-                <a class="btn topbn" href="/account" style="  width: 200px;"><i class="fas fa-user-circle"></i> ESPACE CLIENT</a>
-
+                <a class="btn topbn" [href] = "dashboardLink" style="  width: 200px;">
+                  <i class="fas fa-user-circle"></i>
+                  <span *ngIf="!isAuthenticate">Connexion</span>
+                  <span *ngIf="isAuthenticate">Espace client</span>
+                </a>
               </li>
             </ul>
           </div>

@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {catchError, map, Observable, switchMap, throwError} from "rxjs";
-import {APIRequestResponse, APIResquestError} from "../Models/api-response.model";
+import {APIRequestResponse} from "../Models/api-response.model";
 import {CreatNGhostAccount, LoginData, UserInfo} from "../Models/user.models";
 import {environment} from "../../environments/environment";
 import {Domain, DomainAvailable} from "../Models/domain.model";
@@ -96,7 +96,7 @@ export class RestApiService {
         catchError(err => {
           return this.errorHandler(err);
         })
-    )
+      )
   }
 
   desableAccount(userId: number) {
@@ -111,9 +111,9 @@ export class RestApiService {
 
   getCustomer() {
     return this.http.get<APIRequestResponse>(environment.SERVER_URL + `users/customers`)
-    .pipe(
-      catchError(err =>  this.errorHandler(err))
-    )
+      .pipe(
+        catchError(err => this.errorHandler(err))
+      )
   }
 
 
