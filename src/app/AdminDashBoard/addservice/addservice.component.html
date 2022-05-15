@@ -48,7 +48,7 @@
         <tr>
           <td>{{product.name}}</td>
           <td>{{product.price }} TND</td>
-          <td>{{product.memorySpace}} GO</td>
+          <td>{{product.memorySpace}}</td>
           <td>{{product.nbCore}}</td>
           <td>
             <span [class]="'product-badge status-' + product.domain.toLowerCase()">{{product.domain}}</span>
@@ -135,16 +135,28 @@
           <label>Nombre de email</label>
           <p-inputNumber [(ngModel)]="product.nbEmail" id="nbEmail"></p-inputNumber>
         </div>
-        <div class="p-field p-col">
+        <div class="p-field">
           <label>Ram</label>
-          <p-inputNumber [(ngModel)]="product.ram" id="ram"></p-inputNumber>
-        </div>
-        <div class="p-field p-col">
-          <label>Space Mémoire</label>
-          <p-inputNumber [(ngModel)]="product.memorySpace" id="memorySpace"></p-inputNumber>
+          <input
+            [(ngModel)]="product.ram"
+            autofocus
+            pInputText
+            required
+            type="text"/>
+          <small *ngIf="submitted && !product.ram" class="p-invalid">la ram est requise.</small>
         </div>
         <div class="p-field">
-          <label for="stockage">Stockage</label>
+          <label>Espace mémoire</label>
+          <input
+            [(ngModel)]="product.memorySpace"
+            autofocus
+            pInputText
+            required
+            type="text"/>
+          <small *ngIf="submitted && !product.memorySpace" class="p-invalid">l'espace mémoire est obligatoire.</small>
+        </div>
+        <div class="p-field">
+          <label for="stockage">Nombre de Db</label>
           <input [(ngModel)]="product.nbDatabase" autofocus id="stockage" pInputText required type="text"/>
         </div>
       </div>
