@@ -18,6 +18,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
   changePassworForm: FormGroup;
   sub = new Subscription();
   userProfil: any;
+  avatar = '';
 
   constructor(
     private fb: FormBuilder,
@@ -40,14 +41,16 @@ export class ProfileComponent implements OnInit, OnDestroy {
         Validators.required,
         Validators.email
       ]),
-      phone: fb.control('')
+      phone: fb.control(''),
+      img: fb.control('', Validators.required)
     })
   }
 
   ngOnInit(): void {
     this.sub.add(
       this.userService.getUserInfos().subscribe(
-        data => {
+        (data: any) => {
+          data.img ?  this.avatar = data.img : this.avatar = "../../../assets/profil.png";
           this.userProfil = data;
           this.profilForm.reset(data)
         }
@@ -109,24 +112,24 @@ export class ProfileComponent implements OnInit, OnDestroy {
           })
         )
         .subscribe(
-        data => {
-          if (data.success) {
+          data => {
+            if (data.success) {
+              this.messageService.add({
+                severity: 'success',
+                summary: 'Message',
+                detail: data.payload,
+              });
+            }
+          },
+          error => {
+            console.log(error);
             this.messageService.add({
-              severity: 'success',
+              severity: 'error',
               summary: 'Message',
-              detail: data.payload,
+              detail: error.message,
             });
           }
-        },
-        error => {
-          console.log(error);
-          this.messageService.add({
-            severity: 'error',
-            summary: 'Message',
-            detail: error.message,
-          });
-        }
-      )
+        )
     )
   }
 
@@ -140,6 +143,28 @@ export class ProfileComponent implements OnInit, OnDestroy {
     )
 
   }
+
+  uploadImage(event: any) {
+    let files = event.target.files;
+    if (files.length) {
+      let img = files[0];
+      if (img.type === "image/png" || img.type === "image/jpg") {
+
+        let reader = new FileReader();
+
+        reader.addEventListener('load', (event) => {
+          this.avatar =  event.target?.result?.toString() || '';
+          this.profilForm.patchValue({
+            img: this.avatar
+          })
+          this.submitProfil();
+        });
+
+        reader.readAsDataURL(img);
+      }
+    }
+  }
+
   ngOnDestroy(): void {
     this.sub.unsubscribe();
   }

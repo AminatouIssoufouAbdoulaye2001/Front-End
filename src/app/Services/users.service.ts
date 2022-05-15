@@ -2,8 +2,6 @@ import {Injectable} from "@angular/core";
 import {RestApiService} from "./rest-api-service";
 import {CreateUserForm, CreatNGhostAccount, UserInfo} from "../Models/user.models";
 import {CreatePleskClientAccount} from "../Models/plesk-client.model";
-import {PleskClientService} from "./plesk-client.service";
-import {Observable, of} from "rxjs";
 
 @Injectable({
   providedIn: "root"
@@ -25,7 +23,7 @@ export class UsersService {
       data.password, data.passwordConf, data.phone
     );
 
-    return this.restApi.register(pleskAccount,ngHostAccount)
+    return this.restApi.register(pleskAccount, ngHostAccount)
   }
 
   getUserInfos() {
