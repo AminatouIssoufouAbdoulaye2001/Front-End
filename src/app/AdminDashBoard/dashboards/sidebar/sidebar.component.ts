@@ -32,7 +32,13 @@ export class SidebarComponent implements OnInit {
   loadLinks = () => {
     this.links = [
       {
-        routerLink: '/adminpage/dashboard',
+        routerLink: '/',
+        label: 'Home',
+        icon: PrimeIcons.HOME,
+        tooltip: "Revenir à la page d'acceuil",
+      },
+      {
+        routerLink: 'dashboard/admin',
         label: 'Dashboard',
         icon: PrimeIcons.CHART_LINE,
         tooltip: 'Aller au dashboard',
