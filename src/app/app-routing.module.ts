@@ -23,6 +23,7 @@ import { EnreistrerdomainComponent } from './Panier/enreistrerdomain/enreistrerd
 import { AdduserComponent } from './AdminDashBoard/adduser/adduser.component';
 import { AbonnementaddComponent } from './AdminDashBoard/abonnementadd/abonnementadd.component';
 import { PaymentComponent } from './Components/payment/payment.component';
+import {SalesRatioComponent} from "./AdminDashBoard/dashboards/sales-ratio/sales-ratio.component";
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -48,8 +49,25 @@ const routes: Routes = [
   {
     path: 'dashboard/admin',
     component: AdminpageComponent,
+    children: [
+      {
+        path: '',
+        component: SalesRatioComponent,
+      },
+      {
+        path: 'services',
+        component: AddserviceComponent,
+      },
+      {
+        path:"customers", component:AdduserComponent
+      },
+      {
+        path: 'profil',
+        component: ProfileComponent,
+      },
+    ],
     canActivate: [RoleGuard],
-    data: { 
+    data: {
       role: 'ROLE_ADMIN'
     }
   },
@@ -60,25 +78,6 @@ const routes: Routes = [
     data: {
       role: 'ROLE_ADMIN'
     }
-  },
-  {
-    path: 'adminpage/profil',
-    component: ProfileComponent,
-    canActivate: [RoleGuard],
-    data: {
-      role: 'ROLE_ADMIN'
-    }
-  },
-  {
-    path: 'adminpage/addservice',
-    component: AddserviceComponent,
-    canActivate: [RoleGuard],
-    data: {
-      role: 'ROLE_ADMIN'
-    }
-  },
-  {
-    path:"adminpage/clients", component:AdduserComponent
   },
   {
     path:"adminpage/abonnementadd" , component:AbonnementaddComponent

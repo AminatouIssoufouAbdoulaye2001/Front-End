@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Router } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import { MenuItem, PrimeIcons } from 'primeng/api';
 import {AuthService} from "../../../Services/auth.service";
 
@@ -20,7 +20,11 @@ export class SidebarComponent implements OnInit {
 
   displayWeather: boolean = false;
 
-  constructor(private _router: Router, private authService: AuthService) {}
+  constructor(
+    private _router: Router,
+    private authService: AuthService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
     this.sidebarAffiche();
@@ -38,49 +42,49 @@ export class SidebarComponent implements OnInit {
         tooltip: "Revenir à la page d'acceuil",
       },
       {
-        routerLink: 'dashboard/admin',
+        routerLink: '',
         label: 'Dashboard',
         icon: PrimeIcons.CHART_LINE,
         tooltip: 'Aller au dashboard',
       },
       {
-        routerLink: 'adminpage/addservice',
+        routerLink: 'services',
         label: 'Services',
         icon: PrimeIcons.SERVER,
         tooltip: 'Gérer vos services',
       },
+      // {
+      //   routerLink: '/adminpage/abonnementadd',
+      //   label: "Abonnements",
+      //   icon: PrimeIcons.TAGS,
+      //   tooltip: 'Sections des abonnements',
+      // },
+      // {
+      //   routerLink: '/admin/factures',
+      //   label: 'Factures',
+      //   icon: PrimeIcons.MONEY_BILL,
+      //   tooltip: 'Génerer les factures',
+      // },
+      // {
+      //   routerLink: '/admin/ticket',
+      //   label: 'Ticket',
+      //   icon: PrimeIcons.TICKET,
+      //   tooltip: 'Analyser les tickets',
+      // },
       {
-        routerLink: '/adminpage/abonnementadd',
-        label: "Abonnements",
-        icon: PrimeIcons.TAGS,
-        tooltip: 'Sections des abonnements',
-      },
-      {
-        routerLink: '/admin/factures',
-        label: 'Factures',
-        icon: PrimeIcons.MONEY_BILL,
-        tooltip: 'Génerer les factures',
-      },
-      {
-        routerLink: '/admin/ticket',
-        label: 'Ticket',
-        icon: PrimeIcons.TICKET,
-        tooltip: 'Analyser les tickets',
-      },
-      {
-        routerLink: '/adminpage/clients',
+        routerLink: 'customers',
         label: 'Client',
         icon: PrimeIcons.USER_EDIT,
         tooltip: 'Sections des clients',
       },
       {
-        routerLink: '/adminpage/profil',
+        routerLink: 'profil',
         label: 'Profil',
         icon: PrimeIcons.USER_PLUS,
         tooltip: 'Informations du profil',
       },
       {
-        routerLink: '',
+        routerLink: 'logout',
         label: 'Déconnexion',
         icon: PrimeIcons.SIGN_OUT,
         tooltip: 'Terminer votre session',
@@ -130,11 +134,17 @@ export class SidebarComponent implements OnInit {
   };
 
   lezgo(routerLink: string) {
-    console.log(routerLink);
-    if (routerLink === '') {
+    if (routerLink === 'logout') {
       this.authService.logOut();
-      this._router.navigate([`${routerLink}`]);
-    } else this._router.navigate([`${routerLink}`]);
+      this._router.navigate(['']);
+    } else if(routerLink === '') {
+      this._router.navigate(['dashboard/admin']);
+    }
+    else
+    {
+      console.log(routerLink)
+      this._router.navigate([`${routerLink}`], {relativeTo: this.route});
+    }
   }
 
   notifyClosing = () => this.closeNotifier.emit(false);

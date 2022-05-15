@@ -22,7 +22,7 @@ export class CreatePleskClientAccount {
     this.email = formValue.email;
     this.locale = "fr-FR";
     this.owner_login = "admin";
-    this.description = "Nice guy";
+    this.description = "";
     this.password = formValue.password;
     this.type = "customer";
   }
