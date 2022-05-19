@@ -32,13 +32,15 @@
           <th pSortableColumn="price">Price
             <p-sortIcon field="price"></p-sortIcon>
           </th>
-          <th pSortableColumn="memorySpace">Stockage
+          <th pSortableColumn="memorySpace">SSD
             <p-sortIcon field="memorySpace"></p-sortIcon>
           </th>
           <th pSortableColumn="nbCore">Core</th>
           <th pSortableColumn="domain">Domaine</th>
           <th pSortableColumn="bandwidth">Bande passante</th>
           <th pSortableColumn="nbEmail">Nombre de Email Pro</th>
+          <th pSortableColumn="nbEmail">Nombre de BD</th>
+          <th pSortableColumn="nbEmail">Ram</th>
           <th></th>
         </tr>
       </ng-template>
@@ -57,6 +59,14 @@
           </td>
           <td>
             <span [class]="'product-badge status-' + product.nbEmail">{{product.nbEmail}}
+            </span>
+          </td>
+          <td>
+            <span [class]="'product-badge status-' + product.nbDatabase">{{product.nbDatabase}}
+            </span>
+          </td>
+          <td>
+            <span [class]="'product-badge status-' + product.ram">{{product.ram}}
             </span>
           </td>
           <td>
@@ -97,7 +107,7 @@
           pInputText
           required
           type="text"/>
-        <small *ngIf="submitted && !product.name" class="p-invalid">Name is required.</small>
+        <small *ngIf="submitted && !product.name" class=" erreur p-invalid"> Nom est required.</small>
       </div>
       <div class="field">
         <label>Bande passante</label>
@@ -118,7 +128,7 @@
           pInputText
           required
           type="text"/>
-        <small *ngIf="submitted && !product.domain" class="p-invalid">le nom du domain est obligatoire.</small>
+        <small *ngIf="submitted && !product.domain" class="erreur p-invalid">le champs domain est obligatoire.</small>
       </div>
       <div class="p-formgrid p-grid">
         <div class="p-field p-col">
@@ -141,17 +151,17 @@
             pInputText
             required
             type="text"/>
-          <small *ngIf="submitted && !product.ram" class="p-invalid">la ram est requise.</small>
+          <small *ngIf="submitted && !product.ram" class="erreur p-invalid">la ram est requise.</small>
         </div>
         <div class="p-field">
-          <label>Espace mémoire</label>
+          <label>Disque SSD</label>
           <input
             [(ngModel)]="product.memorySpace"
             autofocus
             pInputText
             required
             type="text"/>
-          <small *ngIf="submitted && !product.memorySpace" class="p-invalid">l'espace mémoire est obligatoire.</small>
+          <small *ngIf="submitted && !product.memorySpace" class="erreur p-invalid">l'espace mémoire est obligatoire.</small>
         </div>
         <div class="p-field">
           <label for="stockage">Nombre de Db</label>

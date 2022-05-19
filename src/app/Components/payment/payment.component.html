@@ -1,12 +1,207 @@
-<div class="container">
-    <h2 class="mt-5 mb-4">Angular Stripe Checkout Example</h2>
-    <div class="col-md-5 mb-2">
-      <button (click)="makePayment(15)" class="btn btn-danger btn-block">Pay $15</button>
-    </div>
-    <div class="col-md-5 mb-2">
-      <button (click)="makePayment(25)" class="btn btn-primary btn-block">Pay $25</button>
-    </div>
-    <div class="col-md-5">
-      <button (click)="makePayment(35)" class="btn btn-success btn-block">Pay $35</button>
-    </div>
+<!-- <div class="container-fluid">
+    <div class="row">
+      <div class="well col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3">
+         
+          <div class="row">
+            <span class="head">
+              <div class="text-center">
+                <h1>Résumé</h1>
+            </div>
+            </span>
+              <table class="table table-hover">
+                  <thead>
+                      <tr>
+                          <th class="text-center">Produits </th>
+                          <th></th>
+                          <th></th>
+                          <th class="text-center">Prix</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                        <td class="col-md-9"><h4><em>Hebergement Basic</em></h4></td>
+                        <th></th>
+                        <th></th>
+                        <td class="col-md-2 text-center">16 TND</td>
+                    </tr>
+                      <tr>
+                        <td class="col-md-9"><h4><em>Hebergement Basic</em></h4></td>
+                        <th></th>
+                        <th></th>
+                        <td class="col-md-9 text-center">16 TND</td>
+                    </tr>
+                      <tr>
+                          <td class="col-md-9"><h4><em>Hebergement Basic</em></h4></td>
+                          <th></th>
+                          <th></th>
+                          <td class="col-md-2 text-center">16 TND</td>
+                      </tr>
+                      <tr>
+                          <td>   </td>
+                          <td>   </td>
+                          <td class="text-right">
+                          <p>
+                              <strong>Sous-total: </strong>
+                          </p>
+                          <p>
+                              <strong>TVA: </strong>
+                          </p></td>
+                          <td class="text-center">
+                          <p>
+                              <strong>6.94TND</strong>
+                          </p>
+                          <p>
+                              <strong>6.94TND</strong>
+                          </p></td>
+                      </tr>
+                      <tr>
+                          <td> </td>
+                          <td> </td>
+                          <td class="text-right"><h4><strong>Total à payé: </strong></h4></td>
+                          <td class="text-center text-danger"><h4><strong>31.53TND</strong></h4></td>
+                      </tr>
+                  </tbody>
+              </table>
+              <button type="button" class="btn btn-lg btn-block" (click)="makePayment(31)">
+                Payer maitenant <span class="fas fa-arrow-circle-right"></span>
+              </button>
+          </div>
+      </div>
   </div>
+   -->
+   <!-- <nav class="navbar navbar-expand-md">
+    <div class="container">
+        <a class="navbar-brand" routerLink="/"> <i class="pi pi-chevron-circle-left"></i> Acceuil</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
+
+            <form class="form-inline my-2 my-lg-0">
+                <a class="btn btn-success btn-sm ml-3" routerLink="/">
+                    <i class="fa fa-shopping-cart"></i> Panier
+                    <span class="badge badge-light">3</span>
+                </a>
+            </form>
+        </div>
+    </div>
+</nav> -->
+<app-header></app-header>
+<section class="jumbotron text-center">
+    <!-- <div class="container">
+        <h1 class="jumbotron-heading">Les services aux quelles vous vous abonnez</h1>
+     </div> -->
+</section>
+<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+<div class="container bootstrap snippets bootdey" style="margin-bottom: -150px;">
+    <div class="col-md-9 col-sm-8 content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-info panel-shadow">
+                    <div class="panel-heading">
+                        <h3>
+                            <img class="img-circle img-thumbnail" src="https://bootdey.com/img/Content/user_3.jpg">
+                            Matew darfkmoun
+                        </h3>
+                    </div>
+                    <div class="panel-body"> 
+                        <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th></th>
+                                <th></th>
+                                <th>Prix</th>
+                                <th></th>
+                                <th></th>
+                               
+                            </tr>
+                            </thead>
+                            
+                                <tbody>
+                                    <ng-template let-service>
+                                        <tr>
+                                            <td>{{service.name}}</td>
+                                            <td><strong>Product 1</strong><p>Size : 26</p></td>
+                                            <td></td>
+                                            <td>{{service.price}}</td>
+                                            <td>
+                                                <form class="form-inline">
+                                                    <button rel="tooltip" class="btn btn-default"><i class="fa fa-pencil"></i></button>
+                                                    <a href="#" class="btn btn-primary"><i class="fa fa-trash-o"></i></a>
+                                                </form>
+                                                </td>
+                                        </tr>
+                                    </ng-template>
+                                   
+                      
+                                    <tr>
+                                        <td>Poduits</td>
+                                        <td><strong>Product 1</strong><p>Size : 26</p></td>
+                                        <td></td>
+                                        <td>$54.00</td>
+                                        <td>
+                                            <form class="form-inline">
+                                                <button rel="tooltip" class="btn btn-default">
+                                                    <a href="#" class="btn btn-primary">
+                                                        <i class="fa fa-trash-o"></i></a>
+                                                </button>
+                                               
+                                            </form>
+                                            </td>
+                                            <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="6">&nbsp;</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td colspan="5" class="text-right">Total</td>
+                                        <td>$27DT</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="5" class="text-right">TVA @ 19.00%</td>
+                                        <td>27DT</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="5" class="text-right"><strong>Total à payé</strong></td>
+                                        <td>$88.00</td>
+                                    </tr>
+                                </tbody>
+                           
+                        </table>
+                    </div>
+                </div>
+                </div>
+                <a href="#" ><span class="glyphicon glyphicon-arrow-left"></span>&nbsp;</a>
+                <a href="#" ><span class="glyphicon glyphicon-arrow-left"></span>&nbsp;</a>
+
+            </div>
+        </div>
+    </div>
+</div>
+             
+<div class="container mb-4">
+    <div class="row">
+        <div class="col-12">
+            <div class="table-responsive">
+                
+            </div>
+        </div>
+        <div class="col mb-2">
+            <div class="row">
+                <div class="col-sm-12  col-md-6">
+                    <button class="btn btn-block btn-light"></button>
+                </div>
+                <div class="col-sm-12 col-md-6 text-right">
+                    <button class="btn btn-lg btn-block text-uppercase" style="margin-bottom: -300px;margin-right: 60px; color: white;" (click)="makePayment(31)"><span class="fas fa-arrow-circle-right"></span> Payé maitenant pour s'abonner à ce service</button>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+</div>
+<app-footer></app-footer>
+<!-- Footer -->

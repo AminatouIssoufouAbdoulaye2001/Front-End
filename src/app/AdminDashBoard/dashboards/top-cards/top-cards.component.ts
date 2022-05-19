@@ -23,25 +23,25 @@ export class TopCardsComponent implements OnInit {
       {
         bgcolor: 'success',
         icon: PrimeIcons.DOLLAR,
-        title: '21,000 DT',
+        title: '100,000 DT',
         subtitle: 'Revenus',
       },
       {
         bgcolor: 'danger',
         icon: PrimeIcons.GLOBE,
-        title: '15',
+        title: '5',
         subtitle: 'Domaines',
       },
       {
         bgcolor: 'warning',
         icon: PrimeIcons.USERS,
-        title: '456',
+        title: '10',
         subtitle: 'Utilisateurs',
       },
       {
         bgcolor: 'info',
         icon: PrimeIcons.TICKET,
-        title: '10',
+        title: '0',
         subtitle: 'Tickets',
       },
     ];

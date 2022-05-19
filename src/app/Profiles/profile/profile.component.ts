@@ -42,7 +42,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
         Validators.email
       ]),
       phone: fb.control(''),
-      img: fb.control('', Validators.required)
+      img: fb.control('')
     })
   }
 

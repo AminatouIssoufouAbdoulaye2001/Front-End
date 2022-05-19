@@ -71,7 +71,7 @@
                       </div>
                     </div>
 
-                    <div class="row gx-3 mb-3">
+                    <!-- <div class="row gx-3 mb-3">
                       <div class="col-md-4">
                         <label class="small mb-1" for="inputOrgName">Organization name</label>
                         <input class="form-control" id="inputOrgName" placeholder="Enter your organization name"
@@ -89,10 +89,10 @@
                                placeholder="Entrer votre date de naissance"
                                type="text">
                       </div>
-                    </div>
+                    </div> -->
                     <div class="row justify-content-end" style="margin-right: 1px;">
                       <button
-                        [disabled]="profilForm.invalid"
+                        [disabled]="profilForm.invalid || !profilForm.dirty"
                         class="btn btn-primary col-md-2"
                         type="submit"
                       >

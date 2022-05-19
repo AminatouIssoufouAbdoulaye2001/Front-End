@@ -10,7 +10,7 @@ export class PleskClientService {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
       'Accept': 'application/json',
-      'X-API-Key': `8184f4eb-c091-c5bd-4bdb-9e85b5a98103`
+      'X-API-Key': `4a135ccb-2140-5bac-b1eb-060f1c46b977`
     })
   };
   private pleskUrl = 'https://cps.tn:8443/api/v2/clients';  // URL to web api with client endpoint
