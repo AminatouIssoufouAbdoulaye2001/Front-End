@@ -127,7 +127,7 @@ const routes: Routes = [
     path:"profile", component:ProfileComponent
   },
   {
-    path:"paid", component:PaymentComponent
+    path:"paid/:id", component:PaymentComponent
   },
   {
     path:"Edomain", component:EnreistrerdomainComponent

@@ -171,8 +171,6 @@ import { HebergementComponent } from './test/hebergement/hebergement.component';
     MatToolbarModule,
     BrowserAnimationsModule,
     CardModule,
-    
-    
   ],
   providers:  [
     ProductserviceService,

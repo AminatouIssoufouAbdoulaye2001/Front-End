@@ -2,7 +2,7 @@ import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {Product} from '../Models/produits';
 import {environment} from "../../environments/environment";
-import {catchError, Observable} from "rxjs";
+import {catchError, Observable, of} from "rxjs";
 import {APIRequestResponse} from "../Models/api-response.model";
 
 @Injectable({
@@ -10,6 +10,7 @@ import {APIRequestResponse} from "../Models/api-response.model";
 })
 export class ProductserviceService {
 
+  private Products: Product [] = [];
 
   status: string[] = ['ILLIMITE', 'FREE', 'INCLUDED'];
   productNames: string[] = [
@@ -50,15 +51,6 @@ export class ProductserviceService {
       )
   }
 
-  getProductsSmall() {
-    return this.http.get<any>('assets/products-small.json')
-      .toPromise()
-      .then(res => <Product[]>res.data)
-      .then(data => {
-        return data;
-      });
-  }
-
   getProducts() {
     return this.http.get<APIRequestResponse>(environment.SERVER_URL + 'services')
       .pipe(
@@ -69,29 +61,36 @@ export class ProductserviceService {
       )
   }
 
-  getProductsWithOrdersSmall() {
-    return this.http.get<any>('assets/products-orders-small.json')
-      .toPromise()
-      .then(res => <Product[]>res.data)
-      .then(data => {
-        return data;
-      });
+  getProduct(productId: number) {
+    return this.http.get<APIRequestResponse>(
+      environment.SERVER_URL + `services/${productId}`
+    ).pipe(
+      catchError(err => {
+        console.log(err);
+        throw err;
+      })
+    )
   }
 
-  // generateProduct(): Product {
-  //   const product:Product={
-  //     id:this.generateId(),
-  //     website:this.generateWebsite(),
-  //     name:this.generateName(),
-  //     price:this.generatePrice(),
-  //     bandeWidth:this.generateStatus(),
-  //     core:this.generateCore(),
-  //     stockage:this.generateStockage(),
-  //     domaine:this.generateStatus()
-  //
-  //   };
-  //   return product;
-  // }
+  getSelectedProducts() {
+    return of(this.Products)
+  }
+
+  addSelectedProduct(product: Product): Product[] {
+    if (!this.Products.find(el => el.id === product.id)) {
+      this.Products.push(product)
+    }
+    return this.Products
+  }
+
+  removeProduct(productId: number): Product[] {
+    this.Products = this.Products.filter(
+      product => product.id !== productId
+    )
+    console.log(this.Products)
+    return this.Products;
+  }
+
   generateId() {
     let text = "";
     let possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -101,10 +100,6 @@ export class ProductserviceService {
     }
 
     return text;
-  }
-
-  generateWebsite() {
-    return Math.floor(Math.random() * Math.floor(20) + 1);
   }
 
   generateName() {

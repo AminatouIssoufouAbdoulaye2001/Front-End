@@ -43,7 +43,8 @@ export class RestApiService {
 
   getUserProfil(): Observable<UserInfo> {
     return this.http.get<APIRequestResponse>(
-      environment.SERVER_URL + 'users/profil')
+      environment.SERVER_URL + 'users/profil'
+    )
       .pipe(
         map(res => res.payload),
         catchError(err => {
