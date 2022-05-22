@@ -77,6 +77,7 @@ import { AdduserComponent } from './AdminDashBoard/adduser/adduser.component';
 import { AbonnementaddComponent } from './AdminDashBoard/abonnementadd/abonnementadd.component';
 import { PaymentComponent } from './Components/payment/payment.component';
 import { HebergementComponent } from './test/hebergement/hebergement.component';
+import { PurchaseServicesDetailsComponent } from './ClientDashBoard/purchase-services-details/purchase-services-details.component';
 
 @NgModule({
   declarations: [
@@ -116,7 +117,8 @@ import { HebergementComponent } from './test/hebergement/hebergement.component';
     ToolbarComponent,
     AbonnementaddComponent,
     PaymentComponent,
-    HebergementComponent
+    HebergementComponent,
+    PurchaseServicesDetailsComponent
   ],
   imports: [
     BrowserModule,

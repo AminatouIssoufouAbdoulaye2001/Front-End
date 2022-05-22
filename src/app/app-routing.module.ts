@@ -24,6 +24,7 @@ import { AdduserComponent } from './AdminDashBoard/adduser/adduser.component';
 import { AbonnementaddComponent } from './AdminDashBoard/abonnementadd/abonnementadd.component';
 import { PaymentComponent } from './Components/payment/payment.component';
 import {SalesRatioComponent} from "./AdminDashBoard/dashboards/sales-ratio/sales-ratio.component";
+import {PurchaseServicesDetailsComponent} from "./ClientDashBoard/purchase-services-details/purchase-services-details.component";
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -92,6 +93,9 @@ const routes: Routes = [
       },
       {
         path:"profil", component:ProfileComponent
+      },
+      {
+        path:"subscribed-services", component:PurchaseServicesDetailsComponent
       },
     ],
     canActivate: [RoleGuard],

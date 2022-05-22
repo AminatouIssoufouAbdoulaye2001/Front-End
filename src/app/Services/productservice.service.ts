@@ -72,6 +72,26 @@ export class ProductserviceService {
     )
   }
 
+  subscribeToServices(productIds: number[]) {
+    return this.http.post<APIRequestResponse>(environment.SERVER_URL + 'services/subscribe', productIds)
+      .pipe(
+        catchError(err => {
+          console.log(err);
+          throw err;
+        })
+      )
+  }
+
+  getsubscribeToServices() {
+    return this.http.get<APIRequestResponse>(environment.SERVER_URL + 'services/subscribe')
+      .pipe(
+        catchError(err => {
+          console.log(err);
+          throw err;
+        })
+      )
+  }
+
   getSelectedProducts() {
     return of(this.Products)
   }

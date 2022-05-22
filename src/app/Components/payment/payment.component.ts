@@ -1,8 +1,8 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {AfterViewInit, Component, OnDestroy, OnInit} from '@angular/core';
 import {Subscription, switchMap} from 'rxjs';
 import {Product} from 'src/app/Models/produits';
 import {ProductserviceService} from 'src/app/Services/productservice.service';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {UsersService} from "../../Services/users.service";
 
 @Component({
@@ -10,7 +10,7 @@ import {UsersService} from "../../Services/users.service";
   templateUrl: './payment.component.html',
   styleUrls: ['./payment.component.scss']
 })
-export class PaymentComponent implements OnInit, OnDestroy {
+export class PaymentComponent implements OnInit, OnDestroy, AfterViewInit {
   paymentHandler: any = null;
   sub = new Subscription();
   products: Product[]
@@ -19,7 +19,8 @@ export class PaymentComponent implements OnInit, OnDestroy {
   constructor(
     private productService: ProductserviceService,
     private route: ActivatedRoute,
-    private userService: UsersService
+    private userService: UsersService,
+    private router: Router
   ) {
   }
 
@@ -29,18 +30,18 @@ export class PaymentComponent implements OnInit, OnDestroy {
       amount += el.price;
     })
 
-    const paymentHandler = (<any>window).StripeCheckout.configure({
-      key: 'pk_test_51Kxi0sCcrQZu0kRNXpsSeSRDBrsgDoQiLhIbXUFPUz587o9x5AjRQsWpsQ5reKd3Kp7jTDW8YqkzjAYdeCaeOVGX00LuWb6JFR',
-      // locale: 'auto',
-      token: function (stripeToken: any) {
-        console.log(stripeToken);
-        alert('Stripe token generated!');
-      },
-    });
-    paymentHandler.open({
+    // const paymentHandler = (<any>window).StripeCheckout.configure({
+    //   key: 'pk_test_51Kxi0sCcrQZu0kRNXpsSeSRDBrsgDoQiLhIbXUFPUz587o9x5AjRQsWpsQ5reKd3Kp7jTDW8YqkzjAYdeCaeOVGX00LuWb6JFR',
+    //   // locale: 'auto',
+    //   token: function (stripeToken: any) {
+    //     console.log(stripeToken);
+    //     alert('Stripe token generated!');
+    //   },
+    // });
+    this.paymentHandler.open({
       name: 'Paiement par carte',
       // description: '3 widgets',
-      amount: Math.floor(amount / 3.5) * 100 ,
+      amount: Math.floor(amount / 3.5) * 100,
     });
   }
 
@@ -50,22 +51,36 @@ export class PaymentComponent implements OnInit, OnDestroy {
       script.id = 'stripe-script';
       script.type = 'text/javascript';
       script.src = 'https://checkout.stripe.com/checkout.js';
-      script.onload = () => {
-        this.paymentHandler = (<any>window).StripeCheckout.configure({
-          key: 'pk_test_51Kxi0sCcrQZu0kRNXpsSeSRDBrsgDoQiLhIbXUFPUz587o9x5AjRQsWpsQ5reKd3Kp7jTDW8YqkzjAYdeCaeOVGX00LuWb6JFR',
-          locale: 'auto',
-          token: function (stripeToken: any) {
-            console.log(stripeToken);
-            alert('Payment has been successfull!');
-          },
-        });
-      };
+      script.onload = () => this.submitPayement()
       window.document.body.appendChild(script);
     }
   }
 
-  ngOnInit(): void {
+  ngAfterViewInit() {
+    this.invokeStripe();
+  }
 
+  submitPayement() {
+    let selectedProductsIds = this.products.map(
+      (el: Product) => el.id
+    ) as number[];
+    this.paymentHandler = (<any>window).StripeCheckout.configure({
+      key: 'pk_test_51Kxi0sCcrQZu0kRNXpsSeSRDBrsgDoQiLhIbXUFPUz587o9x5AjRQsWpsQ5reKd3Kp7jTDW8YqkzjAYdeCaeOVGX00LuWb6JFR',
+      locale: 'auto',
+      token: (stripeToken: any) => this.test(selectedProductsIds)
+    });
+  }
+
+  test(selectedProductsIds: number[]) {
+    this.sub.add(
+      this.productService.subscribeToServices(selectedProductsIds)
+        .subscribe(
+          data => this.router.navigate(['/dashboard/client/subscribed-services'])
+        )
+    )
+  }
+
+  ngOnInit(): void {
     this.productService.getSelectedProducts()
       .subscribe(data => this.products = data)
 
@@ -90,11 +105,10 @@ export class PaymentComponent implements OnInit, OnDestroy {
       )
     )
 
-    this.invokeStripe();
   }
 
   deleteProduct(id: number) {
-    this.products =  this.productService.removeProduct(id);
+    this.products = this.productService.removeProduct(id);
   }
 
   ngOnDestroy(): void {
