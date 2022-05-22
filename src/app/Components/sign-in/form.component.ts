@@ -1,7 +1,7 @@
 import {Component, HostListener, OnDestroy, OnInit,} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ConfirmationService, MessageService} from 'primeng/api';
-import {Subscription} from 'rxjs';
+import {finalize, Subscription} from 'rxjs';
 import {ActivatedRoute, Router} from '@angular/router';
 import {AuthService} from "../../Services/auth.service";
 
@@ -19,6 +19,7 @@ export class SingInComponent implements OnInit, OnDestroy {
   displayOptions: boolean = false;
   choosenType!: string;
   errorMsg = '';
+  loginLoading = false;
 
   constructor(
     private router: Router,
@@ -47,8 +48,14 @@ export class SingInComponent implements OnInit, OnDestroy {
   getForm = () => this.loginForm;
 
   onSubmit() {
+    this.loginLoading = true;
     if (this.loginForm.valid) {
       this.sub.add(this.authService.login(this.loginForm.value)
+        .pipe(
+          finalize(() => {
+            this.loginLoading = false;
+          })
+        )
         .subscribe(
           data => {
             this.errorMsg = '';
