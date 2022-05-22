@@ -5,6 +5,7 @@ import {domainTypes} from "../../Models/domain-type.models";
 import {RestApiService} from "../../Services/rest-api-service";
 import {Domain} from "../../Models/domain.model";
 import {Router} from "@angular/router";
+import {AuthService} from "../../Services/auth.service";
 
 @Component({
   selector: 'app-domaine',
@@ -18,11 +19,14 @@ export class DomaineComponent implements OnInit, OnDestroy {
   searchAvailableDomains: Domain[] = [];
   noAvailableDomains = false;
   waitingForSearchResult = false;
+  paymentHandler: any = null;
 
   constructor(
     private fb: FormBuilder,
     private service: RestApiService,
-    private router: Router) {
+    private router: Router,
+    private authService: AuthService
+  ) {
 
     // @ts-ignore
     let domain = this.router.getCurrentNavigation().extras.state;
@@ -44,6 +48,7 @@ export class DomaineComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    this.invokeStripe();
   }
 
   submit() {
@@ -70,6 +75,47 @@ export class DomaineComponent implements OnInit, OnDestroy {
       ).subscribe(
         domains => this.searchAvailableDomains = domains
       ));
+  }
+
+  makePayment(domain: Domain) {
+    if (!this.authService.isAuthenticated()) {
+      this.router.navigate(['/account/sign-in'])
+    } else {
+      console.log(domain);
+      const paymentHandler = (<any>window).StripeCheckout.configure({
+        key: 'pk_test_51Kxi0sCcrQZu0kRNXpsSeSRDBrsgDoQiLhIbXUFPUz587o9x5AjRQsWpsQ5reKd3Kp7jTDW8YqkzjAYdeCaeOVGX00LuWb6JFR',
+        // locale: 'auto',
+        token: function (stripeToken: any) {
+          console.log(stripeToken);
+          alert('Stripe token generated!');
+        },
+      });
+      paymentHandler.open({
+        name: 'Paiement par carte',
+        // description: '3 widgets',
+        amount: Math.floor(domain.price / 1000000) * 100
+      });
+    }
+  }
+
+  invokeStripe() {
+    if (!window.document.getElementById('stripe-script')) {
+      const script = window.document.createElement('script');
+      script.id = 'stripe-script';
+      script.type = 'text/javascript';
+      script.src = 'https://checkout.stripe.com/checkout.js';
+      script.onload = () => {
+        this.paymentHandler = (<any>window).StripeCheckout.configure({
+          key: 'pk_test_51Kxi0sCcrQZu0kRNXpsSeSRDBrsgDoQiLhIbXUFPUz587o9x5AjRQsWpsQ5reKd3Kp7jTDW8YqkzjAYdeCaeOVGX00LuWb6JFR',
+          locale: 'auto',
+          token: function (stripeToken: any) {
+            console.log(stripeToken);
+            alert('Payment has been successfull!');
+          },
+        });
+      };
+      window.document.body.appendChild(script);
+    }
   }
 
   ngOnDestroy(): void {
