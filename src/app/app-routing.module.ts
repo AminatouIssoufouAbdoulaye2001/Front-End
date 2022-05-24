@@ -61,6 +61,10 @@ const routes: Routes = [
         component: AddserviceComponent,
       },
       {
+        path: 'subscriptions',
+        component:AbonnementaddComponent
+      },
+      {
         path:"customers", component:AdduserComponent
       },
       {
@@ -80,9 +84,6 @@ const routes: Routes = [
     data: {
       role: 'ROLE_ADMIN'
     }
-  },
-  {
-    path:"adminpage/abonnementadd" , component:AbonnementaddComponent
   },
   {
     path:"dashboard/client",

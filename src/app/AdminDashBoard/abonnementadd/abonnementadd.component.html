@@ -1,112 +1,38 @@
-<app-toolbar></app-toolbar>
 <div class="container mt-5">
-    <p-toast></p-toast>
-
-<div class="card">
-    <p-toolbar styleClass="mb-4">
-        <ng-template pTemplate="left">
-            <button pButton pRipple label="New" icon="pi pi-plus" class="p-button-success mr-2"></button>
-            <button pButton pRipple  icon="pi pi-trash" class="p-button-danger" ></button>
-        </ng-template>
-
-        <ng-template pTemplate="right">
-            <p-fileUpload mode="basic" accept="image/*" [maxFileSize]="1000000" label="Import" chooseLabel="Import" class="mr-2 inline-block"></p-fileUpload>
-            <button pButton pRipple label="Export" icon="pi pi-upload" class="p-button-help"></button>
-        </ng-template>
-    </p-toolbar>
-
-    <p-table  [rows]="10" [paginator]="true" [globalFilterFields]="['name','country.name','representative.name','status']" responsiveLayout="scroll"
-         [rowHover]="true" dataKey="id"
-        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
-        <ng-template class="p-table" pTemplate="caption">
-            <div class="flex align-items-center justify-content-between">
-                <h2 class="m-0">Listes des clients</h2>
-                <span class="p-input-icon-left">
-                    <i class="pi pi-search"></i>
-                    <input pInputText type="text"  placeholder="Search..." />
-                </span>
-            </div>
-        </ng-template>
-        <ng-template pTemplate="header">
-            <tr>
-                <th style="width: 3rem">
-                    <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
-                </th>
-                <th pSortableColumn="name">Nom</th>
-                <th pSortableColumn="price">Prenom </th>
-                <th pSortableColumn="name">E-mail</th>
-                <th pSortableColumn="name">Date de naissance</th>
-                <th pSortableColumn="name">Status</th>
-                <th>Action</th>
-            </tr>
-        </ng-template>
-        <ng-template>
-            <tr>
-                <td>
-                    <p-tableCheckbox></p-tableCheckbox>
-                </td>
-                <td>Aminatou</td>
-                <td>Issoufou Abdoulaye</td>
-                <td>aminatouoummy@gmail.com</td>
-                <td>09/07/1999</td>
-                <td> <button class="btn-success">Activé</button></td>
-                <td></td>
-                <td>
-                    <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2"></button>
-                    <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning"></button>
-                </td>
-            </tr>
-        </ng-template>
-        <ng-template pTemplate="summary">
-            <div class="flex align-items-center justify-content-between">
-                In total there are products.
-            </div>
-        </ng-template>
+  <div class="card">
+    <p-table #dt
+             [paginator]="true"
+             [rowHover]="true"
+             [rows]="10" [showCurrentPageReport]="true"
+             [value]="subscriptions"
+             currentPageReportTemplate="Montrant {first} à {last} de {totalRecords} entrées"
+             dataKey="id">
+      <ng-template pTemplate="header">
+        <tr>
+          <th pSortableColumn="name">Name</th>
+          <th pSortableColumn="memorySpace">Date Début</th>
+          <th pSortableColumn="nbCore">Date Fin</th>
+          <th pSortableColumn="domain">Mode Paiement</th>
+          <th pSortableColumn="bandwidth">Client</th>
+          <th pSortableColumn="nbEmail">Montant</th>
+        </tr>
+      </ng-template>
+      <ng-template let-abonement pTemplate="body">
+        <tr>
+          <td>{{abonement.name}}</td>
+          <td>{{getDateFromTimestamp(abonement.startedDate)}}</td>
+          <td>{{getDateFromTimestamp(abonement.endedDate)}}</td>
+          <td>Carte</td>
+          <td>{{abonement.customerEmail}}</td>
+          <td>{{abonement.price}} TND</td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="summary">
+        <div class="p-d-flex p-ai-center p-jc-between">
+          Au total il y a {{subscriptions ? subscriptions.length : 0 }} produits.
+        </div>
+      </ng-template>
     </p-table>
-</div>
+  </div>
 
-<p-dialog [style]="{width: '450px'}" header="Product Details" [modal]="true" styleClass="p-fluid">
-    <ng-template pTemplate="content">
-        <div class="field">
-            <label for="name">Name</label>
-            <input type="text" pInputText id="name"  required autofocus />
-            <small class="p-error" >Name is required.</small>
-        </div>
-        <div class="field">
-            <label for="description">Description</label>
-            <textarea id="description" pInputTextarea required rows="3" cols="20"></textarea>
-        </div>
-        <div class="field">
-            <label for="inventoryStatus">Inventory Status</label>
-            <p-dropdown  inputId="inventoryStatus"  placeholder="Select">
-                <ng-template let-option pTemplate="item">
-                    <span [class]="'product-badge status-' + option.value">{{option.label}}</span>
-                </ng-template>
-            </p-dropdown>
-        </div>
-
-        <div class="field">
-            <label class="mb-3">Category</label>
-           
-        </div>
-
-        <div class="formgrid grid">
-            <div class="field col">
-                <label for="price">Price</label>
-                <p-inputNumber id="price" mode="currency" currency="USD" locale="en-US"></p-inputNumber>
-            </div>
-            <div class="field col">
-                <label for="quantity">Quantity</label>
-                <p-inputNumber id="quantity" ></p-inputNumber>
-            </div>
-        </div>
-    </ng-template>
-
-    <ng-template pTemplate="footer">
-        <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" ></button>
-        <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text"></button>
-    </ng-template>
-</p-dialog>
-
-<p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
 </div>

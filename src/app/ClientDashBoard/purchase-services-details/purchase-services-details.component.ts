@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {Product} from "../../Models/produits";
+import {subscribedProduct} from "../../Models/produits";
 import {map, Subscription} from "rxjs";
 import {ProductserviceService} from "../../Services/productservice.service";
 
@@ -10,7 +10,7 @@ import {ProductserviceService} from "../../Services/productservice.service";
 })
 export class PurchaseServicesDetailsComponent implements OnInit, OnDestroy {
   sub = new Subscription()
-  products: Product[] = [];
+  products: subscribedProduct[] = [];
 
   constructor(private productService: ProductserviceService) {
 
@@ -20,9 +20,15 @@ export class PurchaseServicesDetailsComponent implements OnInit, OnDestroy {
     this.sub.add(
       this.productService.getsubscribeToServices()
         .pipe(
-          map(res => res.payload)
+          map(res => {
+            return res.payload.map(
+              (el: subscribedProduct) => new subscribedProduct(el)
+            )
+          })
         )
-        .subscribe(products => this.products = products)
+        .subscribe(products => {
+          this.products = products
+        })
     )
   }
 

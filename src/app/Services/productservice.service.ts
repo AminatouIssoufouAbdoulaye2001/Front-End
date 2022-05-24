@@ -92,6 +92,16 @@ export class ProductserviceService {
       )
   }
 
+  getSubsciptions() {
+    return this.http.get<APIRequestResponse>(environment.SERVER_URL + 'services/subscriptions')
+      .pipe(
+        catchError(err => {
+          console.log(err);
+          throw err;
+        })
+      )
+  }
+
   getSelectedProducts() {
     return of(this.Products)
   }

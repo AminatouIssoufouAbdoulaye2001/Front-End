@@ -19,6 +19,8 @@
           <th pSortableColumn="nbEmail">Nombre de Email Pro</th>
           <th pSortableColumn="nbEmail">Nombre de BD</th>
           <th pSortableColumn="nbEmail">Ram</th>
+          <th pSortableColumn="nbEmail">Date Début</th>
+          <th pSortableColumn="nbEmail">Date Fin</th>
         </tr>
       </ng-template>
       <ng-template let-product pTemplate="body">
@@ -46,6 +48,8 @@
             <span [class]="'product-badge status-' + product.ram">{{product.ram}}
             </span>
           </td>
+          <td>{{product.getDateFromTimestamp(product.dateDebut)}}</td>
+          <td>{{product.getDateFromTimestamp(product.dateFin)}}</td>
         </tr>
       </ng-template>
       <ng-template pTemplate="summary">

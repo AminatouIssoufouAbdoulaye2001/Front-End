@@ -53,12 +53,12 @@ export class SidebarComponent implements OnInit {
         icon: PrimeIcons.SERVER,
         tooltip: 'Gérer vos services',
       },
-      // {
-      //   routerLink: '/adminpage/abonnementadd',
-      //   label: "Abonnements",
-      //   icon: PrimeIcons.TAGS,
-      //   tooltip: 'Sections des abonnements',
-      // },
+      {
+        routerLink: 'subscriptions',
+        label: "Abonnements",
+        icon: PrimeIcons.TAGS,
+        tooltip: 'Sections des abonnements',
+      },
       // {
       //   routerLink: '/admin/factures',
       //   label: 'Factures',
