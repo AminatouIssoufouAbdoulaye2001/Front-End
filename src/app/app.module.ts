@@ -173,6 +173,7 @@ import { PurchaseServicesDetailsComponent } from './ClientDashBoard/purchase-ser
     MatToolbarModule,
     BrowserAnimationsModule,
     CardModule,
+    TableModule
   ],
   providers:  [
     ProductserviceService,

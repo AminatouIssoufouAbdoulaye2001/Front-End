@@ -26,6 +26,7 @@ import { PaymentComponent } from './Components/payment/payment.component';
 import {SalesRatioComponent} from "./AdminDashBoard/dashboards/sales-ratio/sales-ratio.component";
 import {PurchaseServicesDetailsComponent} from "./ClientDashBoard/purchase-services-details/purchase-services-details.component";
 import { HebergementComponent } from './test/hebergement/hebergement.component';
+import { SecuriteComponent } from './Profiles/securite/securite.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -102,6 +103,9 @@ const routes: Routes = [
       {
         path:"hebergement" , component:HebergementComponent
       },
+      {
+        path:"domain", component:SecuriteComponent
+      }
     ],
     canActivate: [RoleGuard],
     data: {
