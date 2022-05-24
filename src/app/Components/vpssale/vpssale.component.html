@@ -1,0 +1,59 @@
+<app-sidenavbar></app-sidenavbar>
+<div class="container" style="margin-top: 10%;
+    margin-left: 20%; width: 100%">
+  <div class="card">
+    <p-table #dt
+              [paginator]="true"
+             [rowHover]="true"
+             [rows]="10" [showCurrentPageReport]="true" 
+             currentPageReportTemplate="Montrant {first} à {last} de {totalRecords} entrées"
+             dataKey="id">
+      <ng-template pTemplate="header">
+        <tr>
+          <th pSortableColumn="name">Name
+          </th>
+          <th pSortableColumn="price">Price</th>
+          <th pSortableColumn="memorySpace">SSD</th>
+          <th pSortableColumn="nbCore">Core</th>
+          <th pSortableColumn="domain">Domaine</th>
+          <th pSortableColumn="bandwidth">Bande passante</th>
+          <th pSortableColumn="nbEmail">Nombre de Email Pro</th>
+          <th pSortableColumn="nbEmail">Nombre de BD</th>
+          <th pSortableColumn="nbEmail">Ram</th>
+        </tr>
+      </ng-template>
+      <ng-template let-product pTemplate="body">
+        <tr>
+          <td>{{product.name}}</td>
+          <td>{{product.price }} TND</td>
+          <td>{{product.memorySpace}}</td>
+          <td>{{product.nbCore}}</td>
+          <td>
+            <span [class]="'product-badge status-' + product.domain.toLowerCase()">{{product.domain}}</span>
+          </td>
+          <td>
+            <span [class]="'product-badge status-' + product.bandwidth.toLowerCase()">{{product.bandwidth}}
+            </span>
+          </td>
+          <td>
+            <span [class]="'product-badge status-' + product.nbEmail">{{product.nbEmail}}
+            </span>
+          </td>
+          <td>
+            <span [class]="'product-badge status-' + product.nbDatabase">{{product.nbDatabase}}
+            </span>
+          </td>
+          <td>
+            <span [class]="'product-badge status-' + product.ram">{{product.ram}}
+            </span>
+          </td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="summary">
+        <div class="p-d-flex p-ai-center p-jc-between">
+          <!-- Au total il y a {{products ? products.length : 0 }} produits. -->
+        </div>
+      </ng-template>
+    </p-table>
+  </div>
+</div>

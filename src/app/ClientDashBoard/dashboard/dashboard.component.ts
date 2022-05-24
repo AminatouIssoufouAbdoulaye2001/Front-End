@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
+import { AuthService } from 'src/app/Services/auth.service';
 import { PleskClientService } from 'src/app/Services/plesk-client.service';
 import {UserInfo} from "../../Models/user.models";
 
@@ -11,13 +12,15 @@ import {UserInfo} from "../../Models/user.models";
 export class DashboardComponent implements OnInit {
   userProfi: UserInfo
   redirectToPlesk="";
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute,
+    private authServ:AuthService) { }
 
   ngOnInit(): void {
   
       let data = this.route.snapshot.data;
       this.userProfi =  data['userInfos'] as UserInfo;
-      this.redirectToPlesk=`https://cps.tn:8443/login_up.php?login_name=${localStorage.getItem("userName")}&passwd=${localStorage.getItem("password")}`;
+      this.redirectToPlesk=`https://cps.tn:8443/login_up.php?login_name=${this.authServ.userName}&passwd=${this.authServ.password}`;
+      
 
   }
 

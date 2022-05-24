@@ -12,6 +12,8 @@ const helper = new JwtHelperService();
   providedIn: "root"
 })
 export class AuthService {
+  userName="";
+  password="";
 
   constructor(private apiService: RestApiService) {
   }
@@ -23,13 +25,14 @@ export class AuthService {
       tap(response => {
         if (response.success) {
           localStorage.setItem(TOKEN_KEY, response.payload);
-          localStorage.setItem("userName", data.userName);
-          localStorage.setItem("password", data.password);
+          this.userName= data.userName;
+          this.password=data.password;
          
         }
       })
     )
   }
+  
 
   logOut() {
     localStorage.removeItem(TOKEN_KEY);

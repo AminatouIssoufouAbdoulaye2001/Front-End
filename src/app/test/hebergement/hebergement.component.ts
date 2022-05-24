@@ -37,7 +37,7 @@ export class HebergementComponent implements OnInit, OnDestroy {
     if (this.authService.isAuthenticated()) {
       this.router.navigate(['/paid', `${id}`])
     } else {
-      this.router.navigate(['/account/sign-up'])
+      this.router.navigate(['/account/sign-in'])
     }
   }
 
