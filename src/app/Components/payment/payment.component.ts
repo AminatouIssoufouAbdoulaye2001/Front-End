@@ -30,14 +30,6 @@ export class PaymentComponent implements OnInit, OnDestroy, AfterViewInit {
       amount += el.price;
     })
 
-    // const paymentHandler = (<any>window).StripeCheckout.configure({
-    //   key: 'pk_test_51Kxi0sCcrQZu0kRNXpsSeSRDBrsgDoQiLhIbXUFPUz587o9x5AjRQsWpsQ5reKd3Kp7jTDW8YqkzjAYdeCaeOVGX00LuWb6JFR',
-    //   // locale: 'auto',
-    //   token: function (stripeToken: any) {
-    //     console.log(stripeToken);
-    //     alert('Stripe token generated!');
-    //   },
-    // });
     this.paymentHandler.open({
       name: 'Paiement par carte',
       // description: '3 widgets',
