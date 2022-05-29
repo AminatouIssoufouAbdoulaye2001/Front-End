@@ -4,6 +4,7 @@ import {Product} from '../Models/produits';
 import {environment} from "../../environments/environment";
 import {catchError, Observable, of} from "rxjs";
 import {APIRequestResponse} from "../Models/api-response.model";
+import {Domain} from "../Models/domain.model";
 
 @Injectable({
   providedIn: 'root'
@@ -104,6 +105,39 @@ export class ProductserviceService {
 
   getSelectedProducts() {
     return of(this.Products)
+  }
+
+  purchaseDomain(domain: Domain) {
+    console.log(domain);
+    return this.http.post<APIRequestResponse>(
+      environment.SERVER_URL + `services/save-domain`,
+      domain
+    ).pipe(
+      catchError(err => {
+        console.log(err);
+        throw err;
+      })
+    )
+  }
+
+  getCustomerDomains() {
+    return this.http.get<APIRequestResponse>(
+      environment.SERVER_URL + `services/client-domain`
+    ).pipe(
+      catchError(err => {
+        console.log(err);
+        throw err;
+      }));
+  }
+
+  getDomains() {
+    return this.http.get<APIRequestResponse>(environment.SERVER_URL + 'services/domaines')
+      .pipe(
+        catchError(err => {
+          console.log(err);
+          throw err;
+        })
+      )
   }
 
   addSelectedProduct(product: Product): Product[] {

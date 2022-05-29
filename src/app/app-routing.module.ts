@@ -12,21 +12,22 @@ import {AreaComponent} from './ClientDashBoard/area/area.component';
 import {TopComponent} from './Components/top/top.component';
 import {DashboardComponent} from "./ClientDashBoard/dashboard/dashboard.component";
 import {UserProfilResolver} from "./guards/user-profil-resolver";
-import { VpssaleComponent } from './Components/vpssale/vpssale.component';
-import { TicketComponent } from './Components/ticket/ticket.component';
-import { DomaineComponent } from './Components/domaine/domaine.component';
-import { HerbergementwebComponent } from './Components/herbergementweb/herbergementweb.component';
-import { HomesaleComponent } from './Components/homesale/homesale.component';
-import { MailsuiteComponent } from './Components/mailsuite/mailsuite.component';
-import { ProfileComponent } from './Profiles/profile/profile.component';
-import { EnreistrerdomainComponent } from './Panier/enreistrerdomain/enreistrerdomain.component';
-import { AdduserComponent } from './AdminDashBoard/adduser/adduser.component';
-import { AbonnementaddComponent } from './AdminDashBoard/abonnementadd/abonnementadd.component';
-import { PaymentComponent } from './Components/payment/payment.component';
+import {VpssaleComponent} from './Components/vpssale/vpssale.component';
+import {TicketComponent} from './Components/ticket/ticket.component';
+import {DomaineComponent} from './Components/domaine/domaine.component';
+import {HerbergementwebComponent} from './Components/herbergementweb/herbergementweb.component';
+import {HomesaleComponent} from './Components/homesale/homesale.component';
+import {MailsuiteComponent} from './Components/mailsuite/mailsuite.component';
+import {ProfileComponent} from './Profiles/profile/profile.component';
+import {EnreistrerdomainComponent} from './Panier/enreistrerdomain/enreistrerdomain.component';
+import {AdduserComponent} from './AdminDashBoard/adduser/adduser.component';
+import {AbonnementaddComponent} from './AdminDashBoard/abonnementadd/abonnementadd.component';
+import {PaymentComponent} from './Components/payment/payment.component';
 import {SalesRatioComponent} from "./AdminDashBoard/dashboards/sales-ratio/sales-ratio.component";
 import {PurchaseServicesDetailsComponent} from "./ClientDashBoard/purchase-services-details/purchase-services-details.component";
-import { HebergementComponent } from './test/hebergement/hebergement.component';
-import { SecuriteComponent } from './Profiles/securite/securite.component';
+import {HebergementComponent} from './test/hebergement/hebergement.component';
+import {DomainDetailsComponent} from "./Components/domain-details/domain-details.component";
+import {SubscribedDomainDetailsComponent} from "./Components/subscribed-domain-details/subscribed-domain-details.component";
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -63,10 +64,14 @@ const routes: Routes = [
       },
       {
         path: 'subscriptions',
-        component:AbonnementaddComponent
+        component: AbonnementaddComponent
       },
       {
-        path:"customers", component:AdduserComponent
+        path: 'domains',
+        component: SubscribedDomainDetailsComponent
+      },
+      {
+        path: "customers", component: AdduserComponent
       },
       {
         path: 'profil',
@@ -87,7 +92,7 @@ const routes: Routes = [
     }
   },
   {
-    path:"dashboard/client",
+    path: "dashboard/client",
     component: AreaComponent,
     children: [
       {
@@ -95,16 +100,16 @@ const routes: Routes = [
         component: DashboardComponent
       },
       {
-        path:"profil", component:ProfileComponent
+        path: "profil", component: ProfileComponent
       },
       {
-        path:"subscribed-services", component:PurchaseServicesDetailsComponent
+        path: "subscribed-services", component: PurchaseServicesDetailsComponent
       },
       {
-        path:"hebergement" , component:HebergementComponent
+        path: "hebergement", component: HebergementComponent
       },
       {
-        path:"domain", component:SecuriteComponent
+        path: "domain", component: DomainDetailsComponent
       }
     ],
     canActivate: [RoleGuard],
@@ -119,31 +124,31 @@ const routes: Routes = [
     path: "top", component: TopComponent
   },
   {
-    path:"vpssales",component:VpssaleComponent
+    path: "vpssales", component: VpssaleComponent
   },
   {
-    path:"ticket",component:TicketComponent
+    path: "ticket", component: TicketComponent
   },
   {
-    path:"search-domains",component:DomaineComponent
+    path: "search-domains", component: DomaineComponent
   },
   {
-    path:"web",component:HerbergementwebComponent
+    path: "web", component: HerbergementwebComponent
   },
   {
-    path:"sales",component:HomesaleComponent
+    path: "sales", component: HomesaleComponent
   },
   {
-    path:"mail",component:MailsuiteComponent
+    path: "mail", component: MailsuiteComponent
   },
   {
-    path:"profile", component:ProfileComponent
+    path: "profile", component: ProfileComponent
   },
   {
-    path:"paid/:id", component:PaymentComponent
+    path: "paid/:id", component: PaymentComponent
   },
   {
-    path:"Edomain", component:EnreistrerdomainComponent
+    path: "Edomain", component: EnreistrerdomainComponent
   }
 
 ]

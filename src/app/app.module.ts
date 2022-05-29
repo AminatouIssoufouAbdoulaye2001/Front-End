@@ -78,6 +78,8 @@ import { AbonnementaddComponent } from './AdminDashBoard/abonnementadd/abonnemen
 import { PaymentComponent } from './Components/payment/payment.component';
 import { HebergementComponent } from './test/hebergement/hebergement.component';
 import { PurchaseServicesDetailsComponent } from './ClientDashBoard/purchase-services-details/purchase-services-details.component';
+import { DomainDetailsComponent } from './Components/domain-details/domain-details.component';
+import { SubscribedDomainDetailsComponent } from './Components/subscribed-domain-details/subscribed-domain-details.component';
 
 @NgModule({
   declarations: [
@@ -118,7 +120,9 @@ import { PurchaseServicesDetailsComponent } from './ClientDashBoard/purchase-ser
     AbonnementaddComponent,
     PaymentComponent,
     HebergementComponent,
-    PurchaseServicesDetailsComponent
+    PurchaseServicesDetailsComponent,
+    DomainDetailsComponent,
+    SubscribedDomainDetailsComponent
   ],
   imports: [
     BrowserModule,

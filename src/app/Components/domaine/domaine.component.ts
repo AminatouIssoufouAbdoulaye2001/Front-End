@@ -7,11 +7,13 @@ import {Domain} from "../../Models/domain.model";
 import {Router} from "@angular/router";
 import {AuthService} from "../../Services/auth.service";
 import {ProductserviceService} from "../../Services/productservice.service";
+import {MessageService} from "primeng/api";
 
 @Component({
   selector: 'app-domaine',
   templateUrl: './domaine.component.html',
-  styleUrls: ['./domaine.component.scss']
+  styleUrls: ['./domaine.component.scss'],
+  providers: [MessageService]
 })
 export class DomaineComponent implements OnInit, OnDestroy {
   sub = new Subscription();
@@ -28,7 +30,8 @@ export class DomaineComponent implements OnInit, OnDestroy {
     private service: RestApiService,
     private router: Router,
     private authService: AuthService,
-    private productService: ProductserviceService
+    private productService: ProductserviceService,
+    private messageService: MessageService,
   ) {
 
     // @ts-ignore
@@ -91,7 +94,19 @@ export class DomaineComponent implements OnInit, OnDestroy {
   }
 
   purhaseDomain(domain: Domain) {
-    console.log(domain);
+    this.sub.add(
+      this.productService.purchaseDomain(domain)
+        .subscribe(
+          data => {
+            this.messageService.add({
+              severity: 'success',
+              summary: 'Info',
+              detail: 'Votre abonnement a été enregistré',
+              life: 3000
+            });
+          }
+        )
+    )
   }
 
   submitPayement() {
@@ -113,7 +128,7 @@ export class DomaineComponent implements OnInit, OnDestroy {
     this.paymentHandler.open({
       name: 'Paiement par carte',
       // description: '3 widgets',
-      amount:  Math.floor(this.domain.price / 3.5) * 100,
+      amount:  Math.floor(this.domain.price / 10000),
     });
   }
 
