@@ -33,5 +33,7 @@ export class DomainDetailsComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.sub.unsubscribe();
   }
-
+  convertPrice(price:number) {
+    return Math.floor((price / 1000000) * 3.5);
+  }
 }

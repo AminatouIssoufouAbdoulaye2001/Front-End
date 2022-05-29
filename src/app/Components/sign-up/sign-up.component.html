@@ -6,7 +6,7 @@
     <div class="login-container">
       <div class="d-flex align-items-center mt-5 mb-5 pb-1" fxLayoutAlign="center center">
     <span class="h1 fw-bold mb-0" style="color: #0050d5">
-     Se Connecter
+     S' inscire
     </span>
       </div>
   <form (ngSubmit)="onSubmit()" [formGroup]="signupForm">
@@ -164,7 +164,6 @@
         />
         <label>Mot de passe</label>
       </span>
-
         <div *ngIf="controls['password']?.invalid && (controls['password']?.dirty || controls['password']?.touched)">
           <p-message
             *ngIf="(controls['password']?.errors)!['required']"

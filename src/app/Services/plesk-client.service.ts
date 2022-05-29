@@ -7,13 +7,12 @@ import {CreatePleskClientAccount} from "../Models/plesk-client.model";
 @Injectable({providedIn: 'root'})
 export class PleskClientService {
   httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Accept': 'application/json',
-      'X-API-Key': `c5b239d1-8eb6-8cee-76b7-aa16be37fee8`
-    })
-  };
-  private pleskUrl = 'https://cps.tn:8443/api/v2/clients';  // URL to web api with client endpoint
+    headers: new HttpHeaders({'Content-Type': 'application/json',
+    'Accept': 'application/json',
+    'X-API-Key':`e90fbb9d-49f6-87d2-77ca-8b8a85bba1d7`
+  })
+    };
+    private pleskUrl = 'https://devpro.expert:8443/api/v2/clients'; // URL to web api with client endpoint
 
   constructor(private http: HttpClient) {
 

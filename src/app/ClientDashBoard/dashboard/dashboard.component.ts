@@ -19,7 +19,7 @@ export class DashboardComponent implements OnInit {
   
       let data = this.route.snapshot.data;
       this.userProfi =  data['userInfos'] as UserInfo;
-      this.redirectToPlesk=`https://cps.tn:8443/login_up.php?login_name=${this.authServ.userName}&passwd=${this.authServ.password}`;
+      this.redirectToPlesk=`https://devpro.expert:8443/login_up.php?login_name=${this.authServ.userName}&passwd=${this.authServ.password}`;
       
 
   }

@@ -18,7 +18,7 @@
       <ng-template let-domaine pTemplate="body">
         <tr>
           <td>{{domaine.nom}}</td>
-          <td>{{domaine.prix }} TND</td>
+          <td>{{convertPrice(domaine.prix)}} TND</td>
           <td>{{getDateFromTimestamp(domaine.dateDebut)}}</td>
           <td>{{getDateFromTimestamp(domaine.dateFin)}}</td>
         </tr>

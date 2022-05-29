@@ -12,6 +12,9 @@ import {CreatePleskClientAccount} from "../Models/plesk-client.model";
   providedIn: 'root'
 })
 export class RestApiService {
+  // getSubsciptions() {
+  //   throw new Error('Method not implemented.');
+  // }
   domainsAvailables: Domain[] = []
 
   constructor(private http: HttpClient,
@@ -61,7 +64,7 @@ export class RestApiService {
     ).pipe(
       map(res => {
           this.domainsAvailables = [];
-          let domains = res.payload as DomainAvailable[];
+          let domains = res.payload.domains as DomainAvailable[];
           domains.forEach(el => {
             this.domainsAvailables.push(new Domain(
               el?.available,

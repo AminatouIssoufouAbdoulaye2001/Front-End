@@ -24,8 +24,11 @@
         <tr>
           <td>{{abonement.name}}</td>
           <td>{{abonement.price }} TND</td>
-          <td>{{abonement.memorySpace}}</td>
-          <td>{{abonement.nbCore}}</td>
+          <td>{{abonement.dateDebut}}</td>
+          <td>{{abonement.dateFin}}</td>
+          <td>{{abonement.modePaiement}}</td>
+          <td>{{abonement.customersEmail}}</td>
+          <td>{{abonement.montant}}</td>
           <td>
             <span [class]="'abonement-badge status-' + abonement.domain.toLowerCase()">{{abonement.domain}}</span>
           </td>
