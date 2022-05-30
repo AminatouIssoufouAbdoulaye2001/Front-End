@@ -12,6 +12,8 @@ import {UserInfo} from "../../Models/user.models";
 export class DashboardComponent implements OnInit {
   userProfi: UserInfo
   redirectToPlesk="";
+  userName = '';
+  password = '';
   constructor(private route: ActivatedRoute,
     private authServ:AuthService) { }
 
@@ -19,9 +21,10 @@ export class DashboardComponent implements OnInit {
   
       let data = this.route.snapshot.data;
       this.userProfi =  data['userInfos'] as UserInfo;
-      this.redirectToPlesk=`https://devpro.expert:8443/login_up.php?login_name=${this.authServ.userName}&passwd=${this.authServ.password}`;
-      
-
-  }
+      this.userName=this.authServ.userName;
+      this.password=this.authServ.password;
+      this.redirectToPlesk=`https://devpro.expert:8443/login_up.php?login_name=${this.authServ.userName}&passwd=${this.authServ.password}&success_redirect_url=https://devpro.expert:8443/smb/account&failure_redirect_url=127.0.0.1:4200`;
+      //this.redirectToPlesk = `https://devpro.expert:8443/login_up.php?login_name=${this.userName}&passwd=${this.password}&success_redirect_url=https://devpro.expert:8443/smb/account&failure_redirect_url=127.0.0.1:4200`;
+    }
 
 }

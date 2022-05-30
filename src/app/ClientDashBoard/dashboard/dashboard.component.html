@@ -249,6 +249,21 @@
                     <i class="fas fa-globe "></i>&nbsp; Enregistrer un nom
                     de domaine
                   </a>
+                  <!-- <form
+                  id="pleskRoadForm"
+                  action="https://devpro.expert:8443/login_up.php"
+                  method="POST"
+                >
+                  <input type="hidden" value="{{ userName }}" name="login_name" />
+                  <input type="hidden" value="{{ password }}" name="passwd" />
+                  <a
+                  class="list-group-item"
+                    role="button"
+                    href="javascript:{}"
+                    onclick="document.getElementById('pleskRoadForm').submit();"
+                    >Redirection vers Plesk</a
+                  >
+                </form> -->
                   <a
                     menuitemname="Logout"
                     href={{redirectToPlesk}}
@@ -256,7 +271,8 @@
                     class="list-group-item"
                     id="Secondary_Sidebar-Client_Shortcuts-Logout"
                     target="_blank">
-                    <i class="fas fa-arrow-left "></i>&nbsp;Redirection vers Plesk
+                    <i class="fas fa-arrow-left "></i>&nbsp;
+                    Redirection vers Plesk
                   </a>
                 </div>
               </div>
