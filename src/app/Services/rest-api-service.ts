@@ -64,7 +64,7 @@ export class RestApiService {
     ).pipe(
       map(res => {
           this.domainsAvailables = [];
-          let domains = res.payload.domains as DomainAvailable[];
+          let domains = res.payload as DomainAvailable[];
           domains.forEach(el => {
             this.domainsAvailables.push(new Domain(
               el?.available,
