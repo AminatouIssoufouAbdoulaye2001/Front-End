@@ -101,7 +101,7 @@ export class DomaineComponent implements OnInit, OnDestroy {
             this.messageService.add({
               severity: 'success',
               summary: 'Info',
-              detail: 'Votre abonnement a été enregistré',
+              detail: 'Votre domaine a été enregistré',
               life: 3000
             });
           }

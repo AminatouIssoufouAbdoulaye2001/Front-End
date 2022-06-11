@@ -9,7 +9,7 @@ export class PleskClientService {
   httpOptions = {
     headers: new HttpHeaders({'Content-Type': 'application/json',
     'Accept': 'application/json',
-    'X-API-Key':`002cd3c4-e14f-5364-fd6a-d55796ae1ef2`
+    'X-API-Key':`1fa3aeb0-f8e4-382b-cd1c-bc09fcbb5af2`
   })
     };
     private pleskUrl = 'https://devpro.expert:8443/api/v2/clients'; // URL to web api with client endpoint

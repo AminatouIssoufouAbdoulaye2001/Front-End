@@ -37,6 +37,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
       id: fb.control(null, Validators.required),
       username: fb.control('', Validators.required),
       fullName: fb.control('', Validators.required),
+      organisation: fb.control(''),
       email: fb.control('', [
         Validators.required,
         Validators.email

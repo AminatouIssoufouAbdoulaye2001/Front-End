@@ -80,6 +80,7 @@ import { HebergementComponent } from './test/hebergement/hebergement.component';
 import { PurchaseServicesDetailsComponent } from './ClientDashBoard/purchase-services-details/purchase-services-details.component';
 import { DomainDetailsComponent } from './Components/domain-details/domain-details.component';
 import { SubscribedDomainDetailsComponent } from './Components/subscribed-domain-details/subscribed-domain-details.component';
+import { ErrorComponent } from './Components/NotFound/error/error.component';
 
 @NgModule({
   declarations: [
@@ -122,7 +123,8 @@ import { SubscribedDomainDetailsComponent } from './Components/subscribed-domain
     HebergementComponent,
     PurchaseServicesDetailsComponent,
     DomainDetailsComponent,
-    SubscribedDomainDetailsComponent
+    SubscribedDomainDetailsComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,

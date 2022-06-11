@@ -23,7 +23,8 @@ export class UserInfo {
     public username: string,
     public fullName: string,
     public email: string,
-    public phone: string
+    public phone: string,
+    public organisation: string
   ) { }
 }
 
